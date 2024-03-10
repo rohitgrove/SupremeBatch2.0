@@ -1,0 +1,44 @@
+import java.util.Arrays;
+
+public class MissingNumber {
+    public static int sortingMethod(int nums[]) {
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            if (i == nums[i]) {
+                continue;
+            } else {
+                return i;
+            }
+        }
+
+        return nums.length;
+    }
+
+    public static int xorMethod(int nums[]) {
+        int ans = 0;
+        // 1. xor all values of array
+        for (int i = 0; i < nums.length; i++) {
+            ans ^= nums[i];
+        }
+
+        // 2. xor all range items (0, n)
+        int n = nums.length;
+        for (int i = 0; i <= n; i++) {
+            ans ^= i;
+        }
+        return ans;
+    }
+
+    public static int missingNumber(int[] nums) {
+        return xorMethod(nums);
+    }
+
+    public static void main(String[] args) {
+        int nums1[] = { 3, 0, 1 };
+        System.out.println(missingNumber(nums1));
+        int nums2[] = { 0, 1 };
+        System.out.println(missingNumber(nums2));
+        int nums3[] = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
+        System.out.println(missingNumber(nums3));
+    }
+}
