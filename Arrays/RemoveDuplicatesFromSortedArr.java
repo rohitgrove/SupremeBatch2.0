@@ -1,4 +1,4 @@
-public class RemoveDuplicates {
+public class RemoveDuplicatesFromSortedArr {
     public static int removeDuplicates(int[] nums) {
         int i = 1;
         int j = 0;
