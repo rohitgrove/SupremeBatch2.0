@@ -36,7 +36,7 @@ public class MaximumAvgSubArray {
             maxSum = Math.max(maxSum, sum);
         }
 
-        double maxAvg = maxSum / (double)k;
+        double maxAvg = maxSum / (double) k;
         return maxAvg;
     }
 

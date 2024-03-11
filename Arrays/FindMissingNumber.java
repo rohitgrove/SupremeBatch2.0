@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MissingNumber {
+public class FindMissingNumber {
     public static int sortingMethod(int nums[]) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
@@ -19,6 +19,7 @@ public class MissingNumber {
         // 1. xor all values of array
         for (int i = 0; i < nums.length; i++) {
             ans ^= nums[i];
+            System.out.println(ans);
         }
 
         // 2. xor all range items (0, n)
@@ -35,9 +36,9 @@ public class MissingNumber {
 
     public static void main(String[] args) {
         int nums1[] = { 3, 0, 1 };
-        System.out.println(missingNumber(nums1));
+        // System.out.println(missingNumber(nums1));
         int nums2[] = { 0, 1 };
-        System.out.println(missingNumber(nums2));
+        // System.out.println(missingNumber(nums2));
         int nums3[] = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
         System.out.println(missingNumber(nums3));
     }
