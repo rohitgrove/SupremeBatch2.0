@@ -8,15 +8,19 @@ public class InsertionSort {
                 j--;
             }
 
-            nums[j+1] = num;
+            nums[j + 1] = num;
+            System.out.println("Pass: " + i);
+            printArr(nums);
         }
     }
+
     public static void printArr(int nums[]) {
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
         }
         System.out.println();
     }
+
     public static void main(String[] args) {
         int nums1[] = { 5, 4, 3, 2, 1 };
         insertionSort(nums1);
@@ -30,5 +34,8 @@ public class InsertionSort {
         int nums4[] = { 44, 33, 55, 22, 11 };
         insertionSort(nums4);
         printArr(nums4);
+        int nums5[] = { 14, 12, 16, 6, 3, 10 };
+        insertionSort(nums5);
+        printArr(nums5);
     }
 }
