@@ -36,5 +36,8 @@ public class InsertionSort {
         int nums4[] = { 44, 33, 55, 22, 11 };
         insertionSort(nums4);
         printArr(nums4);
+        int nums5[] = { 34, 8, 64, 51, 32, 21 };
+        insertionSort(nums5);
+        printArr(nums5);
     }
 }
