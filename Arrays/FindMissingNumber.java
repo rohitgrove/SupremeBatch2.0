@@ -36,9 +36,9 @@ public class FindMissingNumber {
 
     public static void main(String[] args) {
         int nums1[] = { 3, 0, 1 };
-        // System.out.println(missingNumber(nums1));
+        System.out.println(missingNumber(nums1));
         int nums2[] = { 0, 1 };
-        // System.out.println(missingNumber(nums2));
+        System.out.println(missingNumber(nums2));
         int nums3[] = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
         System.out.println(missingNumber(nums3));
     }
