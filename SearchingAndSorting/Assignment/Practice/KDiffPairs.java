@@ -1,14 +1,13 @@
 import java.util.Arrays;
 
 public class KDiffPairs {
-    public static int findPairs(int[] nums, int k) {
+    public static int findPairs(int nums[], int k) {
         Arrays.sort(nums);
         int ans = 0;
         for (int i = 0; i <= nums.length - 2; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
-            }
-            if (binarySearch(nums, i, nums[i] + k)) {
+            } else if (binarySearch(nums, i, nums[i] + k)) {
                 ans++;
             }
         }
