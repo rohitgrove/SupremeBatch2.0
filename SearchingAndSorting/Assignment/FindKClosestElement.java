@@ -41,7 +41,7 @@ public class FindKClosestElement {
         return ans;
     }
 
-    public static List<Integer> bs_method(int arr[], int k, int x) { // tc: O(n-k)
+    public static List<Integer> bs_method(int arr[], int k, int x) { // tc: O(n)
         int h = lowerBound(arr, x);
         int l = h - 1;
         while (k > 0) {
