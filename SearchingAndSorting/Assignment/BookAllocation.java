@@ -1,11 +1,13 @@
-import java.util.Arrays;
 public class BookAllocation {
     public static int findPages(int[] Arr, int N, int M) {
         if (M > N) {
             return -1;
         }
         int s = 0;
-        int e = Arrays.stream(Arr).sum();
+        int e = 0;
+        for (int i = 0; i < Arr.length; i++) {
+            e += Arr[i]; 
+        }
 
         int ans = -1;
         int mid = s + (e - s) / 2;
