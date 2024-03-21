@@ -1,16 +1,14 @@
 public class InsertionSort {
     public static void insertionSort(int nums[]) {
         for (int i = 1; i < nums.length; i++) {
-            int num = nums[i];
+            int curr = nums[i];
             int j = i - 1;
-            while (j >= 0 && nums[j] > num) {
+            while (j >= 0 && nums[j] > curr) {
                 nums[j + 1] = nums[j];
                 j--;
             }
 
-            nums[j + 1] = num;
-            System.out.println("Pass: " + i);
-            printArr(nums);
+            nums[j + 1] = curr;
         }
     }
 
