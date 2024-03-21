@@ -10,9 +10,9 @@ public class NearlySortedArray {
             if (nums[mid] == target) {
                 return mid;
             }
-            if (mid + 1 < nums.length && nums[mid+1] == target) {
+            if (mid + 1 < nums.length && nums[mid + 1] == target) {
                 return mid + 1;
-            } 
+            }
 
             if (target > nums[mid]) {
                 // right
@@ -27,13 +27,14 @@ public class NearlySortedArray {
 
         return -1;
     }
+
     public static void main(String[] args) {
         int arr[] = { 20, 10, 30, 50, 40, 70, 60 };
         int target = 20;
 
         int targetIndex = srachNearlySorted(arr, target);
         if (targetIndex != -1) {
-            System.out.println("Element found at index: "+ targetIndex);
+            System.out.println("Element found at index: " + targetIndex);
         } else {
             System.out.println("Element not found");
         }
