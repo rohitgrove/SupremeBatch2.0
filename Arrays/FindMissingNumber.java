@@ -19,7 +19,6 @@ public class FindMissingNumber {
         // 1. xor all values of array
         for (int i = 0; i < nums.length; i++) {
             ans ^= nums[i];
-            System.out.println(ans);
         }
 
         // 2. xor all range items (0, n)
