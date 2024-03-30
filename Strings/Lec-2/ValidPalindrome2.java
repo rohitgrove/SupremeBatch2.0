@@ -1,5 +1,5 @@
 public class ValidPalindrome2 {
-    public static boolean validPalindrome(String s) {
+    public static boolean validPalindrome(String s) { // tc: O(n)
         int i = 0;
         int j = s.length() - 1;
 

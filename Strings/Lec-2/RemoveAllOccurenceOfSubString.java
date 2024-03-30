@@ -6,6 +6,22 @@ public class RemoveAllOccurenceOfSubString {
 
         return s;
     }
+
+    public static String removeOccurrences2(String s, String part) {
+        while (true) {
+            int found = s.indexOf(part);
+            if (found == -1) break;
+
+            // Remove the substring
+            String LP = s.substring(0, found);
+            String RP = s.substring(found + part.length());
+
+            // Concatenate the remaining parts
+            s = LP + RP;
+        }
+
+        return s;
+    }
     public static void main(String[] args) {
         String s = "daabcbaabcbc", part = "abc";
         System.out.println(removeOccurrences(s, part));

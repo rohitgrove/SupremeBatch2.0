@@ -17,8 +17,8 @@ public class DecodeMessage {
             if (ch == ' ') {
                 ans.append(' ');
             } else {
-                char decodeMsg = mapping[ch];
-                ans.append(decodeMsg);
+                char decode = mapping[ch];
+                ans.append(decode);
             }
         }
 

@@ -1,23 +1,24 @@
 public class PalindromicSubString {
-    public static int countSubStringHelper(String s, int i, int j) {
+    public static int expendStr(String s, int i, int j) {
         int count = 0;
         while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
-            count++;
             i--;
             j++;
+            count++;
         }
 
         return count;
     }
 
     public static int countSubstrings(String s) {
-        int totalCount = 0;
+        int totalAns = 0;
         for (int center = 0; center < s.length(); center++) {
-            int oddCase = countSubStringHelper(s, center, center);
-            int evenCase = countSubStringHelper(s, center, center + 1);
-            totalCount = totalCount + oddCase + evenCase;
+            int oddKaAns = expendStr(s, center, center);
+            int eveKaAns = expendStr(s, center, center + 1);
+            totalAns = totalAns + oddKaAns + eveKaAns;
         }
-        return totalCount;
+
+        return totalAns;
     }
 
     public static void main(String[] args) {
