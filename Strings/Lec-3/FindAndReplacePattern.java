@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindAndReplace {
+public class FindAndReplacePattern {
     // This function normalizes all the words and pattern into a similar format
     // so that we can compare them and find the solution
     public static void createUpdateMapping(StringBuilder str) {
