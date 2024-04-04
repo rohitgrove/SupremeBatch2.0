@@ -19,11 +19,13 @@ public class CustomComparator {
     }
 }
 
-// Define a custom comparator for sorting integers in descending order
+// Define a custom comparator for sorting integers in descending order. there remove <Integer> parameter when we write on int data type
 class CustomComparatorex implements Comparator<Integer> {
+    // in function we write Integer Ki jagah object likhna ha
     @Override
     public int compare(Integer num1, Integer num2) {
-        // Reverse order comparison for descending sort
-        return num2.compareTo(num1);
+        // Reverse order comparison for descending sort. we can write in int also. example: className.varibleName - className.varibleName;
+        return num2 - num1;
+        // return num2.compareTo(num2);
     }
 }
