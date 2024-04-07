@@ -16,6 +16,15 @@ public class CustomComparator {
         // Print the sorted array
         System.out.println("\nSorted array:");
         System.out.println(Arrays.toString(numbers));
+
+        Integer[] numbers2 = {5, 3, 8, 1, 9};
+        Arrays.sort(numbers2, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer s1, Integer s2) {
+                return s2 - s1;
+            }
+        });
+        System.out.println(Arrays.toString(numbers2));
     }
 }
 
