@@ -2,39 +2,52 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class CustomComparator {
-    public static void main(String[] args) {
-        // Create an array of integers
-        Integer[] numbers = {5, 3, 8, 1, 9};
+    // static class Compare implements Comparator<Integer> {
+    //     @Override
+    //     public int compare(Integer o1, Integer o2) {
+    //         // return o1 - o2; // increasing order sorting
+    //         return o2 - o1; // decreasing order sorting
+    //     }
+    // }
 
-        // Print the original array
-        System.out.println("Original array:");
-        System.out.println(Arrays.toString(numbers));
-
-        // Sort the array using the custom comparator
-        Arrays.sort(numbers, new CustomComparatorex());
-
-        // Print the sorted array
-        System.out.println("\nSorted array:");
-        System.out.println(Arrays.toString(numbers));
-
-        Integer[] numbers2 = {5, 3, 8, 1, 9};
-        Arrays.sort(numbers2, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer s1, Integer s2) {
-                return s2 - s1;
-            }
-        });
-        System.out.println(Arrays.toString(numbers2));
+    static class Compare2dArr implements Comparator<Integer[]>{
+        @Override
+        public int compare(Integer[] o1, Integer[] o2) {
+            // return o1[1] - o2[1]; // Increasing order
+            return o2[1] - o1[1]; // decresing order
+        }
+        
     }
-}
 
-// Define a custom comparator for sorting integers in descending order. there remove <Integer> parameter when we write on int data type
-class CustomComparatorex implements Comparator<Integer> {
-    // in function we write Integer Ki jagah object likhna ha
-    @Override
-    public int compare(Integer num1, Integer num2) {
-        // Reverse order comparison for descending sort. we can write in int also. example: className.varibleName - className.varibleName;
-        return num2 - num1;
-        // return num2.compareTo(num2);
+    public static void main(String[] args) {
+        // Integer arr[] = { 44, 55, 22, 11, 33 };
+        // Arrays.sort(arr); // increasing order sorting
+        // Arrays.sort(arr, new Compare());
+        // printArr(arr);
+
+        Integer arr[][] = { { 1, 44 },
+                { 0, 55 },
+                { 0, 22 },
+                { 0, 11 },
+                { 2, 33 } };
+
+        Arrays.sort(arr, new Compare2dArr());
+        printAL(arr);
+    }
+
+    public static void printAL(Integer arr[][]) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printArr(Integer arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 }
