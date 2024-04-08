@@ -1,14 +1,13 @@
 public class ReorgainiseString {
-    public static CharSequence reorganizeString(String s) { //tc: O(n)
-        char sArr[] = s.toCharArray(); 
+    public static String reorganizeString(String s) {
+        char sArr[] = s.toCharArray();
         int hash[] = new int[26];
         for (int i = 0; i < s.length(); i++) {
             hash[sArr[i] - 'a']++;
         }
 
-        // find the most frequent char
-        char most_freq_char = ' ';
         int max_freq = Integer.MIN_VALUE;
+        char most_freq_char = ' ';
         for (int i = 0; i < 26; i++) {
             if (hash[i] > max_freq) {
                 max_freq = hash[i];
@@ -17,9 +16,7 @@ public class ReorgainiseString {
         }
 
         int index = 0;
-
-        // place most freq character
-        while (max_freq > 0 && index < s.length()) {
+        while (index < s.length() && max_freq > 0) {
             sArr[index] = most_freq_char;
             max_freq--;
             index += 2;
@@ -29,20 +26,18 @@ public class ReorgainiseString {
             return "";
         }
 
-        hash[most_freq_char - 'a'] = 0;
-
-        // let's place the rest of the characters.
         for (int i = 0; i < 26; i++) {
             while (hash[i] > 0) {
                 index = index >= s.length() ? 1 : index;
                 sArr[index] = (char) (i + 'a');
                 hash[i]--;
-                index += 2;
+                index++;
             }
         }
 
         return String.valueOf(sArr);
     }
+
     public static void main(String[] args) {
         String s1 = "aab";
         System.out.println(reorganizeString(s1));
@@ -52,5 +47,5 @@ public class ReorgainiseString {
         System.out.println(reorganizeString(s3));
         String s4 = "aaabb";
         System.out.println(reorganizeString(s4));
-    }    
+    }
 }
