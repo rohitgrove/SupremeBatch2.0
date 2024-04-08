@@ -15,14 +15,14 @@ public class MinimumTimeToCollectGarbage {
         for (int i = 0; i < garbage.length; i++) {
             String curr = garbage[i];
             for (int j = 0; j < curr.length(); j++) {
-                char ch = curr.charAt(j);
-                if (ch == 'P') {
+                char currChar = curr.charAt(j);
+                if (currChar == 'P') {
                     pickP++;
                     lastP = i;
-                } else if (ch == 'G') {
+                } else if (currChar == 'G') {
                     pickG++;
                     lastG = i;
-                } else if (ch == 'M') {
+                } else if (currChar == 'M') {
                     pickM++;
                     lastM = i;
                 }
@@ -41,7 +41,7 @@ public class MinimumTimeToCollectGarbage {
             travelM += travel[i];
         }
 
-        int ans = (travelG + pickG) + (travelM + pickM) + (travelP + pickP);
+        int ans = (pickP + travelP) + (pickG + travelG) + (pickM + travelM);
         return ans;
     }
 
