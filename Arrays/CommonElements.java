@@ -5,7 +5,7 @@ public class CommonElements {
         ArrayList<Integer> ans = new ArrayList<>();
         int i = 0, j = 0, k = 0;
         while (i < n1 && j < n2 && k < n3) {
-            // Skip duplicates in A
+            // Skip duplicates in A, B And C
             while (i > 0 && i < n1 && A[i] == A[i - 1]) {
                 i++;
             }
