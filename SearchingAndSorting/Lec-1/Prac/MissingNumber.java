@@ -1,17 +1,18 @@
 public class MissingNumber {
     public static int findMissingNum(int[] nums) {
-        int s = 0;
-        int e = nums.length - 1;
+        int start = 0;
+        int end = nums.length - 1;
         int ans = -1;
-        while (s <= e) {
-            int mid = s + (e - s) / 2;
+        int mid = start + (end - start) / 2;
+        while (start <= end) {
             int diff = nums[mid] - mid;
             if (diff == 1) {
-                s = mid + 1;
+                start = mid + 1;
             } else {
                 ans = mid;
-                e = mid - 1;
+                end = mid - 1;
             }
+            mid = start + (end - start) / 2;
         }
 
         if (ans + 1 == 0) {
