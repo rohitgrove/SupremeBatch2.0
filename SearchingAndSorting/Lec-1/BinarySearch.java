@@ -32,7 +32,7 @@ public class BinarySearch {
         if (ansIndex == -1) {
             System.out.println("Element Not found");
         } else {
-            System.out.println("Element found at index: "+ ansIndex);
+            System.out.println("Element found at index: " + ansIndex);
         }
     }
 }
