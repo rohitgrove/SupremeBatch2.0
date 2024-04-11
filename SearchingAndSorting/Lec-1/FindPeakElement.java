@@ -24,17 +24,15 @@ public class FindPeakElement {
     public static int peakIndexInMountainArray(int[] nums) {
         int ans = -1;
         int start = 0;
-        int end = nums.length- 1;
+        int end = nums.length - 1;
 
-        while(start <= end){
+        while (start <= end) {
             int mid = (start + end) / 2;
-            if(nums[mid + 1] > nums[mid]){
+            if (nums[mid + 1] > nums[mid]) {
                 start = mid + 1;
-            }
-            else if(nums[mid - 1] > nums[mid]){
+            } else if (nums[mid - 1] > nums[mid]) {
                 end = mid - 1;
-            }
-            else {
+            } else {
                 // It must be Peak
                 ans = mid;
                 break;
