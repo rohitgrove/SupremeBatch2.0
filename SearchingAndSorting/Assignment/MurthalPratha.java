@@ -4,7 +4,7 @@ public class MurthalPratha {
     public static int findHowMuchTakeTime(int cook[], int pratha) {
         int start = 0;
         int end = (2 * cook[0] + (pratha - 1) * cook[0]) * pratha / 2;
-        
+
         int ans = -1;
 
         while (start <= end) {
@@ -19,6 +19,7 @@ public class MurthalPratha {
 
         return ans;
     }
+
     public static boolean isPossible(int[] cook, int pratha, int mid) {
         int currP = 0; // initial cooked prata count
         for (int i = 0; i < cook.length; i++) {
@@ -26,9 +27,9 @@ public class MurthalPratha {
             int timeTaken = 0;
 
             while (true) {
-                if ((timeTaken + j * R)  <= mid) {
+                if ((timeTaken + j * R) <= mid) {
                     ++currP;
-                    timeTaken += j*R;
+                    timeTaken += j * R;
                     ++j;
                 } else {
                     break;
@@ -42,7 +43,9 @@ public class MurthalPratha {
 
         return false;
     }
-    public static Scanner sc = new Scanner(System.in); 
+
+    public static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         int nP = sc.nextInt();
         int cP = sc.nextInt();
