@@ -21,7 +21,6 @@ public class NumbersInABeamInABank {
             int j = i + 1;
             while (j < devices.size()) {
                 beams += devices.get(i) * devices.get(j);
-                System.out.println(beams);
                 if (devices.get(j) == 0) {
                     j++;
                 } else {
@@ -30,7 +29,6 @@ public class NumbersInABeamInABank {
             }
         }
 
-        System.out.println("End");
         return beams;
     }
 

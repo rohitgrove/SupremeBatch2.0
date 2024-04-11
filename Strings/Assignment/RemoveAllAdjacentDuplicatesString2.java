@@ -14,7 +14,7 @@ public class RemoveAllAdjacentDuplicatesString2 {
     }
 
     public static boolean areLastKCharsSame(StringBuilder ans, char newch, int k) {
-        for (int j = ans.length()- k; j < ans.length(); j++) {
+        for (int j = ans.length() - k; j < ans.length(); j++) {
             if (ans.charAt(j) != newch) {
                 return false;
             }
