@@ -34,34 +34,6 @@ public class IntegerToEnglishWords {
             new Pair<>(2, "Two"),
             new Pair<>(1, "One"));
 
-    public static String solve(int num) {
-        if (num == 0) {
-            return "Zero ";
-        }
-        for (Pair<Integer, String> it : mp) {
-            if (num >= it.getFirst()) {
-                String a = "";
-                if (num >= 100) {
-                    a = solve(num / it.getFirst());
-                }
-                String b = it.getSecond();
-                String c = "";
-                if (num % it.getFirst() != 0) {
-                    c = solve(num % it.getFirst());
-                }
-
-                return a + b + c;
-            }
-        }
-
-        return "";
-    }
-
-    public static String numberToWords(int num) {
-        String ans = solve(num);
-        return ans.trim();
-    }
-
     static class Pair<T, U> {
         private T first;
         private U second;
@@ -78,6 +50,34 @@ public class IntegerToEnglishWords {
         public U getSecond() {
             return second;
         }
+    }
+
+    public static String solve(int num) {
+        if (num == 0) {
+            return "Zero ";
+        }
+        for (Pair<Integer, String> it : mp) {
+            if (num >= it.getFirst()) {
+                String a = "";
+                if (num >= 100) {
+                    a = solve(num / it.getFirst());
+                }
+                String b = it.getSecond() + " ";
+                String c = "";
+                if (num % it.getFirst() != 0) {
+                    c = solve(num % it.getFirst());
+                }
+
+                return a + b + c;
+            }
+        }
+
+        return "";
+    }
+
+    public static String numberToWords(int num) {
+        String ans = solve(num);
+        return ans.trim();
     }
 
     public static void main(String[] args) {
