@@ -1,13 +1,13 @@
 public class QuickSortFromStart {
-    public static void quickSort(int[] arr, int start, int end) {
+    public static void quickSort(int arr[], int start, int end) {
         if (start >= end) {
             return;
         }
+        
+        int pivot = partition(arr, start, end);
 
-        int p = partition(arr, start, end);
-
-        quickSort(arr, start, p - 1);
-        quickSort(arr, p + 1, end);
+        quickSort(arr, start, pivot - 1);
+        quickSort(arr, pivot + 1, end);
     }
 
     public static int partition(int arr[], int start, int end) {
@@ -20,30 +20,29 @@ public class QuickSortFromStart {
         }
 
         int pivotIdx = start + cnt;
-        int temp = arr[start];
-        arr[start] = arr[pivotIdx];
-        arr[pivotIdx] = temp;
+        int temp = arr[pivotIdx];
+        arr[pivotIdx] = arr[start];
+        arr[start] = temp;
 
-        int i = start, j = end;
-        while (i < pivotIdx && pivotIdx < j) {
-            while (arr[i] <= pivot) {
-                i++;
+        int l = start, r = end;
+        while (l < pivotIdx && r > pivotIdx) {
+            while (arr[l] <= pivot) {
+                l++;
             }
 
-            while (arr[j] > pivot) {
-                j--;
+            while (arr[r] > pivot) {
+                r--;
             }
 
-            if (i < pivotIdx && j > pivotIdx) {
-                temp = arr[i];
-                arr[i++] = arr[j];
-                arr[j--] = temp;
+            if (l < pivotIdx && r > pivotIdx) {
+                temp = arr[l];
+                arr[l++] = arr[r];
+                arr[r--] = temp;
             }
         }
 
         return pivotIdx;
     }
-
 
     public static void main(String[] args) {
         int arr1[] = { 7, 2, 1, 8, 6, 3, 5, 4 };
