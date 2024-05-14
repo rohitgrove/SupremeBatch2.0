@@ -1,5 +1,5 @@
 public class InPlaceMergeSort {
-    public static void mergeInPlace(int[] nums, int start, int mid, int end) {
+    public static void mergeInPlace(int[] nums, int start, int end) {
         int total_Len = end - start + 1;
         int gap = (total_Len / 2) + (total_Len % 2);
         while (gap > 0) {
@@ -25,7 +25,7 @@ public class InPlaceMergeSort {
         mergeSort(nums, start, mid);
         mergeSort(nums, mid + 1, end);
 
-        mergeInPlace(nums, start, mid, end);
+        mergeInPlace(nums, start, end);
     }
 
     public static int[] sortAnArray(int nums[]) {
