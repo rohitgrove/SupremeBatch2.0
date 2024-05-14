@@ -14,41 +14,6 @@ public class MergeSort {
         int right[] = mergeSort(nums, mid + 1, e);
         return merge(left, right);
     }
-  
-    public static int partition(int arr[], int start, int end) {
-        int pivot = arr[start];
-        int cnt = 0;
-        for (int i = start + 1; i <= end; i++) {
-            if (arr[i] <= pivot) {
-                cnt++;
-            }
-        }
-
-        int pivotIdx = start + cnt;
-        int temp = arr[start];
-        arr[start] = arr[pivotIdx];
-        arr[pivotIdx] = temp;
-
-        int i = start, j = end;
-        while (i < pivotIdx && pivotIdx < j) {
-            while (arr[i] <= pivot) {
-                i++;
-            }
-
-            while (arr[j] > pivot) {
-                j--;
-            }
-
-            if (i < pivotIdx && j > pivotIdx) {
-                temp = arr[i];
-                arr[i++] = arr[j];
-                arr[j--] = temp;
-            }
-        }
-
-        return pivotIdx;
-    }
-
 
     public static int[] merge(int left[], int right[]) {
         int temp[] = new int[left.length + right.length];
