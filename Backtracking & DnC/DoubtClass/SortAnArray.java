@@ -4,10 +4,11 @@ public class SortAnArray {
         int k = start;
 
         while (i <= mid && j <= end) {
-            if (nums[i] <= nums[j])
+            if (nums[i] <= nums[j]) {
                 temp[k++] = nums[i++];
-            else
+            } else {
                 temp[k++] = nums[j++];
+            }
         }
 
         while (i <= mid) {
@@ -17,14 +18,15 @@ public class SortAnArray {
         while (j <= end) {
             temp[k++] = nums[j++];
         }
-        
+
         for (int p = start; p <= end; p++) {
             nums[p] = temp[p];
         }
     }
 
     public static void mergeSort(int[] nums, int[] temp, int start, int end) {
-        if (start >= end) return;
+        if (start >= end)
+            return;
 
         int mid = (start + end) / 2;
         mergeSort(nums, temp, start, mid);
@@ -41,10 +43,11 @@ public class SortAnArray {
 
     public static void printArr(int nums[]) {
         for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i]+" ");
+            System.out.print(nums[i] + " ");
         }
         System.out.println();
     }
+
     public static void main(String[] args) {
         int nums1[] = { 5, 2, 3, 1 };
         printArr(sortArray(nums1));
