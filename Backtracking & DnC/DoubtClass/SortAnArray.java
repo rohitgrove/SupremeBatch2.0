@@ -1,40 +1,42 @@
 public class SortAnArray {
-    public static int[] mergeSort(int nums[], int start, int end) {
-        if (start >= end) {
-            return new int[] { nums[start] };
+    public static void merge(int[] nums, int[] temp, int start, int mid, int end) {
+        int i = start, j = mid + 1;
+        int k = start;
+
+        while (i <= mid && j <= end) {
+            if (nums[i] <= nums[j])
+                temp[k++] = nums[i++];
+            else
+                temp[k++] = nums[j++];
         }
 
-        int mid = start + (end - start) / 2;
-        int leftArr[] = mergeSort(nums, start, mid);
-        int rightArr[] = mergeSort(nums, mid + 1, end);
-        return merge(leftArr, rightArr);
+        while (i <= mid) {
+            temp[k++] = nums[i++];
+        }
+
+        while (j <= end) {
+            temp[k++] = nums[j++];
+        }
+        
+        for (int p = start; p <= end; p++) {
+            nums[p] = temp[p];
+        }
     }
 
-    public static int[] merge(int leftArr[], int rightArr[]) {
-        int temp[] = new int[leftArr.length + rightArr.length];
-        int leftIdx = 0, rightIdx = 0, tempIdx = 0;
+    public static void mergeSort(int[] nums, int[] temp, int start, int end) {
+        if (start >= end) return;
 
-        while (leftIdx < leftArr.length && rightIdx < rightArr.length) {
-            if (leftArr[leftIdx] < rightArr[rightIdx]) {
-                temp[tempIdx++] = leftArr[leftIdx++];
-            } else {
-                temp[tempIdx++] = rightArr[rightIdx++];
-            }
-        }
+        int mid = (start + end) / 2;
+        mergeSort(nums, temp, start, mid);
+        mergeSort(nums, temp, mid + 1, end);
 
-        while (leftIdx < leftArr.length) {
-            temp[tempIdx++] = leftArr[leftIdx++];
-        }
-
-        while (rightIdx < rightArr.length) {
-            temp[tempIdx++] = rightArr[rightIdx++];
-        }
-
-        return temp;
+        merge(nums, temp, start, mid, end);
     }
 
     public static int[] sortArray(int[] nums) {
-        return mergeSort(nums, 0, nums.length - 1);
+        int[] temp = new int[nums.length];
+        mergeSort(nums, temp, 0, nums.length - 1);
+        return nums;
     }
 
     public static void printArr(int nums[]) {
