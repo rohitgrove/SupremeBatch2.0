@@ -1,16 +1,18 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
-public class PermutaionOfArray {
+public class Permutation2 {
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> numsL = new ArrayList<>();
+        List<Integer> List = new ArrayList<>();
         for (int num : nums) {
-            numsL.add(num);
+            List.add(num);
         }
         int index = 0;
-        solve(numsL, ans, index);
+        solve(List, ans, index);
         return ans;
     }
 
@@ -20,7 +22,12 @@ public class PermutaionOfArray {
             return;
         }
 
+        Map<Integer, Boolean> visited = new HashMap<>();
         for (int i = index; i < nums.size(); i++) {
+            if (visited.containsKey(nums.get(i))) {
+                continue;
+            }
+            visited.put(nums.get(i), true);
             Collections.swap(nums, index, i);
             solve(nums, ans, index + 1);
             Collections.swap(nums, index, i);
@@ -28,7 +35,9 @@ public class PermutaionOfArray {
     }
 
     public static void main(String[] args) {
-        int nums[] = { 1, 2, 3 };
-        System.out.println(permute(nums));
+        int nums1[] = { 1, 2, 3 };
+        System.out.println(permute(nums1));
+        int nums2[] = { 1, 1, 2 };
+        System.out.println(permute(nums2));
     }
 }
