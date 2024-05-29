@@ -10,7 +10,13 @@ interface Bird {
     }
 }
 
-class sparrow implements Bird {
+interface Walk {
+    int legs = 4;
+
+    void walk();
+}
+
+class sparrow implements Bird, Walk {
     @Override
     public void fly() {
         System.out.println("Sparow flying 2445454");
@@ -22,6 +28,12 @@ class sparrow implements Bird {
     @Override
     public void eat() {
         System.out.println("Sparrow eating");
+    }
+
+    @Override
+    public void walk() {
+        int a = Walk.legs;
+        System.out.println("Sparrow walking on " + a + " legs");
     }
 }
 
