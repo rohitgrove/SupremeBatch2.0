@@ -3,6 +3,10 @@ package Design;
 abstract class Bird {
     abstract void fly();
     abstract void eat();
+
+    public void sleep() {
+        System.out.println("Bird is sleeping");
+    }
 }
 
 class sparrow extends Bird {
@@ -33,6 +37,7 @@ public class AbstractClasses {
     public static void doBirdStuff(Bird b) {
         b.fly();
         b.eat();
+        b.sleep();
     }
 
     public static void main(String[] args) {
