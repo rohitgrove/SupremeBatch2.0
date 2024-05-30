@@ -3,7 +3,7 @@ package Exeptions;
 public class ThrowsKeyword {
     public static void printName(String name) throws ArithmeticException, NullPointerException {
         if (name.equalsIgnoreCase("Rohit")) {
-            throw new NullPointerException("Bhut bhyankar exeption aya hai");
+            throw new RohitExeption("Bhut bhyankar exeption aya hai");
         }
         System.out.println("Hello, " + name);
     }
@@ -15,5 +15,12 @@ public class ThrowsKeyword {
         } finally {
             System.out.println("Badia");
         }
+    }
+}
+
+class RohitExeption extends RuntimeException {
+    RohitExeption(String msg) {
+        super(msg);
+        System.out.println("Hello");
     }
 }
