@@ -38,7 +38,8 @@ public class DecreaingSort {
         list.add(40);
 
         // labda expression
-        list.sort((o1, o2) -> o2 - o1);
+        Collections.sort(list,(o1, o2) -> o2 - o1);
+        // list.sort((o1, o2) -> o2 - o1);
         System.out.println("Decreasing Sorting Using Lambda Expression: " + list);
 
         list = new ArrayList<>();
