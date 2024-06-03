@@ -42,8 +42,10 @@ public class DistributingRepeatingNumbers {
         Integer quan[] = new Integer[quantity.length];
         for (int i = 0; i < quan.length; i++) {
             quan[i] = quantity[i];
-        }
+        } 
+        // Both Are Right Method to dec sorting
         Arrays.sort(quan, new Compare());
+        // Arrays.sort(quan, (o1, o2) -> o2 - o1);
         return canDistributeHelper(counts, nums, quan, 0);
     }
 
