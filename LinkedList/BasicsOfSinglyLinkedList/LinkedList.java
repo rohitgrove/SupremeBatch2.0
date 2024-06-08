@@ -115,4 +115,112 @@ public class LinkedList {
             curr.next = newNode;
         }
     }
+
+    public int deleteAtHead() {
+        if (head == null) {
+            throw new RuntimeException("Cannot delete, coz LL is empty");
+        } else if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+
+        int val = head.data;
+        head = head.next;
+        return val;
+    }
+
+    public int deleteAtTail() {
+        if (head == null) {
+            throw new RuntimeException("Cannot delete, coz LL is empty");
+        } else if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+        Node prev = head;
+        while (prev.next != tail) {
+            prev = prev.next;
+        }
+
+        // Tail ki value nikalo
+        int val = tail.data;
+        // prev node ko link null karo
+        prev.next = null;
+        // update tail
+        tail = prev;
+        return val;
+    }
+
+    public int deleteAtPositionByPos(int position) {
+        // empty list
+        if (head == null) {
+            throw new RuntimeException("Cannot delete, coz LL is empty");
+        }
+
+        int len = getLength();
+
+        if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+        // delete from head
+        if (position == 1) {
+            // first node ko delete kar do
+            return deleteAtHead();
+            
+        } else if (position == len) {
+            // last node ko delete kardo
+            return deleteAtTail();
+        } else {
+            // middle main koi node ko delete kar do
+
+            // step1: set prev/curr pointer
+            Node prev = null;
+            Node curr = head;
+            while (position != 1) {
+                position--;
+                prev = curr;
+                curr = curr.next;
+            }
+            int val = curr.data;
+
+            // step2: prev.next ko curr ke next se link karo
+            prev.next = curr.next;
+
+            // step3: node isolate kardo
+            curr.next = null;
+
+            return val;
+        }
+    }
+
+    public void deleteAtPositionByVal(int val) {
+        if (head == null) {
+            throw new RuntimeException("Cannot delete, coz LL is empty");
+        }
+
+        if (head == tail) {
+            head = tail = null;
+            return;
+        } 
+        
+        if (val == head.data) {
+            head = head.next;
+            return;
+        } else if (val == tail.data) {
+            deleteAtTail();
+            return;            
+        } else {
+            Node prev = null;
+            Node curr = head;
+            while (curr != null && curr.data != val) {
+                prev = curr;
+                curr = curr.next;
+            }
+            prev.next = curr.next;
+            curr.next = null;
+        }
+    }
 }

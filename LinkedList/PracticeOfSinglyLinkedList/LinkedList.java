@@ -88,7 +88,99 @@ public class LinkedList {
             }
 
             newNode.next = curr.next;
-            curr.next = newNode; 
+            curr.next = newNode;
+        }
+    }
+
+    public int deleteAtHead() {
+        if (head == null) {
+            throw new RuntimeException("Linked List is empty");
+        } else if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+
+        int val = head.data;
+        head = head.next;
+        return val;
+    }
+
+    public int deleteAtTail() {
+        if (head == null) {
+            throw new RuntimeException("Linked List is empty");
+        } else if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+
+        Node prev = null;
+        Node curr = head;
+        while (curr.next != null) {
+            prev = curr;
+            curr = curr.next;
+        }
+        int val = curr.data;
+        prev.next = null;
+        tail = prev;
+
+        return val;
+    }
+
+    public int deleteAtPosition(int index) {
+        if (head == null) {
+            throw new RuntimeException("Linked List is empty");
+        }
+        int len = getLength();
+        if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        } else if (index == 1) {
+            return deleteAtHead();
+        } else if (index == len) {
+            return deleteAtTail();
+        } else {
+            Node prev = null;
+            Node curr = head;
+            while (index != 1) {
+                index--;
+                prev = curr;
+                curr = curr.next;
+            }
+            int val = curr.data;
+
+            prev.next = curr.next;
+            curr.next = null;
+
+            return val;
+        }
+    }
+
+    public void deleteAtPositionByVal(int val) {
+        if (head == null) {
+            throw new RuntimeException("Linked List is empty");
+        }
+
+        if (head == tail) {
+            head = tail = null;
+        } else if (head.data == val) {
+            deleteAtHead();
+            return;
+        } else if (tail.data == val) {
+            deleteAtTail();
+            return;
+        } else {
+            Node prev = null;
+            Node curr = head;
+            while (curr != null && curr.data != val) {
+                prev = curr;
+                curr = curr.next;
+            }
+
+            prev.next = curr.next;
+            curr.next = null;
         }
     }
 }

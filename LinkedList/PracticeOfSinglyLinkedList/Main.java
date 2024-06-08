@@ -15,5 +15,14 @@ public class Main {
         ll.insertAtPosition2(450, 3);
         ll.print();
         System.out.println(ll.getLength());
+        // ll.deleteAtHead();
+        // ll.print();
+        // ll.deleteAtTail();
+        // ll.print();
+        // ll.deleteAtPosition(2);
+        // ll.print();
+        ll.print();
+        ll.deleteAtPositionByVal(450);
+        ll.print();
     }
 }
