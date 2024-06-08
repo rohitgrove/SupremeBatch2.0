@@ -190,6 +190,7 @@ public class LinkedList {
             prev.next = curr.next;
 
             // step3: node isolate kardo
+            // This line is not important
             curr.next = null;
 
             return val;
@@ -220,6 +221,7 @@ public class LinkedList {
                 curr = curr.next;
             }
             prev.next = curr.next;
+            // This line is not important
             curr.next = null;
         }
     }
