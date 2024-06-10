@@ -1,6 +1,6 @@
-public class Main extends PalindromeLL {
+public class Main {
     public static void main(String[] args) {
-        PrintLinkedList pll = new PrintLinkedList();
+        // PrintLinkedList pll = new PrintLinkedList();
         // ListNode first = new ListNode(1);
         // ListNode second = new ListNode(2);
         // ListNode third = new ListNode(3);
