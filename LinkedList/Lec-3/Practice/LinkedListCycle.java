@@ -2,10 +2,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LinkedListCycle {
-    public boolean hasCycle(ListNode head) {
-        Map<ListNode, Boolean> table = new HashMap<>();
+    public boolean hasCycle(Node head) {
+        Map<Node, Boolean> table = new HashMap<>();
 
-        ListNode temp = head;
+        Node temp = head;
         while (temp != null) {
             if (table.getOrDefault(temp, false)) {
                 // Cycle present

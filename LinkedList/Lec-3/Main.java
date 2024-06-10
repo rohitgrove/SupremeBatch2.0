@@ -44,14 +44,14 @@ public class Main {
         // PalindromeLL palindrome = new PalindromeLL();
         // System.out.println(palindrome.isPalindrome(head));
 
-        ListNode first = new ListNode(10);
-        ListNode second = new ListNode(20);
-        ListNode third = new ListNode(30);
-        ListNode fourth = new ListNode(40);
-        ListNode fifth = new ListNode(50);
-        ListNode sixth = new ListNode(60);
+        Node first = new Node(10);
+        Node second = new Node(20);
+        Node third = new Node(30);
+        Node fourth = new Node(40);
+        Node fifth = new Node(50);
+        Node sixth = new Node(60);
     
-        ListNode head = first;
+        Node head = first;
         first.next = second;
         second.next = third;
         third.next = fourth;

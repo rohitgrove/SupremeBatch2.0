@@ -1,22 +1,22 @@
 public class ReverseLL {
-    public ListNode reverseListrec(ListNode prev, ListNode curr) {
+    public Node reverseListrec(Node prev, Node curr) {
         if (curr == null) {
             return prev;
         }
 
-        ListNode nextNode = curr.next;
+        Node nextNode = curr.next;
         curr.next = prev;
         prev = curr;
         curr = nextNode;
         return reverseListrec(prev, curr);
     }
 
-    public ListNode reverseListitr(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
+    public Node reverseListitr(Node head) {
+        Node prev = null;
+        Node curr = head;
 
         while (curr != null) {
-            ListNode nextNode = curr.next;
+            Node nextNode = curr.next;
             curr.next = prev;
             prev = curr;
             curr = nextNode;
@@ -25,7 +25,7 @@ public class ReverseLL {
         return prev;
     }
     
-    public ListNode reverseList(ListNode head) {
+    public Node reverseList(Node head) {
         return reverseListrec(null, head);
     }    
 }

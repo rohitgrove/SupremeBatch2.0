@@ -1,7 +1,7 @@
 public class MiddleNodeOfLL {
-    public int getLength(ListNode head) {
+    public int getLength(Node head) {
         int length = 0;
-        ListNode temp = head;
+        Node temp = head;
         while (temp != null) {
             length++;
             temp = temp.next;
@@ -10,12 +10,12 @@ public class MiddleNodeOfLL {
         return length;
     }
 
-    public ListNode simpleApproachOfMiddleNode(ListNode head) {
+    public Node simpleApproachOfMiddleNode(Node head) {
         int length = getLength(head);
         int position = (length / 2) + 1;
 
         int currPos = 1;
-        ListNode temp = head;
+        Node temp = head;
         while (currPos != position) {
             temp = temp.next;
             currPos++;
@@ -23,9 +23,9 @@ public class MiddleNodeOfLL {
         return temp;
     }
 
-    public ListNode slowFastApproach(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
+    public Node slowFastApproach(Node head) {
+        Node slow = head;
+        Node fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -34,7 +34,7 @@ public class MiddleNodeOfLL {
         return slow;
     }
 
-    public ListNode middleNode(ListNode head) {
+    public Node middleNode(Node head) {
         return slowFastApproach(head);
     }
 }

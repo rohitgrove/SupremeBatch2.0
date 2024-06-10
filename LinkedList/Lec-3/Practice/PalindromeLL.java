@@ -1,7 +1,7 @@
 public class PalindromeLL {
-    public ListNode slowFastApproach(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head.next;
+    public Node slowFastApproach(Node head) {
+        Node slow = head;
+        Node fast = head.next;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
@@ -10,12 +10,12 @@ public class PalindromeLL {
         return slow;
     }
 
-    public ListNode reverseListitr(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
+    public Node reverseListitr(Node head) {
+        Node prev = null;
+        Node curr = head;
 
         while (curr != null) {
-            ListNode nextNode = curr.next;
+            Node nextNode = curr.next;
             curr.next = prev;
             prev = curr;
             curr = nextNode;
@@ -24,8 +24,8 @@ public class PalindromeLL {
         return prev;
     }
 
-    public boolean compare(ListNode head, ListNode head2) {
-        ListNode temp = head, temp2 = head2;
+    public boolean compare(Node head, Node head2) {
+        Node temp = head, temp2 = head2;
         while (temp2 != null) {
             if (temp.data != temp2.data) {
                 return false;
@@ -37,9 +37,9 @@ public class PalindromeLL {
         return true;
     }
 
-    public boolean isPalindrome(ListNode head) {
-        ListNode midNode = slowFastApproach(head);
-        ListNode head2 = midNode.next;
+    public boolean isPalindrome(Node head) {
+        Node midNode = slowFastApproach(head);
+        Node head2 = midNode.next;
         head2 = reverseListitr(head2);
         return compare(head, head2);
     }
