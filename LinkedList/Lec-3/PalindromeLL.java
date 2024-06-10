@@ -40,8 +40,8 @@ public class PalindromeLL {
         ListNode midNode = slowFastApproach(head);
         ListNode head2 = midNode.next;
         midNode.next = null;
+       
         // reverse second half
-
         ListNode prev = null;
         ListNode curr = head2;
         head2 = reverseListrec(prev, curr); 
