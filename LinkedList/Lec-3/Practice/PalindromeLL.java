@@ -1,46 +1,72 @@
 public class PalindromeLL {
-    public Node slowFastApproach(Node head) {
+    public static Node slowFastApproach(Node head) {
         Node slow = head;
         Node fast = head.next;
         while (fast != null && fast.next != null) {
-            fast = fast.next.next;
             slow = slow.next;
+            fast = fast.next.next;
         }
 
         return slow;
     }
 
-    public Node reverseListitr(Node head) {
-        Node prev = null;
-        Node curr = head;
-
-        while (curr != null) {
-            Node nextNode = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nextNode;
+    public static Node reverseListrec(Node prev, Node curr) {
+        // base case
+        if (curr == null) {
+            return prev;
         }
 
-        return prev;
+        Node nextNode = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = nextNode;
+        return reverseListrec(prev, curr);
     }
 
-    public boolean compare(Node head, Node head2) {
-        Node temp = head, temp2 = head2;
-        while (temp2 != null) {
-            if (temp.data != temp2.data) {
+    public static boolean compareList(Node head, Node head2) {
+        while (head != null && head2 != null) {
+            if (head.data != head2.data) {
                 return false;
+            } else {
+                head = head.next;
+                head2 = head2.next;
             }
-            temp = temp.next;
-            temp2 = temp2.next;
         }
-
         return true;
     }
 
-    public boolean isPalindrome(Node head) {
+    public static boolean isPalindrome(Node head) {
+        // break into two halfs
         Node midNode = slowFastApproach(head);
         Node head2 = midNode.next;
-        head2 = reverseListitr(head2);
-        return compare(head, head2);
+        midNode.next = null;
+       
+        // reverse second half
+        Node prev = null;
+        Node curr = head2;
+        head2 = reverseListrec(prev, curr); 
+
+        // comapre both LinkedList
+        boolean ans = compareList(head, head2);
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtHead(1);
+        ll.insertAtHead(2);
+        ll.insertAtHead(2);
+        ll.insertAtHead(1);
+        ll.printLL();
+        System.out.println(isPalindrome(ll.head));
+
+        LinkedList ll2 = new LinkedList();
+        ll2.insertAtHead(1);
+        ll2.insertAtHead(2);
+        ll2.insertAtHead(3);
+        ll2.insertAtHead(2);
+        ll2.insertAtHead(1);
+        ll2.printLL();
+        System.out.println(isPalindrome(ll2.head));
     }
 }

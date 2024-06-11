@@ -1,5 +1,5 @@
-public class RevereseKGroup {
-    public int getLength(Node head) {
+public class ReverseKGroup {
+    public static int getLength(Node head) {
         Node temp = head;
         int len = 0;
         while(temp != null) {
@@ -9,7 +9,7 @@ public class RevereseKGroup {
         return len;
     }
     
-    public Node reverseKGroup(Node head, int k) {
+    public static Node reverseKGroup(Node head, int k) {
         if(head == null) {
             return head;
         }
@@ -17,7 +17,6 @@ public class RevereseKGroup {
             return head;
         }
     
-        //1 case main solve karunga
         Node prev = null;
         Node curr = head;
         Node nextNode = curr.next;
@@ -36,10 +35,23 @@ public class RevereseKGroup {
             pos++;
         }
     
+        Node recursionKaAns = null;
         if(nextNode != null) {
-            head.next = reverseKGroup(nextNode, k);
+            recursionKaAns = reverseKGroup(nextNode, k);
+            head.next = recursionKaAns;
         }
     
         return prev;
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtHead(5);
+        ll.insertAtHead(4);
+        ll.insertAtHead(3);
+        ll.insertAtHead(2);
+        ll.insertAtHead(1);
+        ll.printLL();
+        ll.printLL(reverseKGroup(ll.head, 3));
     }
 }

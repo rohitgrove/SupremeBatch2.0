@@ -1,5 +1,5 @@
 public class ReverseALinkedList {
-    public Node reverseListitr(Node head) {
+    public static Node reverseListitr(Node head) {
         Node prev = null;
         Node curr = head;
         while (curr != null) {
@@ -12,7 +12,7 @@ public class ReverseALinkedList {
         return prev;
     }
 
-    public Node reverseListrec(Node prev, Node curr) {
+    public static Node reverseListrec(Node prev, Node curr) {
         // base case
         if (curr == null) {
             return prev;
@@ -25,7 +25,17 @@ public class ReverseALinkedList {
         return reverseListrec(prev, curr);
     }
 
-    public Node reverseList(Node head) {
+    public static Node reverseList(Node head) {
         return reverseListrec(null, head);
+    }
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtHead(50);
+        ll.insertAtHead(40);
+        ll.insertAtHead(30);
+        ll.insertAtHead(20);
+        ll.insertAtHead(10);
+        ll.printLL();
+        ll.printLL(reverseList(ll.head));
     }
 }

@@ -1,5 +1,5 @@
 public class AddOneToALL {
-    public Node reverse(Node head) {
+    public static Node reverse(Node head) {
         Node prev = null;
         Node curr = head;
         while (curr != null) {
@@ -11,7 +11,7 @@ public class AddOneToALL {
 
         return prev;
     }
-    public Node addOne(Node head) {
+    public static Node addOne(Node head) {
         // reverse
         head = reverse(head);
 
@@ -46,4 +46,11 @@ public class AddOneToALL {
         head = reverse(head);
         return head;        
     }        
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtHead(9);
+        ll.insertAtHead(9);
+        ll.insertAtHead(9);
+        ll.printLL(addOne(ll.head));
+    }
 }

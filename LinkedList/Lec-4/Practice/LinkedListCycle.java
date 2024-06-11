@@ -8,14 +8,13 @@ public class LinkedListCycle {
         Node temp = head;
         while (temp != null) {
             if (table.getOrDefault(temp, false)) {
-                // Cycle present
                 return true;
             } else {
                 table.put(temp, true);
             }
             temp = temp.next;
         }
-        // Loop not present
+
         return false;
     }
 

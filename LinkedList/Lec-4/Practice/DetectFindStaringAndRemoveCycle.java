@@ -14,16 +14,13 @@ public class DetectFindStaringAndRemoveCycle {
             return null;
         }
 
-        // yha pohoch chuke ho toh, iska mtlb slow and fast meet kr chuke hai
         slow = head;
 
-        // slow and fast -> 1 step
         while (fast != slow) {
             slow = slow.next;
             fast = fast.next;
         }
 
-        // return starting point
         return slow;
     }
 

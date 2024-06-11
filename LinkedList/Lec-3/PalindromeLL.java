@@ -1,5 +1,5 @@
 public class PalindromeLL {
-    public Node slowFastApproach(Node head) {
+    public static Node slowFastApproach(Node head) {
         Node slow = head;
         Node fast = head.next;
         while (fast != null && fast.next != null) {
@@ -10,7 +10,7 @@ public class PalindromeLL {
         return slow;
     }
 
-    public Node reverseListrec(Node prev, Node curr) {
+    public static Node reverseListrec(Node prev, Node curr) {
         // base case
         if (curr == null) {
             return prev;
@@ -23,7 +23,7 @@ public class PalindromeLL {
         return reverseListrec(prev, curr);
     }
 
-    public boolean compareList(Node head, Node head2) {
+    public static boolean compareList(Node head, Node head2) {
         while (head != null && head2 != null) {
             if (head.data != head2.data) {
                 return false;
@@ -35,7 +35,7 @@ public class PalindromeLL {
         return true;
     }
 
-    public boolean isPalindrome(Node head) {
+    public static boolean isPalindrome(Node head) {
         // break into two halfs
         Node midNode = slowFastApproach(head);
         Node head2 = midNode.next;
@@ -49,5 +49,24 @@ public class PalindromeLL {
         // comapre both LinkedList
         boolean ans = compareList(head, head2);
         return ans;
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtHead(1);
+        ll.insertAtHead(2);
+        ll.insertAtHead(2);
+        ll.insertAtHead(1);
+        ll.printLL();
+        System.out.println(isPalindrome(ll.head));
+
+        LinkedList ll2 = new LinkedList();
+        ll2.insertAtHead(1);
+        ll2.insertAtHead(2);
+        ll2.insertAtHead(3);
+        ll2.insertAtHead(2);
+        ll2.insertAtHead(1);
+        ll2.printLL();
+        System.out.println(isPalindrome(ll2.head));
     }
 }

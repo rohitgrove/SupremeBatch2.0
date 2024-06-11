@@ -1,5 +1,5 @@
 public class MiddleNodeOfLL {
-    public int getLength(Node head) {
+    public static int getLength(Node head) {
         int length = 0;
         Node temp = head;
         while (temp != null) {
@@ -10,7 +10,7 @@ public class MiddleNodeOfLL {
         return length;
     }
 
-    public Node simpleApproachOfMiddleNode(Node head) {
+    public  static Node simpleApproachOfMiddleNode(Node head) {
         int length = getLength(head);
         int position = (length / 2) + 1;
 
@@ -23,7 +23,7 @@ public class MiddleNodeOfLL {
         return temp;
     }
 
-    public Node slowFastApproach(Node head) {
+    public static Node slowFastApproach(Node head) {
         Node slow = head;
         Node fast = head;
         while (fast != null && fast.next != null) {
@@ -34,7 +34,19 @@ public class MiddleNodeOfLL {
         return slow;
     }
 
-    public Node middleNode(Node head) {
+    public static Node middleNode(Node head) {
         return slowFastApproach(head);
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtHead(60);
+        ll.insertAtHead(50);
+        ll.insertAtHead(40);
+        ll.insertAtHead(30);
+        ll.insertAtHead(20);
+        ll.insertAtHead(10);
+        ll.printLL();
+        System.out.println(middleNode(ll.head));
     }
 }
