@@ -1,6 +1,7 @@
 public class LinkedList {
     public Node head;
     public Node tail;
+
     public void insertAtHead(int data) {
         // Step 1 - create new node
         Node newNode = new Node(data);
