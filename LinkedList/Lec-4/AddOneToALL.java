@@ -51,6 +51,7 @@ public class AddOneToALL {
         ll.insertAtHead(9);
         ll.insertAtHead(9);
         ll.insertAtHead(9);
+        ll.printLL();
         ll.printLL(addOne(ll.head));
     }
 }
