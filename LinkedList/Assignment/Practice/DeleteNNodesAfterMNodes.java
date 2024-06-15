@@ -6,26 +6,25 @@ public class DeleteNNodesAfterMNodes {
 
         Node it = head;
         for (int i = 0; i < M - 1; i++) {
-            // if M nodes are N.A
             if (it == null) {
                 return;
             }
             it = it.next;
         }
-        
-        // it would be at Mth node;
+
         if (it == null) {
             return;
         }
 
         Node MthNode = it;
-        it = MthNode.next;
+        it = it.next;
         for (int i = 0; i < N; i++) {
             if (it == null) {
                 break;
             }
             it = it.next;
         }
+
         MthNode.next = it;
         linkdelete(it, M, N);
     }
