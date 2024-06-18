@@ -3,27 +3,32 @@ public class SortList {
         return mergeSort(head);
     }
 
+    public static Node getMid(Node head) {
+        Node slow = head, fast = head.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     public static Node mergeSort(Node head) {
         if (head == null || head.next == null)
             return head;
 
         // step 1. cut the list to two halves
-        Node prev = null, slow = head, fast = head;
-
-        while (fast != null && fast.next != null) {
-            prev = slow;
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-
-        prev.next = null;
+        Node midNode = getMid(head);
+        Node left = head;
+        Node right = midNode.next;
+        midNode.next = null; // cut the list
 
         // step 2. sort each half
-        Node l1 = mergeSort(head);
-        Node l2 = mergeSort(slow);
+        left = mergeSort(left);
+        right = mergeSort(right);
 
         // step 3. merge l1 and l2
-        return merge(l1, l2);
+        return merge(left, right);
     }
 
     public static Node merge(Node left, Node right) {
