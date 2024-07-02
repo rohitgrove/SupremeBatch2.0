@@ -4,7 +4,7 @@ public class SearchRotatedandSorted {
         if (nums[pivot] > target && target > nums[0]) {
             return binarySearch(nums, 0, pivot, target);
         } else {
-            return binarySearch(nums, pivot+1, nums.length-1, target);
+            return binarySearch(nums, pivot + 1, nums.length - 1, target);
         }
     }
 
@@ -14,7 +14,7 @@ public class SearchRotatedandSorted {
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {
-                s = mid+1;
+                s = mid + 1;
             } else {
                 e = mid - 1;
             }
