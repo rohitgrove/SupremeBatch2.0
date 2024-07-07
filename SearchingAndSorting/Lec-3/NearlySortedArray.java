@@ -1,5 +1,5 @@
 public class NearlySortedArray {
-    public static int srachNearlySorted(int nums[], int target) { // tc: (logn)
+    public static int serachNearlySorted(int nums[], int target) { // tc: (logn)
         int s = 0;
         int e = nums.length - 1;
         int mid = s + (e - s) / 2;
@@ -32,7 +32,7 @@ public class NearlySortedArray {
         int arr[] = { 20, 10, 30, 50, 40, 70, 60 };
         int target = 20;
 
-        int targetIndex = srachNearlySorted(arr, target);
+        int targetIndex = serachNearlySorted(arr, target);
         if (targetIndex != -1) {
             System.out.println("Element found at index: " + targetIndex);
         } else {
