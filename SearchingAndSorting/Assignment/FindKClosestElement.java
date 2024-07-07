@@ -33,7 +33,7 @@ public class FindKClosestElement {
                 end = mid - 1;
             } else if (x > arr[mid]) {
                 start = mid + 1;
-            } else {
+            } else { // this condition is not complsory
                 end = mid - 1;
             }
         }
