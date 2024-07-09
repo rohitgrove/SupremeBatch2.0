@@ -18,7 +18,6 @@ public class GroupAnagram {
             mp.get(s).add(str);
         }
 
-
         List<List<String>> ans = new ArrayList<>(mp.values());
         return ans;
     }
@@ -45,7 +44,6 @@ public class GroupAnagram {
         List<List<String>> ans = new ArrayList<>(mp.values());
         return ans;
     }
-
 
     public static void main(String[] args) {
         String strs[] = { "eat", "tea", "tan", "ate", "nat", "bat" };
