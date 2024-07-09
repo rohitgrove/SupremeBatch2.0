@@ -42,10 +42,7 @@ public class GroupAnagram {
             mp.get(key).add(str);
         }
 
-        List<List<String>> ans = new ArrayList<>();
-        for (List<String> group : mp.values()) {
-            ans.add(group);
-        }
+        List<List<String>> ans = new ArrayList<>(mp.values());
         return ans;
     }
 
