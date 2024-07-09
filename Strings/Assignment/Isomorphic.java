@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Isomorphic {
     public static boolean isIsomorphic1(String s, String t) {
         int hash[] = new int[256]; // mapping of each char of language 's' to language 't'
@@ -43,9 +41,7 @@ public class Isomorphic {
     public static boolean isIsomorphic2(String s, String t) {
         s = updateMappingString(new StringBuilder(s));
         t = updateMappingString(new StringBuilder(t));
-        char arrs[] = s.toCharArray();
-        char arrt[] = t.toCharArray();
-        return Arrays.equals(arrs, arrt);
+        return s.equals(t);
     }
 
     public static void main(String[] args) {
