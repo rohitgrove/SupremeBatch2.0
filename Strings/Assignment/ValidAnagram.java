@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class ValidAnagram {
-    public static boolean isAnagram1(String s, String t) { // tc: O(logn)
+    public static boolean isAnagram1(String s, String t) { // tc: O(nlogn)
         char sArr[] = s.toCharArray();
         char tArr[] = t.toCharArray();
         Arrays.sort(tArr);
