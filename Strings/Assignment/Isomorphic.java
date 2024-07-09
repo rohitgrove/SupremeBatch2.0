@@ -18,7 +18,6 @@ public class Isomorphic {
         return true;
     }
 
-
     public static String updateMappingString(StringBuilder str) {
         char hash[] = new char[256];
         char start = 'a';
