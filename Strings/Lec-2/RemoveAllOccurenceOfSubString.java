@@ -26,6 +26,6 @@ public class RemoveAllOccurenceOfSubString {
         String s = "daabcbaabcbc", part = "abc";
         System.out.println(removeOccurrences(s, part));
         s = "axxxxyyyyb"; part = "xy";
-        System.out.println(removeOccurrences(s, part));
+        System.out.println(removeOccurrences2(s, part));
     }    
 }
