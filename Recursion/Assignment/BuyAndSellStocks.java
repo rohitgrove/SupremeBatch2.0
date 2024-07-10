@@ -1,4 +1,4 @@
-public class BuyAndSellStcks {
+public class BuyAndSellStocks {
     static class MaxProfitHelper {
         int maxProfit;
         int minPrice;
