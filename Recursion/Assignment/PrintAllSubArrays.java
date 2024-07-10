@@ -1,4 +1,4 @@
-public class SubArrays {
+public class PrintAllSubArrays {
     public static void printSubarray_util(int nums[], int start, int end) {
         if (end == nums.length) {
             return;
