@@ -8,13 +8,13 @@ public class RecBasics {
         PD(n - 1);
     }
 
-    public static void PI(int n) {
-        if (n == 0) {
+    public static void PI(int s, int e) {
+        if (s > e) {
             return;
         }
 
-        PI(n - 1);
-        System.out.println(n);
+        System.out.println(s);
+        PI(s + 1, e);
     }
 
     public static void PDI(int n) {
@@ -39,7 +39,7 @@ public class RecBasics {
 
     public static void main(String[] args) {
         // PD(5);
-        // PI(5);
+        // PI(1, 5);
         // PDI(5);
         PID(1, 5);
     }
