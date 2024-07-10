@@ -37,7 +37,7 @@ public class CoinChange {
     public static void main(String[] args) {
         int coins1[] = { 1, 2, 5 }, amount1 = 11;
         System.out.println(coinChange(coins1, amount1));
-        int coins2[] = {2}, amount2 = 3;
+        int coins2[] = { 2 }, amount2 = 3;
         System.out.println(coinChange(coins2, amount2));
     }
 }
