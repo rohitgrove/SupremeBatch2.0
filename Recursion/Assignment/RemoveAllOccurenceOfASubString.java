@@ -1,4 +1,4 @@
-public class RemoveAllOccurenceOfASubarray {
+public class RemoveAllOccurenceOfASubString {
     public static String removeOCCRE(String s, String part) {
         int found = s.indexOf(part);
         if (found != -1) {
