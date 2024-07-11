@@ -35,7 +35,7 @@ public class MergeSort {
 
         // 2 more cases
 
-        // 1 case -> rigght array exhaust but left array me element abhi bhi bache hai
+        // 1 case -> right array exhaust but left array me element abhi bhi bache hai
         while (leftIdx < left.length) {
             temp[tempIdx] = left[leftIdx];
             leftIdx++;
