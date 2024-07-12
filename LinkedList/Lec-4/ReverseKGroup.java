@@ -10,10 +10,7 @@ public class ReverseKGroup {
     }
     
     public static Node reverseKGroup(Node head, int k) {
-        if(head == null) {
-            return head;
-        }
-        if(head.next == null) {
+        if(head == null || head.next == null) {
             return head;
         }
     
