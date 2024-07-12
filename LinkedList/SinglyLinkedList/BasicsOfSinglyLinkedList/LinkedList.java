@@ -55,7 +55,7 @@ public class LinkedList {
         // asumption: position ki value [1 to length+1 tk]
         int length = getLength();
         if (position < 1 || position > (length + 1)) {
-            throw new RuntimeException("Invalid index. Valid index is 1 to list size + 1 position");
+            throw new RuntimeException("Invalid index. Valid index is 1 to list's size + 1 position");
         }
 
         if (position == 1) {
