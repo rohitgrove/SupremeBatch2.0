@@ -190,7 +190,7 @@ public class LinkedList {
             prev.next = curr.next;
 
             // step3: node isolate kardo
-            // This line is not important
+            // This line is not important for java lanauge
             curr.next = null;
 
             return val;
