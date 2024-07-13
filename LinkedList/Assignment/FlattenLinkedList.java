@@ -31,13 +31,48 @@ public class FlattenLinkedList {
         return ans;
     }
 
+    public static FNode mergeTwoLists(FNode left, FNode right) {
+        if (left == null) {
+            return right;
+        }
+        if (right == null) {
+            return left;
+        }
+
+        FNode ans = new FNode(-1);  // Dummy node to simplify merging
+        FNode mptr = ans;
+
+        while (left != null && right != null) {
+            if (left.data <= right.data) {
+                mptr.bottom = left;
+                mptr = left;
+                left = left.bottom;  // Use bottom instead of next
+            } else {
+                mptr.bottom = right;
+                mptr = right;
+                right = right.bottom;  // Use bottom instead of next
+            }
+        }
+
+        if (left != null) {
+            mptr.bottom = left;
+        }
+
+        if (right != null) {
+            mptr.bottom = right;
+        }
+
+        return ans.bottom; 
+    }
+
     public static FNode flatten(FNode root) {
         if (root == null || root.next == null) {
             return root;
         }
-
+        // both are correct method
         // Merge this list with the list on the right
         root = merge(root, flatten(root.next));
+        // root = mergeTwoLists(root, flatten(root.next));
 
         return root;
     }
