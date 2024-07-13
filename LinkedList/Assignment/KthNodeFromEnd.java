@@ -22,15 +22,16 @@ public class KthNodeFromEnd {
         return temp.data;
     }
 
-    public static int getNodeRec(Node head, int positionFromTail, int[] currentPosition) {
+    public static int currentPosition = 0;
+    public static int getNodeRec(Node head, int positionFromTail) {
         if (head == null) {
             return -1;
         }
-        int value = getNodeRec(head.next, positionFromTail, currentPosition);
+        int value = getNodeRec(head.next, positionFromTail);
     
-        currentPosition[0]++;
+        currentPosition++;
         
-        if (currentPosition[0] == positionFromTail) {
+        if (currentPosition == positionFromTail) {
             return head.data;
         }
         
@@ -38,17 +39,16 @@ public class KthNodeFromEnd {
     }
 
     public static int getNode(Node list, int positionFromTail) {
-        int[] currentPosition = new int[1]; 
-        currentPosition[0] = -1;
-        return getNodeRec(list, positionFromTail, currentPosition); 
+        return getNodeRec(list, positionFromTail); 
     }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.insertAtTail(3);
-        ll.insertAtTail(2);
         ll.insertAtTail(1);
+        ll.insertAtTail(2);
+        ll.insertAtTail(3);
+        ll.insertAtTail(4);
         ll.printLL();
-        System.out.println(getNode(ll.head, 2));
+        System.out.println(getNode(ll.head, 3));
     }
 }
