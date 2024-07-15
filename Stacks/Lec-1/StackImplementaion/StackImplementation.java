@@ -22,6 +22,7 @@ public class StackImplementation {
         if (top == -1) {
             throw new RuntimeException("Stack is Underflow");
         } else {
+            arr[top] = 0;
             top--;
         }
     }
