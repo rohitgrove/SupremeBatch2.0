@@ -1,19 +1,17 @@
-public class ImplementStackWithTwoArrays {
+public class StackImplementationInAnArray {
     public int arr[];
-    public int size;
-    public int top1;
-    public int top2;
-
-    public ImplementStackWithTwoArrays(int size) {
+    int size;
+    int top1;
+    int top2;
+    public StackImplementationInAnArray(int size) {
         arr = new int[size];
         this.size = size;
-        top1 = -1;
-        top2 = size;
-    }
+        this.top1 = -1;
+        this.top2 = size;
+    }    
 
     public void push1(int data) {
         if (top2 - top1 == 1) {
-            // sapce not available
             throw new RuntimeException("Overflow");
         } else {
             top1++;
@@ -23,7 +21,6 @@ public class ImplementStackWithTwoArrays {
 
     public void push2(int data) {
         if (top2 - top1 == 1) {
-            // sapce not available
             throw new RuntimeException("Overflow");
         } else {
             top2--;
@@ -35,7 +32,7 @@ public class ImplementStackWithTwoArrays {
         if (top1 == -1) {
             throw new RuntimeException("underflow");
         } else {
-            arr[top1] = 0;
+            arr[top1] = 0; 
             top1--;
         }
     }
