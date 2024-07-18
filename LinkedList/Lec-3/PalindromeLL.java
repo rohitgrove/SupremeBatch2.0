@@ -53,43 +53,11 @@ public class PalindromeLL {
         return ans;
     }
 
-    public static boolean checkPalindromeM2(Node head) {
-        if (head.next == null || head.next.next == null) {
-            if (head.next == null) {
-                return true;
-            } else if(head.data == head.next.data) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-        
-        Node mid = slowFastApproach(head);
-
-        Node head2 = mid.next;
-        Node temp = head2;
-        Stack<Integer> st = new Stack<>();
-        while (temp != null) {
-            st.push(temp.data);
-            temp = temp.next;
-        }
-
-        temp = head;
-        while (!st.isEmpty()) {
-            if (st.peek() != temp.data) {
-                return false;
-            }
-            temp = temp.next;
-            st.pop();
-        }
-
-        return true;
-    }
-
     public static boolean isPalindrome(Node head) {
-        return checkPalindromeM2(head);
+        return checkPalindromeM1(head);
     }
 
+    // Palindrome check Method 2 in Stacks Doubt Class
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.insertAtHead(1);
