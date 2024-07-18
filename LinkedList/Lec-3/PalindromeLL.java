@@ -75,7 +75,7 @@ public class PalindromeLL {
         }
 
         temp = head;
-        while (!st.isEmpty() && temp != head2) {
+        while (!st.isEmpty()) {
             if (st.peek() != temp.data) {
                 return false;
             }
@@ -96,8 +96,8 @@ public class PalindromeLL {
         ll.insertAtHead(2);
         ll.insertAtHead(2);
         ll.insertAtHead(1);
-        // ll.printLL();
-        // System.out.println(isPalindrome(ll.head));
+        ll.printLL();
+        System.out.println(isPalindrome(ll.head));
 
         LinkedList ll2 = new LinkedList();
         ll2.insertAtHead(1);
@@ -105,8 +105,8 @@ public class PalindromeLL {
         ll2.insertAtHead(3);
         ll2.insertAtHead(2);
         ll2.insertAtHead(1);
-        // ll2.printLL();
-        // System.out.println(isPalindrome(ll2.head));
+        ll2.printLL();
+        System.out.println(isPalindrome(ll2.head));
 
         LinkedList ll3 = new LinkedList();
         ll3.insertAtHead(1);
