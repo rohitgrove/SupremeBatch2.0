@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class PalindromeLL {
     public static Node slowFastApproach(Node head) {
         Node slow = head;
@@ -35,20 +37,46 @@ public class PalindromeLL {
         return true;
     }
 
-    public static boolean isPalindrome(Node head) {
+    public static boolean checkPalindromeM1(Node head) {
         // break into two halfs
         Node midNode = slowFastApproach(head);
         Node head2 = midNode.next;
         midNode.next = null;
-       
+
         // reverse second half
         Node prev = null;
         Node curr = head2;
-        head2 = reverseListrec(prev, curr); 
+        head2 = reverseListrec(prev, curr);
 
         // comapre both LinkedList
         boolean ans = compareList(head, head2);
         return ans;
+    }
+
+    public static boolean checkPalindromeM2(Node head) {
+        Node mid = slowFastApproach(head);
+
+        Node temp = mid.next;
+        Stack<Integer> st = new Stack<>();
+        while (temp != null) {
+            st.push(temp.data);
+            temp = temp.next;
+        }
+
+        temp = head;
+        while (!st.isEmpty() && temp != mid) {
+            if (st.peek() != temp.data) {
+                return false;
+            }
+            temp = temp.next;
+            st.pop();
+        }
+
+        return true;
+    }
+
+    public static boolean isPalindrome(Node head) {
+        return checkPalindromeM2(head);
     }
 
     public static void main(String[] args) {
