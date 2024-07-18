@@ -54,9 +54,20 @@ public class PalindromeLL {
     }
 
     public static boolean checkPalindromeM2(Node head) {
+        if (head.next == null || head.next.next == null) {
+            if (head.next == null) {
+                return true;
+            } else if(head.data == head.next.data) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
         Node mid = slowFastApproach(head);
 
-        Node temp = mid.next;
+        Node head2 = mid.next;
+        Node temp = head2;
         Stack<Integer> st = new Stack<>();
         while (temp != null) {
             st.push(temp.data);
@@ -64,7 +75,7 @@ public class PalindromeLL {
         }
 
         temp = head;
-        while (!st.isEmpty() && temp != mid) {
+        while (!st.isEmpty() && temp != head2) {
             if (st.peek() != temp.data) {
                 return false;
             }
@@ -85,8 +96,8 @@ public class PalindromeLL {
         ll.insertAtHead(2);
         ll.insertAtHead(2);
         ll.insertAtHead(1);
-        ll.printLL();
-        System.out.println(isPalindrome(ll.head));
+        // ll.printLL();
+        // System.out.println(isPalindrome(ll.head));
 
         LinkedList ll2 = new LinkedList();
         ll2.insertAtHead(1);
@@ -94,7 +105,15 @@ public class PalindromeLL {
         ll2.insertAtHead(3);
         ll2.insertAtHead(2);
         ll2.insertAtHead(1);
-        ll2.printLL();
-        System.out.println(isPalindrome(ll2.head));
+        // ll2.printLL();
+        // System.out.println(isPalindrome(ll2.head));
+
+        LinkedList ll3 = new LinkedList();
+        ll3.insertAtHead(1);
+        ll3.insertAtHead(2);
+        ll3.insertAtHead(1);
+        ll3.insertAtHead(1);
+        ll3.printLL();
+        System.out.println(isPalindrome(ll3.head));
     }
 }
