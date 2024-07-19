@@ -57,5 +57,7 @@ public class LargestAreaInAHistogram {
     public static void main(String[] args) {
         int heights[] = { 2, 1, 5, 6, 2, 3 };
         System.out.println(largestRectangleArea(heights));
+        int heights2[] = { 6, 2, 5, 4, 5, 1, 6 };
+        System.out.println(largestRectangleArea(heights2));
     }
 }
