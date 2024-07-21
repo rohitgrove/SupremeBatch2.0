@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 public class PalindromeLL {
     public static Node slowFastApproach(Node head) {
         Node slow = head;
@@ -57,7 +55,7 @@ public class PalindromeLL {
         return checkPalindromeM1(head);
     }
 
-    // Palindrome check Method 2 in Stacks Doubt Class
+    // Palindrome check Method 2 in LinkedList Doubt Class
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.insertAtHead(1);
