@@ -27,7 +27,7 @@ public class CopyListWithRandomPointer {
         return newNode;
     }
 
-    public static ListNode helper2(ListNode head) {// t.c: O(1)
+    public static ListNode helper2(ListNode head) {// t.c: O(n)
         if (head == null) return null;
 
         // Step 1: Clone A -> A'
