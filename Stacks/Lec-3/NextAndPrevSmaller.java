@@ -1,7 +1,7 @@
 import java.util.Stack;
 
-public class NextSmaller {
-    public static int[] nextSmallerRight(int arr[]) {
+public class NextAndPrevSmaller {
+    public static int[] nextSmaller(int arr[]) {
         Stack<Integer> st = new Stack<>();
         st.push(-1);
         int ans[] = new int[arr.length];
@@ -56,10 +56,10 @@ public class NextSmaller {
         printArr(arr1);
         printArr(arr2);
         printArr(arr3);
-        System.out.println("Next Smaller Right");
-        printArr(nextSmallerRight(arr1));
-        printArr(nextSmallerRight(arr2));
-        printArr(nextSmallerRight(arr3));
+        System.out.println("Next Smaller");
+        printArr(nextSmaller(arr1));
+        printArr(nextSmaller(arr2));
+        printArr(nextSmaller(arr3));
         System.out.println("Prev Smaller");
         printArr(prevSmaller(arr1));
         printArr(prevSmaller(arr2));
