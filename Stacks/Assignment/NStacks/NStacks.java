@@ -4,7 +4,7 @@ public class NStacks {
     int a[], top[], next[];
     int n; // no. of stacks
     int size; // size of main array
-    int freeSpot; // tells free space in manin array
+    int freeSpot; // tells free space in main array
 
     public NStacks(int n, int s) {
         this.n = n;
