@@ -47,6 +47,6 @@ public class MiddleNodeOfLL {
         ll.insertAtHead(20);
         ll.insertAtHead(10);
         ll.printLL();
-        System.out.println(middleNode(ll.head));
+        System.out.println(middleNode(ll.head).data);
     }
 }
