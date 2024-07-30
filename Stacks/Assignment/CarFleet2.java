@@ -37,9 +37,15 @@ public class CarFleet2 {
     }
 
     public static void main(String[] args) {
-        int cars1[][] = { { 1, 2 }, { 2, 1 }, { 4, 3 }, { 7, 2 } };
+        int cars1[][] = { { 1, 2 },
+                { 2, 1 },
+                { 4, 3 },
+                { 7, 2 } };
         printArr(getCollisionTimes(cars1));
-        int cars2[][] = { { 3, 4 }, { 5, 4 }, { 6, 3 }, { 9, 1 } };
+        int cars2[][] = { { 3, 4 },
+                { 5, 4 },
+                { 6, 3 },
+                { 9, 1 } };
         printArr(getCollisionTimes(cars2));
     }
 }
