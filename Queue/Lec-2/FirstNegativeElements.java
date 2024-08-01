@@ -2,7 +2,7 @@ import java.util.Deque;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 
-public class PrintFirstNegativeElements {
+public class FirstNegativeElements {
     public static ArrayList<Integer> firstNegative(int arr[], int k) {
         Deque<Integer> dq = new ArrayDeque<>();
         ArrayList<Integer> ans = new ArrayList<>();
