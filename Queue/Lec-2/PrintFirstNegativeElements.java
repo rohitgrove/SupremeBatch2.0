@@ -45,7 +45,9 @@ public class PrintFirstNegativeElements {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 2, -5, 4, -1, -2, 0, 5 };
-        System.out.println(firstNegative(arr, 3));
+        int arr1[] = { 2, -5, 4, -1, -2, 0, 5 };
+        System.out.println(firstNegative(arr1, 3));
+        int arr2[] = {-2, 0, 4, -1, -5, 6};
+        System.out.println(firstNegative(arr2, 3));
     }
 }
