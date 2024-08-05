@@ -16,9 +16,12 @@ public class SlidingWindiowMaximum {
         // Process the first window of size k
         for (int i = 0; i < k; i++) {
             int ele = nums[i];
+            // chotte element remove kardo
             while (!dq.isEmpty() && ele > nums[dq.peekLast()]) {
                 dq.pollLast();
             }
+
+            // inserting index, so that we can checkout of window element
             dq.add(i);
         }
 
