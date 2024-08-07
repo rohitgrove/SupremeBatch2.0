@@ -95,7 +95,6 @@ public class PreorderInorderAndPostOrderCreateTree {
     }
 
     public static void main(String[] args) {
-        // Example usage for preOrder and inOrder
         // int inorder[] = { 10, 8, 6, 2, 4, 12 };
         // int preOrder[] = { 2, 8, 10, 6, 4, 12 };
         // int size = inorder.length;
