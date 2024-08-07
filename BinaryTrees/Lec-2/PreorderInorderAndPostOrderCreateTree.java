@@ -101,7 +101,7 @@ public class PreorderInorderAndPostOrderCreateTree {
         // int size = inorder.length;
         // int[] preOrderIndex = {0};
         // int inorderStart = 0;
-        // int inorderEnd = 5;
+        // int inorderEnd = size - 1;
         // HashMap<Integer, Integer> valueToIndexMap = new HashMap<>();
         // createMapping(inorder, size, valueToIndexMap);
         // Node root = constructTreeFromPreAndInorderTraversal(valueToIndexMap,
