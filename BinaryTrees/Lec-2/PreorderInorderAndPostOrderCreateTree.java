@@ -98,7 +98,7 @@ public class PreorderInorderAndPostOrderCreateTree {
         // Example usage for preOrder and inOrder
         // int inorder[] = { 10, 8, 6, 2, 4, 12 };
         // int preOrder[] = { 2, 8, 10, 6, 4, 12 };
-        // int size = 6;
+        // int size = inorder.length;
         // int[] preOrderIndex = {0};
         // int inorderStart = 0;
         // int inorderEnd = 5;
@@ -109,7 +109,7 @@ public class PreorderInorderAndPostOrderCreateTree {
 
         int inorder[] = { 8, 14, 6, 2, 10, 4 };
         int postOrder[] = { 8, 6, 14, 4, 10, 2 };
-        int size = 6;
+        int size = inorder.length;
         int[] postIndex = { size - 1 };
         int inorderStart = 0;
         int inorderEnd = size - 1;
