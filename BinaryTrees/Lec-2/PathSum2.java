@@ -45,7 +45,7 @@ public class PathSum2 {
                 -1 };
         ConstructTree ct1 = new ConstructTree();
         Node root1 = ct1.createTree(data1);
-        int targetSum1 = 22;
+        int targetSum1 = 24;
         System.out.println(pathSum(root1, targetSum1));
     }
 }
