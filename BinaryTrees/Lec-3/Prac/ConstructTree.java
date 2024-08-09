@@ -36,6 +36,35 @@ public class ConstructTree {
         return root;
     }
 
+    public void preOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.data + " ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    public void InOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        InOrder(root.left);
+        System.out.print(root.data + " ");
+        InOrder(root.right);
+    }
+
+    public void postOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public void bfs(Node root) {
         if (root == null) {
             return;
@@ -44,6 +73,7 @@ public class ConstructTree {
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         q.add(null);
+        System.out.println();
 
         while (!q.isEmpty()) {
             Node front = q.poll();

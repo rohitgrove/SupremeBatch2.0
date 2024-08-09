@@ -43,7 +43,7 @@ public class Traversals {
         System.out.print(root.data + " ");
     }
 
-    public static void levelOrderTraversal(Node root) {
+    public static void levelOrderTraversalBFS(Node root) {
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         q.add(null);
@@ -84,6 +84,6 @@ public class Traversals {
         postOrderTraversal(root);
         System.out.println();
         System.out.println("level Order Traversal: ");
-        levelOrderTraversal(root);
+        levelOrderTraversalBFS(root);
     }
 }
