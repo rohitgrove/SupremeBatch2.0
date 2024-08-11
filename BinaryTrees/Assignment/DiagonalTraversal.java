@@ -3,16 +3,17 @@ import java.util.TreeMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Pair<T, U> {
-    public T first;
-    public U second;
-
-    public Pair(T first, U second) {
-        this.first = first;
-        this.second = second;
-    }
-}
 public class DiagonalTraversal {
+    static class Pair<T, U> {
+        public T first;
+        public U second;
+
+        public Pair(T first, U second) {
+            this.first = first;
+            this.second = second;
+        }
+    }
+
     public static void diagonalUsingMap(Node root, TreeMap<Integer, ArrayList<Integer>> map) {
         Queue<Pair<Node, Integer>> q = new LinkedList<>();
         q.add(new Pair<>(root, 0));
@@ -70,6 +71,7 @@ public class DiagonalTraversal {
 
         return ans;
     }
+
     public static void main(String[] args) {
         int data[] = { 8, 3, 1, -1, -1, 6, 4, -1, -1, 7, -1, -1, 10, -1, 14, 13, -1, -1, -1 };
         ConstructTree ct = new ConstructTree();
