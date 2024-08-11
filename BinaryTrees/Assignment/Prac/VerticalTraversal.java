@@ -1,9 +1,9 @@
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Queue;
 import java.util.LinkedList;
-import java.util.Map;
+import java.util.List;
+import java.util.Queue;
 import java.util.TreeMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 public class VerticalTraversal {
@@ -19,10 +19,10 @@ public class VerticalTraversal {
 
     public static List<List<Integer>> verticalTraversal(Node root) {
         List<List<Integer>> ans = new ArrayList<>();
-        Queue<Pair<Node, Pair<Integer, Integer>>> q = new LinkedList<>(); // Node, {row, col}
+        Queue<Pair<Node, Pair<Integer, Integer>>> q = new LinkedList<>();
         q.add(new Pair<>(root, new Pair<>(0, 0)));
 
-        Map<Integer, Map<Integer, PriorityQueue<Integer>>> mp = new TreeMap<>(); // col -> {row -> [x,y,z....]}
+        Map<Integer, Map<Integer, PriorityQueue<Integer>>> mp = new TreeMap<>();
 
         while (!q.isEmpty()) {
             Pair<Node, Pair<Integer, Integer>> front = q.poll();
@@ -43,7 +43,6 @@ public class VerticalTraversal {
             }
         }
 
-        // Store final vertical order into ans list
         for (Map<Integer, PriorityQueue<Integer>> colMap : mp.values()) {
             List<Integer> vLine = new ArrayList<>();
             for (PriorityQueue<Integer> nodes : colMap.values()) {
