@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ConstructTree {
     public static Scanner sc = new Scanner(System.in);
 
-    public Node createTree() {
+    public static Node createTree() {
         System.out.println("Enter the value for node: ");
         int data = sc.nextInt();
 
@@ -23,8 +23,8 @@ public class ConstructTree {
         return root;
     }
 
-    private int idx = 0;
-    public Node createTree(int[] data) {
+    private static int idx = 0;
+    public static Node createTree(int[] data) {
         if (data[idx] == -1) {
             idx++;
             return null;
@@ -36,5 +36,4 @@ public class ConstructTree {
         root.right = createTree(data);
         return root;
     }
-
 }

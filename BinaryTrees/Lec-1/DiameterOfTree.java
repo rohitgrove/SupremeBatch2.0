@@ -22,12 +22,10 @@ public class DiameterOfTree {
 
     public static void main(String[] args) {
         int data[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, -1 };
-        ConstructTree ct = new ConstructTree();
-        Node root = ct.createTree(data);
+        Node root = ConstructTree.createTree(data);
         System.out.println(diameterOfBinaryTree(root));
         int data2[] = { 10, 20, 40, -1, -1, 50, 80, -1, -1, -1, 30, 60, -1, 90, -1, -1, 70, -1, -1 };
-        ConstructTree ct2 = new ConstructTree();
-        Node root2 = ct2.createTree(data2);
+        Node root2 = ConstructTree.createTree(data2);
         System.out.println(diameterOfBinaryTree(root2));
     }
 }

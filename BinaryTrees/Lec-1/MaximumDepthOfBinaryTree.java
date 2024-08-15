@@ -45,12 +45,10 @@ public class MaximumDepthOfBinaryTree {
 
     public static void main(String[] args) {
         int data1[] = { 3, 9, -1, -1, 20, 15, -1, -1, 7, -1, -1 };
-        ConstructTree ct1 = new ConstructTree();
-        Node root1 = ct1.createTree(data1);
+        Node root1 = ConstructTree.createTree(data1);
         System.out.println(maxDepth(root1));
         int data2[] = { 10, 20, 40, -1, -1, 50, 70, -1, -1, 80, -1, -1, 30, -1, 60, -1, -1 };
-        ConstructTree ct2 = new ConstructTree();
-        Node root2 = ct2.createTree(data2);
+        Node root2 = ConstructTree.createTree(data2);
         System.out.println(maxDepth(root2));
     }
 }
