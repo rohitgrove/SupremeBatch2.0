@@ -24,7 +24,7 @@ public class MorrisTraversal {
                     pred.right = curr;
                     curr = curr.left;
                 } else {
-                    // left is already visited, Go roght after visiting curr node, while removing the link
+                    // left is already visited, Go right after visiting curr node, while removing the link
                     pred.right = null;
                     ans.add(curr.data);
                     curr = curr.right;
