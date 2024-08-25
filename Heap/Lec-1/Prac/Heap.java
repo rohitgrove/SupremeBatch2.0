@@ -1,32 +1,32 @@
 public class Heap {
-    int arr[];
-    int size;
+    public int arr[];
+    public int size;
     int capacity;
 
     public Heap(int capacity) {
+        this.arr = new int[capacity];
         this.capacity = capacity;
-        arr = new int[capacity];
         size = 0;
     }
 
-    public void insert(int val) {
+    public void insert(int val) { // t.c O(logn)
         if (size == capacity) {
-            System.out.println("Heap Overflow");
+            System.out.println("Heap OverFlow");
             return;
         }
-
+        // size increase kar jayega
         size++;
         int index = size;
         arr[index] = val;
 
+        // take the value to its correct position
         while (index > 1) {
-            int parentIndex = index / 2;
-
-            if (arr[parentIndex] < arr[index]) {
-                int temp = arr[parentIndex];
-                arr[parentIndex] = arr[index];
-                arr[index] = temp;
-                index = parentIndex;
+            int parrentIndex = index / 2;
+            if (arr[index] > arr[parrentIndex]) {
+                int temp = arr[index];
+                arr[index] = arr[parrentIndex];
+                arr[parrentIndex] = temp;
+                index = parrentIndex;
             } else {
                 break;
             }
@@ -42,8 +42,9 @@ public class Heap {
 
     public int delete() {
         int answer = arr[1];
-
+        // replacement
         arr[1] = arr[size];
+        // last element ko delete karo uski orignal position se
         size--;
 
         int index = 1;
@@ -51,22 +52,26 @@ public class Heap {
             int leftIndex = 2 * index;
             int rightIndex = 2 * index + 1;
 
-            int largestIndex = index;
-            if (leftIndex <= size && arr[largestIndex] < arr[leftIndex]) {
-                largestIndex = leftIndex;
+            // find out karna hai, sabse bada kaun hai
+            int largestKaIndex = index;
+            // check karo left child
+            if (leftIndex <= size && arr[largestKaIndex] < arr[leftIndex]) {
+                largestKaIndex = leftIndex;
             }
 
-            if (rightIndex <= size && arr[largestIndex] < arr[rightIndex]) {
-                largestIndex = rightIndex; 
+            // check karo right child
+            if (rightIndex <= size && arr[largestKaIndex] < arr[rightIndex]) {
+                largestKaIndex = rightIndex;
             }
 
-            if (largestIndex == index) {
+            // no change
+            if (index == largestKaIndex) {
                 break;
             } else {
                 int temp = arr[index];
-                arr[index] = arr[largestIndex];
-                arr[largestIndex] = temp;
-                index = largestIndex;
+                arr[index] = arr[largestKaIndex];
+                arr[largestKaIndex] = temp;
+                index = largestKaIndex;
             }
         }
 
@@ -74,31 +79,44 @@ public class Heap {
     }
 
     public void heapify(int arr[], int n, int index) {
-        int leftIdx = 2 * index;
-        int rightIdx = 2 * index + 1;
-        int largest = index;
+        int leftIndex = 2 * index;
+        int rightIndex = 2 * index + 1;
+        int largestKaIndex = index;
 
-        if (largest <= n && arr[largest] < arr[leftIdx]) {
-            largest = leftIdx;
+        // teno me se max lao
+        if (leftIndex<= n && arr[leftIndex] > arr[largestKaIndex]) {
+            largestKaIndex = leftIndex;
         }
 
-        if (largest <= n && arr[largest] < arr[rightIdx]) {
-            largest = rightIdx;
+        if (rightIndex <= n && arr[rightIndex] > arr[largestKaIndex]) {
+            largestKaIndex = rightIndex;
         }
 
-        if (index != largest) {
+        // after these 2 conditions largestKaIndex will be pointing towrds largest
+        // element among 3
+        if (index != largestKaIndex) {
             int temp = arr[index];
-            arr[index] = arr[largest];
-            arr[largest] = temp;
-            
-            index = largest;
+            arr[index] = arr[largestKaIndex];
+            arr[largestKaIndex] = temp;
+            // abb recursion sumbhal lega
+            index = largestKaIndex;
             heapify(arr, n, index);
         }
     }
 
-    public void buildHeap(int arr[], int n) {
-        for (int i = n / 2; i > 0; i--) {
-            heapify(arr, n, i);
+    public void buildHeap(int arr[], int n) { // O(n)
+        for (int index = n / 2; index > 0; index--) {
+            heapify(arr, n, index);
+        }
+    }
+
+    public void heapSort(int arr[], int n) { // O(nlogn)
+        while (n != 1) {
+            int temp = arr[1];
+            arr[1] = arr[n];
+            arr[n] = temp;
+            n--;
+            heapify(arr, n, 1);
         }
     }
 }
