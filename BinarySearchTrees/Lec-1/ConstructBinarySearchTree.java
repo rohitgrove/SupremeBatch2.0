@@ -74,8 +74,10 @@ public class ConstructBinarySearchTree {
             System.out.println("Element is not present");
         }
 
+        int data1[] = { 100, 50, 200, 30, 150, 20, 130, 170, 110 };
+        Node root1 = createBST(data1);
         int key = 100;
-        root = DeleteANodeFromBST.deleteNode(root, key);
+        root = DeleteANodeFromBST.deleteNode(root1, key);
         System.out.printf("\nPrinting Level Order Traversal: \n");
         Traversals.levelOrderTraversal(root);
     }
