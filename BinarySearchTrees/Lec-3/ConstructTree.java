@@ -1,5 +1,5 @@
 public class ConstructTree {
-    public Node insertData(Node root, int element) {
+    public static Node insertData(Node root, int element) {
         if (root == null) {
             return new Node(element);
         }
@@ -13,7 +13,7 @@ public class ConstructTree {
         return root;
     }
 
-    public Node createTree(int data[]) {
+    public static Node createTree(int data[]) {
         Node root = null;
         for (int i = 0; i < data.length; i++) {
             root = insertData(root, data[i]);
@@ -22,7 +22,7 @@ public class ConstructTree {
         return root;
     }
 
-    public Node bstFromInorder(int inorder[], int s, int e) {
+    public static Node bstFromInorder(int inorder[], int s, int e) {
         // base case
         if (s > e) {
             return null;
