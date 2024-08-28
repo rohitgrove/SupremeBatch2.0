@@ -27,10 +27,12 @@ public class DecodeMessage {
 
         return ans.toString();
     }
+
     public static void main(String[] args) {
         String key = "the quick brown fox jumps over the lazy dog", message = "vkbs bs t suepuv";
         System.out.println(decodeMessage(key, message));
-        key = "eljuxhpwnyrdgtqkviszcfmabo"; message = "zwx hnfx lqantp mnoeius ycgk vcnjrdb";
+        key = "eljuxhpwnyrdgtqkviszcfmabo";
+        message = "zwx hnfx lqantp mnoeius ycgk vcnjrdb";
         System.out.println(decodeMessage(key, message));
     }
 }

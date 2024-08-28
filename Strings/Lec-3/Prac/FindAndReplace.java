@@ -21,15 +21,15 @@ public class FindAndReplace {
     }
 
     public static List<String> findAndReplacePattern(String[] words, String pattern) {
+        List<String> ans = new ArrayList<>(); 
         StringBuilder patternBuilder = new StringBuilder(pattern);
         upadateStringMapping(patternBuilder);
 
-        List<String> ans = new ArrayList<>();
-        for (String s : words) {
-            StringBuilder curr = new StringBuilder(s);
-            upadateStringMapping(curr);
-            if (curr.toString().equals(patternBuilder.toString())) {
-                ans.add(s);
+        for (String word : words) {
+            StringBuilder tempString = new StringBuilder(word);
+            upadateStringMapping(tempString);
+            if (tempString.toString().equals(patternBuilder.toString())) {
+                ans.add(word);
             }
         }
 
