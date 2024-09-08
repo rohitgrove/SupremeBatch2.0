@@ -1,22 +1,22 @@
 public class Trie {
-    public void insert(TrieNode root, String word) {
-        if (word.length() == 0) {
+    private void insertWordUtil(TrieNode root, String word, int i) {
+        if (i >= word.length()) {
             root.isTerminal = true;
             return;
         }
 
-        char ch = word.charAt(0);
+        char ch = word.charAt(i);
         int index = ch - 'a';
-        TrieNode child;
-
-        if (root.children[index] != null) {
-            child = root.children[index];
-        } else {
-            child = new TrieNode(ch);
-            root.children[index] = child;
+        // elment not present and create new element
+        if (root.children[index] == null) {
+            root.children[index] = new TrieNode(ch);
             root.childCount++;
         }
 
-        insert(child, word.substring(1));
+        insertWordUtil(root.children[index], word, i + 1);
+    }
+
+    public void insertWord(TrieNode root,String word) {
+        insertWordUtil(root, word, 0);
     }
 }

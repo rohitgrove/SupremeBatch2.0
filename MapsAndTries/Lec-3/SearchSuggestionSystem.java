@@ -7,7 +7,7 @@ public class SearchSuggestionSystem {
         Trie t = new Trie();
 
         for (int i = 0; i < products.length; i++) {
-            t.insert(root, products[i]);
+            t.insertWord(root, products[i]);
         }
 
         List<String> ans = new ArrayList<>();
@@ -22,7 +22,7 @@ public class SearchSuggestionSystem {
         Trie t = new Trie();
 
         for (int i = 0; i < products.length; i++) {
-            t.insert(root, products[i]);
+            t.insertWord(root, products[i]);
         }
 
         return getSuggestions(root, searchWord);

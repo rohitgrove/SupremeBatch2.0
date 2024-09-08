@@ -28,7 +28,7 @@ public class LongestCommonPrefix {
         Trie t = new Trie();
         // Insert all strings into the Trie
         for (String str : strs) {
-            t.insert(root, str);
+            t.insertWord(root, str);
         }
 
         StringBuilder ans = new StringBuilder();
