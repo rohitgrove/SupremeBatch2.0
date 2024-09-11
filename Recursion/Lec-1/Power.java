@@ -28,7 +28,7 @@ public class Power {
         }
 
         int halfPower = optimizedPower(a, n / 2);
-        // System.out.println(halfPower);
+        
         int halfPowerSq = halfPower * halfPower;
 
         // n is odd
