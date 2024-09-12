@@ -79,6 +79,27 @@ public class LongestCommonSubsequence {
         return next[0];
     }
 
+    public static int solveUsingTabulationSOWithoutChangLoop(String a, String b) {
+        int[] currRow = new int[b.length() + 1];
+        int[] nextRow = new int[b.length() + 1];
+    
+        for (int i_index = a.length() - 1; i_index >= 0; i_index--) {
+            for (int j_index = b.length() - 1; j_index >= 0; j_index--) {
+                int ans = 0;
+                if (a.charAt(i_index) == b.charAt(j_index)) {
+                    ans = 1 + nextRow[j_index + 1];
+                } else {
+                    ans = Math.max(currRow[j_index + 1], nextRow[j_index]);
+                }
+                currRow[j_index] = ans;
+            }
+            // Shifting
+            nextRow = currRow.clone(); // Clone to avoid reference issues
+        }
+        return nextRow[0];
+    }
+    
+
     public static int longestCommonSubsequence(String text1, String text2) {
         // int i = 0;
         // int j = 0;
@@ -87,7 +108,7 @@ public class LongestCommonSubsequence {
         // Arrays.fill(row, -1);
         // }
 
-        int ans = solveUsingTabulationSO(text1, text2);
+        int ans = solveUsingTabulationSOWithoutChangLoop(text1, text2);
         return ans;
     }
 
