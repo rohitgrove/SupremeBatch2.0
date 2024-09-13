@@ -67,15 +67,7 @@ public class MinimumCostTreeFromLeafValues {
 
     public static int mctFromLeafValues(int[] arr) {
         // pre-computation
-        TreeMap<Pair<Integer, Integer>, Integer> maxi = new TreeMap<>(new Comparator<Pair<Integer, Integer>>() {
-            @Override
-            public int compare(Pair<Integer, Integer> p1, Pair<Integer, Integer> p2) {
-                if (!p1.first.equals(p2.first)) {
-                    return p1.first - p2.first;
-                }
-                return p1.second - p2.second;
-            }
-        });
+        TreeMap<Pair<Integer, Integer>, Integer> maxi = new TreeMap<>(new customComparator());
         
         for (int i = 0; i < arr.length; i++) {
             maxi.put(new Pair<>(i, i), arr[i]);
@@ -101,6 +93,16 @@ public class MinimumCostTreeFromLeafValues {
         public Pair(U first, V second) {
             this.first = first;
             this.second = second;
+        }
+    }
+
+    static class customComparator implements Comparator<Pair<Integer, Integer>> {
+        @Override
+        public int compare(Pair<Integer, Integer> p1, Pair<Integer, Integer> p2) {
+            if (!p1.first.equals(p2.first)) {
+                return p1.first - p2.first;
+            }
+            return p1.second - p2.second;
         }
     }
 
