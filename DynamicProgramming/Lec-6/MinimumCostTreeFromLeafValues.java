@@ -93,7 +93,7 @@ public class MinimumCostTreeFromLeafValues {
         return solveUsingTabulation(arr, maxi);
     }
 
-    // Helper class to store pairs (similar to C++'s pair)
+
     static class Pair<U, V> {
         public final U first;
         public final V second;
