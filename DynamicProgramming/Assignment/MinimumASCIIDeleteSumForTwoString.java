@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class MinimumSCIIDeleteSumForTwoString {
+public class MinimumASCIIDeleteSumForTwoString {
     public static int solveUsingRec(String s1, String s2, int i, int j) {
         int cost = 0;
         if (i == s1.length() || j == s2.length()) {
