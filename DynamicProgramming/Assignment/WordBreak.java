@@ -94,8 +94,8 @@ public class WordBreak {
         List<String> wordDict3 = new ArrayList<>();
         wordDict3.add("cats");
         wordDict3.add("dog");
-        wordDict3.add("snad");
-        wordDict3.add("snd");
+        wordDict3.add("sand");
+        wordDict3.add("and");
         wordDict3.add("cat");
         System.out.println(wordBreak(s3, wordDict3));
     }
