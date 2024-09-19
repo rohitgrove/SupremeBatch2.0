@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -34,9 +33,8 @@ public class WordBreak2 {
 
         return ans;
     }
-    
-    static HashMap<Integer, List<String>> dp = new HashMap<>();
-    public static List<String> solveUsingMemo(String s, HashMap<String, Boolean> dict, int i) {
+
+    public static List<String> solveUsingMemo(String s, HashMap<String, Boolean> dict, int i, HashMap<Integer, List<String>> dp) {
         if (i == s.length()) {
             return Arrays.asList("");
         }
@@ -56,7 +54,7 @@ public class WordBreak2 {
             }
 
             // Found a valid word
-            List<String> right = solveUsingMemo(s, dict, j + 1);
+            List<String> right = solveUsingMemo(s, dict, j + 1, dp);
 
             for (String eachRightPart : right) {
                 String endPart = "";
@@ -71,15 +69,17 @@ public class WordBreak2 {
         dp.put(i, ans);
         return dp.get(i);
     }
-   
+
     public static List<String> wordBreak(String s, List<String> wordDict) {
         HashMap<String, Boolean> dict = new HashMap<>();
 
         for (String word : wordDict) {
             dict.put(word, true);
         }
-        
-        return solveUsingMemo(s, dict, 0);
+
+        HashMap<Integer, List<String>> dp = new HashMap<>();
+
+        return solveUsingMemo(s, dict, 0, dp);
     }
 
     public static void main(String[] args) {
