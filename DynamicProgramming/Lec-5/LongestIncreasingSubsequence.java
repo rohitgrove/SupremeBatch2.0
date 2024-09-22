@@ -90,7 +90,6 @@ public class LongestIncreasingSubsequence {
             } else {
                 // just bada number exist karta hai
                 int index = Collections.binarySearch(ans, nums[i]);
-                // if index not found
                 if (index < 0) {
                     index = Math.abs(index) - 1;
                 }
