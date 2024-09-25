@@ -36,8 +36,24 @@ public class Main {
         // BFS traversal to check for all components
         for (char node = 'a'; node <= 'f'; node++) {
             if (!vis.getOrDefault(node, false)) {
-                g1.bfsTraversal(node, vis);
+                g1.bfs(node, vis);
             }
         }   
+
+        System.out.println();
+
+        GragpWithWeight<Integer> g3 = new GragpWithWeight<>();
+        g3.addEdge(0, 1, 5, false);
+        g3.addEdge(1, 2, 10, false);
+        g3.addEdge(1, 3, 20, false);
+        g3.addEdge(2, 3, 50, false);
+
+        g3.addEdge(4, 5, 50, false);
+        g3.addEdge(4, 6, 50, false);
+
+        HashMap<Integer, Boolean> visi = new HashMap<>();
+        for (int node = 0; node <= 6; node++) {
+            g3.bfs(node, visi);            
+        }
     }
 }

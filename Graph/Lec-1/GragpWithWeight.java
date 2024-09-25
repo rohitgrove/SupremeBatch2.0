@@ -42,7 +42,7 @@ public class GragpWithWeight<T> {
         System.out.println();
     }
 
-    public void bfsTraversal(T src, HashMap<T, Boolean> vis) {
+    public void bfs(T src, HashMap<T, Boolean> vis) {
         Queue<T> q = new LinkedList<>();
         q.add(src);
         vis.put(src, true);

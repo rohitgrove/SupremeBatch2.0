@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class GragpWithWeight<T> {
     Map<T, List<Pair<T>>> adjList = new HashMap<>();
@@ -27,7 +29,6 @@ public class GragpWithWeight<T> {
             adjList.get(u).add(new Pair<>(v, wt));
             adjList.get(v).add(new Pair<>(u, wt));
         }
-        printAdjList();
     }
 
     public void printAdjList() {
@@ -39,5 +40,36 @@ public class GragpWithWeight<T> {
             System.out.println("}");
         }
         System.out.println();
+    }
+
+    public void bfs(T src, HashMap<T, Boolean> vis) {
+        Queue<T> q = new LinkedList<>();
+        q.add(src);
+        vis.put(src, true);
+
+        while (!q.isEmpty()) {
+            T frontNode = q.poll();
+            System.out.print(frontNode + " ");
+
+            for (Pair<T> nbr : adjList.get(frontNode)) {
+                T nbrData = nbr.first;
+                if (!vis.getOrDefault(nbrData, false)) {
+                    q.add(nbrData);
+                    vis.put(nbrData, true);
+                }
+            }
+        }
+    }
+
+    public void dfs(T src, HashMap<T, Boolean> vis) {
+        vis.put(src, true);
+        System.out.print(src + " ");
+
+        for (Pair<T> nbr : adjList.get(src)) {
+            T nbrData = nbr.first;
+            if (!vis.getOrDefault(nbrData, false)) {
+                dfs(nbrData, vis);
+            }
+        }
     }
 }
