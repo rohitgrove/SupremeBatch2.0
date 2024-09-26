@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Gragh {
+public class Graph {
     public Map<Integer, List<Integer>> adjList = new HashMap<>();
 
     public void addEdge(int u, int v, boolean direction) {

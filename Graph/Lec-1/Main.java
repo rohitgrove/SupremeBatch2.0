@@ -8,13 +8,13 @@ public class Main {
         // g.addEdge(1, 3, 20, false);
         // g.addEdge(2, 3, 50, false);
 
-        GragpWithWeight<Character> g = new GragpWithWeight<>();
+        GraphWithWeight<Character> g = new GraphWithWeight<>();
         g.addEdge('a', 'b', 5, false);
         g.addEdge('b', 'c', 20, false);
         g.addEdge('d', 'e', 50, false);
         g.addEdge('f', 'f', 20, false);
 
-        GragpWithWeight<Character> g1 = new GragpWithWeight<>();
+        GraphWithWeight<Character> g1 = new GraphWithWeight<>();
         g1.addEdge('a', 'b', 5, false);
         g1.addEdge('c', 'd', 20, false);
         g1.addEdge('c', 'e', 50, false);
@@ -41,7 +41,7 @@ public class Main {
 
         System.out.println();
 
-        GragpWithWeight<Integer> g3 = new GragpWithWeight<>();
+        GraphWithWeight<Integer> g3 = new GraphWithWeight<>();
         g3.addEdge(1, 2, 5, false);
         g3.addEdge(3, 4, 10, false);
         g3.addEdge(3, 5, 20, false);
@@ -50,7 +50,7 @@ public class Main {
 
         HashMap<Integer, Boolean> visi = new HashMap<>();
         for (int node = 1; node <= 6; node++) {
-            if (!visi.getOrDefault(node, false)) {
+            if (!visi.containsKey(node)) {
                 g3.bfs(node, visi);
             }
         }

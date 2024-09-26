@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.LinkedList;
 import java.util.Queue;
 
-public class GragpWithWeight<T> {
+public class GraphWithWeight<T> {
     Map<T, List<Pair<T>>> adjList = new HashMap<>();
 
     static class Pair<T> {
@@ -53,7 +53,7 @@ public class GragpWithWeight<T> {
 
             for (Pair<T> nbr : adjList.get(frontNode)) {
                 T nbrData = nbr.first;
-                if (!vis.getOrDefault(nbrData, false)) {
+                if (!vis.containsKey(nbrData)) {
                     q.add(nbrData);
                     vis.put(nbrData, true);
                 }
@@ -61,13 +61,13 @@ public class GragpWithWeight<T> {
         }
     }
 
-    public void dfs(T src, HashMap<T, Boolean> vis) {
+    void dfs(T src, HashMap<T, Boolean> vis) {
         vis.put(src, true);
         System.out.print(src + " ");
 
         for (Pair<T> nbr : adjList.get(src)) {
             T nbrData = nbr.first;
-            if (!vis.getOrDefault(nbrData, false)) {
+            if (!vis.containsKey(nbrData)) {
                 dfs(nbrData, vis);
             }
         }

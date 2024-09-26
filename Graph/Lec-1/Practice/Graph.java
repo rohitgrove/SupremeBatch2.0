@@ -1,21 +1,24 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class Gragh {
-    public HashMap<Integer, List<Integer>> adjList = new HashMap<>();
+public class Graph {
+    public Map<Integer, List<Integer>> adjList = new HashMap<>();
 
     public void addEdge(int u, int v, boolean direction) {
+        // direction -> false -> undirected
+        // direction -> true -> directed
         adjList.putIfAbsent(u, new ArrayList<>());
-        if (direction) {
+        if (direction) { // Directed graph
             adjList.get(u).add(v);
-        } else {
+        } else { // Undirected graph
             adjList.putIfAbsent(v, new ArrayList<>());
             adjList.get(u).add(v);
             adjList.get(v).add(u);
         }
-        System.out.println("Printing adjList");
+
+        System.out.println("Printing AdjList");
         printAdjList();
     }
 
