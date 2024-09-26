@@ -13,7 +13,6 @@ public class Main {
         g.addEdge('b', 'c', 20, false);
         g.addEdge('d', 'e', 50, false);
         g.addEdge('f', 'f', 20, false);
-    
 
         GragpWithWeight<Character> g1 = new GragpWithWeight<>();
         g1.addEdge('a', 'b', 5, false);
@@ -29,7 +28,7 @@ public class Main {
             if (!visited.getOrDefault(node, false)) {
                 g.dfs(node, visited);
             }
-        }   
+        }
         System.out.println();
 
         HashMap<Character, Boolean> vis = new HashMap<>();
@@ -38,22 +37,22 @@ public class Main {
             if (!vis.getOrDefault(node, false)) {
                 g1.bfs(node, vis);
             }
-        }   
+        }
 
         System.out.println();
 
         GragpWithWeight<Integer> g3 = new GragpWithWeight<>();
-        g3.addEdge(0, 1, 5, false);
-        g3.addEdge(1, 2, 10, false);
-        g3.addEdge(1, 3, 20, false);
-        g3.addEdge(2, 3, 50, false);
-
+        g3.addEdge(1, 2, 5, false);
+        g3.addEdge(3, 4, 10, false);
+        g3.addEdge(3, 5, 20, false);
         g3.addEdge(4, 5, 50, false);
-        g3.addEdge(4, 6, 50, false);
+        g3.addEdge(5, 6, 50, false);
 
         HashMap<Integer, Boolean> visi = new HashMap<>();
-        for (int node = 0; node <= 6; node++) {
-            g3.bfs(node, visi);            
+        for (int node = 1; node <= 6; node++) {
+            if (!visi.getOrDefault(node, false)) {
+                g3.bfs(node, visi);
+            }
         }
     }
 }
