@@ -113,7 +113,7 @@ public class LongestIncreasingSubsequence {
         int ans = solveUsingBS(nums);
         return ans;
     }
-    
+
     public static void main(String[] args) {
         int nums1[] = { 10, 9, 2, 5, 3, 7, 101, 18 };
         System.out.println(lengthOfLIS(nums1));
@@ -121,5 +121,7 @@ public class LongestIncreasingSubsequence {
         System.out.println(lengthOfLIS(nums2));
         int nums3[] = { 7, 7, 7, 7, 7, 7, 7 };
         System.out.println(lengthOfLIS(nums3));
+        int nums4[] = { 2, 8, 9, 5, 6, 7, 0, 10 };
+        System.out.println(lengthOfLIS(nums4));
     }
 }
