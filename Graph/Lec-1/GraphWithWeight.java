@@ -18,7 +18,7 @@ public class GraphWithWeight<T> {
         }
     }
 
-    public void addEdge(T u, T v, int wt, boolean direction) {
+    public void addEdge(T u, T v, int wt, boolean direction) { // tc: (v + e)
         // direction -> false -> undirected
         // direction -> true -> directed
         adjList.putIfAbsent(u, new ArrayList<>());

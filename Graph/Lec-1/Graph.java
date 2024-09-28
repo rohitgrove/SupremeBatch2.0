@@ -6,7 +6,7 @@ import java.util.Map;
 public class Graph {
     public Map<Integer, List<Integer>> adjList = new HashMap<>();
 
-    public void addEdge(int u, int v, boolean direction) {
+    public void addEdge(int u, int v, boolean direction) { // tc: (v + e)
         // direction -> false -> undirected
         // direction -> true -> directed
         adjList.putIfAbsent(u, new ArrayList<>());
