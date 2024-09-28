@@ -61,7 +61,7 @@ public class GraphWithWeight<T> {
         }
     }
 
-    void dfs(T src, HashMap<T, Boolean> vis) {
+    public void dfs(T src, HashMap<T, Boolean> vis) {
         vis.put(src, true);
         System.out.print(src + " ");
 

@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +31,35 @@ public class Graph {
                 System.out.print(neighbor + ", ");
             }
             System.out.println("}");
+        }
+    }
+
+    public void bfs(int src, HashMap<Integer, Boolean> visited) {
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(src);
+        visited.put(src, true);
+
+        while (!q.isEmpty()) {
+            System.out.print(src + " ");
+
+            for (int nbr : adjList.get(src)) {
+                if (!visited.containsKey(nbr)) {
+                    q.add(nbr);
+                    visited.put(nbr, true);
+                }
+            }
+        }
+    }
+
+    public void dfs(int src, HashMap<Integer, Boolean> visited) {
+        visited.put(src, true);
+        System.out.print(src + " ");
+
+        for (int nbr : adjList.get(src)) {
+            if (!visited.containsKey(nbr)) {
+                dfs(nbr, visited);
+            }
         }
     }
 }
