@@ -41,7 +41,7 @@ public class Graph {
             System.out.print(frontNode + " ");
 
             for (Integer nbr : adjList.get(frontNode)) {
-                if (!visited.getOrDefault(nbr, false)) {
+                if (!visited.containsKey(nbr)) {
                     q.add(nbr);
                     visited.put(nbr, true);
                 }
@@ -54,7 +54,7 @@ public class Graph {
         visited.put(src, true);
 
         for (Integer nbr : adjList.get(src)) {
-            if (!visited.getOrDefault(nbr, false)) {
+            if (!visited.containsKey(nbr)) {
                 dfs(nbr, visited);
             }
         }
