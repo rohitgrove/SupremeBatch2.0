@@ -40,7 +40,7 @@ public class Heap {
         System.out.println();
     }
 
-    public int delete() {
+    public int delete() { // t.c O(logn)
         int answer = arr[1];
         // replacement
         arr[1] = arr[size];
