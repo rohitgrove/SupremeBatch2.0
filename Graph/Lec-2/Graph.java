@@ -107,12 +107,15 @@ public class Graph {
         vis.put(src, true);
         
         for (int nbr : adjList.get(src)) {
+            if (nbr == parent) {
+                continue;
+            }
             if (!vis.containsKey(nbr)) {
                 boolean ans = DFSUndirected(nbr, vis, src);
                 if (ans) {
                     return true;
                 }
-            } else if (vis.get(nbr) && nbr != parent) {
+            } else if (vis.get(nbr)) {
                 return true;
             }
         }
