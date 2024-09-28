@@ -160,7 +160,7 @@ public class Graph {
         HashMap<Integer, Boolean> dfsTrack = new HashMap<>();
 
         for (int i = 0; i < V; i++) {
-            if (!visited.getOrDefault(i, false)) {
+            if (!visited.containsKey(i)) {
                 boolean isCyclic = DFSDirected(i, visited, dfsTrack);
                 if (isCyclic) {
                     return true;
