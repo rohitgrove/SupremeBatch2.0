@@ -25,7 +25,7 @@ public class Main {
 
         // DFS traversal to check for all components
         for (char node = 'a'; node <= 'f'; node++) {
-            if (!visited.containsKey(node, false)) {
+            if (!visited.containsKey(node)) {
                 g.dfs(node, visited);
             }
         }
@@ -34,7 +34,7 @@ public class Main {
         HashMap<Character, Boolean> vis = new HashMap<>();
         // BFS traversal to check for all components
         for (char node = 'a'; node <= 'f'; node++) {
-            if (!vis.containsKey(node, false)) {
+            if (!vis.containsKey(node)) {
                 g1.bfs(node, vis);
             }
         }

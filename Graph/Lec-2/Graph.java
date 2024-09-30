@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Graph {
-    HashMap<Integer, List<Integer>> adjList = new HashMap<>();  
-    
+    HashMap<Integer, List<Integer>> adjList = new HashMap<>();
+
     public void addEdge(int u, int v, boolean direction) {
         adjList.putIfAbsent(u, new ArrayList<>());
 
@@ -19,15 +19,15 @@ public class Graph {
             adjList.get(v).add(u);
         }
     }
-    
+
     public void adjListPrint() {
         for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey()+" -> { ");
+            System.out.print(entry.getKey() + " -> { ");
             for (Integer values : entry.getValue()) {
                 System.out.print(values + ", ");
             }
             System.out.println("}");
-        }        
+        }
     }
 
     public void bfs(int src, HashMap<Integer, Boolean> visited) {
@@ -39,6 +39,10 @@ public class Graph {
         while (!q.isEmpty()) {
             int frontNode = q.poll();
             System.out.print(frontNode + " ");
+
+            if (!adjList.containsKey(frontNode)) {
+                continue;
+            }
 
             for (Integer nbr : adjList.get(frontNode)) {
                 if (!visited.containsKey(nbr)) {
@@ -53,9 +57,11 @@ public class Graph {
         System.out.print(src + " ");
         visited.put(src, true);
 
-        for (Integer nbr : adjList.get(src)) {
-            if (!visited.containsKey(nbr)) {
-                dfs(nbr, visited);
+        if (adjList.containsKey(src)) {
+            for (Integer nbr : adjList.get(src)) {
+                if (!visited.containsKey(nbr)) {
+                    dfs(nbr, visited);
+                }
             }
         }
     }
@@ -63,7 +69,7 @@ public class Graph {
     public boolean BFSUndirected(int src, HashMap<Integer, Boolean> visited) {
         Queue<Integer> q = new LinkedList<>();
         Map<Integer, Integer> parent = new HashMap<>();
-        
+
         // Initial state
         q.add(src);
         visited.put(src, true);
@@ -80,7 +86,7 @@ public class Graph {
                     q.add(nbr);
                     visited.put(nbr, true);
                     parent.put(nbr, frontNode);
-                } else if (visited.get(nbr) ) {
+                } else if (visited.get(nbr)) {
                     // Cycle present
                     return true;
                 }
@@ -105,7 +111,7 @@ public class Graph {
 
     public boolean DFSUndirected(int src, Map<Integer, Boolean> vis, int parent) {
         vis.put(src, true);
-        
+
         for (int nbr : adjList.get(src)) {
             if (nbr == parent) {
                 continue;
@@ -121,10 +127,10 @@ public class Graph {
         }
         return false;
     }
-    
+
     public boolean checkCycleUndirectedGraghDFS(int V) {
         HashMap<Integer, Boolean> vis = new HashMap<>();
-        
+
         for (int i = 0; i < V; i++) {
             if (!vis.containsKey(i)) {
                 int parent = -1;
@@ -147,7 +153,8 @@ public class Graph {
                 if (ans) {
                     return true;
                 }
-            } if (visited.get(nbr) && dfsTrack.get(nbr)) {
+            }
+            if (visited.get(nbr) && dfsTrack.get(nbr)) {
                 // cycle present
                 return true;
             }
@@ -156,7 +163,7 @@ public class Graph {
         // [backtrack] Yahi glati karta hu
         dfsTrack.put(src, false);
         return false;
-    }  
+    }
 
     public boolean checkCycleDirectedGraghDFS(int V) {
         HashMap<Integer, Boolean> visited = new HashMap<>();

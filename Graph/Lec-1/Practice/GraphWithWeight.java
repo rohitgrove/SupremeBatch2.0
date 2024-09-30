@@ -18,7 +18,7 @@ public class GraphWithWeight<T> {
         }
     }
 
-    public void addEdge(T u, T v, int wt, boolean direction) {
+    public void addEdge(T u, T v, int wt, boolean direction) { // tc: (v + e)
         // direction -> false -> undirected
         // direction -> true -> directed
         adjList.putIfAbsent(u, new ArrayList<>());
@@ -51,6 +51,10 @@ public class GraphWithWeight<T> {
             T frontNode = q.poll();
             System.out.print(frontNode + " ");
 
+            if (!adjList.containsKey(frontNode)) {
+                continue;
+            }
+
             for (Pair<T> nbr : adjList.get(frontNode)) {
                 T nbrData = nbr.first;
                 if (!vis.containsKey(nbrData)) {
@@ -61,14 +65,16 @@ public class GraphWithWeight<T> {
         }
     }
 
-    void dfs(T src, HashMap<T, Boolean> vis) {
+    public void dfs(T src, HashMap<T, Boolean> vis) {
         vis.put(src, true);
         System.out.print(src + " ");
 
-        for (Pair<T> nbr : adjList.get(src)) {
-            T nbrData = nbr.first;
-            if (!vis.containsKey(nbrData)) {
-                dfs(nbrData, vis);
+        if (adjList.containsKey(src)) {
+            for (Pair<T> nbr : adjList.get(src)) {
+                T nbrData = nbr.first;
+                if (!vis.containsKey(nbrData)) {
+                    dfs(nbrData, vis);
+                }
             }
         }
     }

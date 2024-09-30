@@ -34,31 +34,38 @@ public class Graph {
         }
     }
 
-    public void bfs(int src, HashMap<Integer, Boolean> visited) {
+    public void bfs(Integer src, HashMap<Integer, Boolean> vis) {
         Queue<Integer> q = new LinkedList<>();
-
         q.add(src);
-        visited.put(src, true);
+        vis.put(src, true);
 
         while (!q.isEmpty()) {
-            System.out.print(src + " ");
+            int frontNode = q.poll();
+            System.out.print(frontNode + " ");
 
-            for (int nbr : adjList.get(src)) {
-                if (!visited.containsKey(nbr)) {
+            if (!adjList.containsKey(frontNode)) {
+                continue;
+            }
+
+            for (int nbr : adjList.get(frontNode)) {
+                if (!vis.containsKey(nbr)) {
                     q.add(nbr);
-                    visited.put(nbr, true);
+                    vis.put(nbr, true);
                 }
             }
         }
     }
 
+
     public void dfs(int src, HashMap<Integer, Boolean> visited) {
         visited.put(src, true);
         System.out.print(src + " ");
 
-        for (int nbr : adjList.get(src)) {
-            if (!visited.containsKey(nbr)) {
-                dfs(nbr, visited);
+        if (adjList.containsKey(src)) {
+            for (int nbr : adjList.get(src)) {
+                if (!visited.containsKey(nbr)) {
+                    dfs(nbr, visited);
+                }
             }
         }
     }
