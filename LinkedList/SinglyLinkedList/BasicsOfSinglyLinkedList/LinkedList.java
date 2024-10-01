@@ -208,7 +208,7 @@ public class LinkedList {
         } 
         
         if (val == head.data) {
-            head = head.next;
+            deleteAtHead();
             return;
         } else if (val == tail.data) {
             deleteAtTail();

@@ -10,7 +10,7 @@ public class MiddleNodeOfLL {
         return length;
     }
 
-    public  static Node simpleApproachOfMiddleNode(Node head) {
+    public static Node simpleApproachOfMiddleNode(Node head) {
         int length = getLength(head);
         int position = (length / 2) + 1;
 
