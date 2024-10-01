@@ -9,12 +9,12 @@ public class GraphWithWeight<T> {
     Map<T, List<Pair<T>>> adjList = new HashMap<>();
 
     static class Pair<T> {
-        T first;
-        int second;
+        T node;
+        int wt;
 
-        Pair(T first, int second) {
-            this.first = first;
-            this.second = second;
+        Pair(T node, int wt) {
+            this.node = node;
+            this.wt = wt;
         }
     }
 
@@ -35,7 +35,7 @@ public class GraphWithWeight<T> {
         for (Map.Entry<T, List<Pair<T>>> entry : adjList.entrySet()) {
             System.out.print(entry.getKey() + ": { ");
             for (Pair<T> p : entry.getValue()) {
-                System.out.print("{" + p.first + ", " + p.second + "}, ");
+                System.out.print("{" + p.node + ", " + p.wt + "}, ");
             }
             System.out.println("}");
         }
@@ -56,7 +56,7 @@ public class GraphWithWeight<T> {
             }
 
             for (Pair<T> nbr : adjList.get(frontNode)) {
-                T nbrData = nbr.first;
+                T nbrData = nbr.node;
                 if (!vis.containsKey(nbrData)) {
                     q.add(nbrData);
                     vis.put(nbrData, true);
@@ -71,7 +71,7 @@ public class GraphWithWeight<T> {
 
         if (adjList.containsKey(src)) {
             for (Pair<T> nbr : adjList.get(src)) {
-                T nbrData = nbr.first;
+                T nbrData = nbr.node;
                 if (!vis.containsKey(nbrData)) {
                     dfs(nbrData, vis);
                 }

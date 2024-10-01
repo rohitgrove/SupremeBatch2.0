@@ -1,38 +1,37 @@
 import java.util.HashMap;
-import java.util.Stack;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Collections;
 
 public class Graph {
-    public HashMap<Integer, List<Integer>> adjList = new HashMap<>();
+    public void addEdge(int u, int v, boolean direction, HashMap<Integer, List<Integer>> adj) {
+        // direction - false - undirected
+        // direction - true - directed
 
-    public void addEdges(int u, int v, boolean direction) {
-        adjList.putIfAbsent(u, new ArrayList<>());
-
+        adj.putIfAbsent(u, new ArrayList<>());
         if (direction) {
-            adjList.get(u).add(v);
+            adj.get(u).add(v);
         } else {
-            adjList.putIfAbsent(v, new ArrayList<>());
-            adjList.get(u).add(v);
-            adjList.get(v).add(u);
+            adj.putIfAbsent(v, new ArrayList<>());
+            adj.get(u).add(v);
+            adj.get(v).add(u);
         }
     }
 
-    public void printList() {
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey() + " ");
-            for (Integer element : entry.getValue()) {
-                System.out.print(element + " ");
+    public void printAdj(HashMap<Integer, List<Integer>> adj) {
+        for (Map.Entry<Integer, List<Integer>> entry : adj.entrySet()) {
+            System.out.print(entry.getKey() + " : {");
+            for (Integer nbr : entry.getValue()) {
+                System.out.print("{" + nbr + " ,");
             }
-            System.out.println();
+            System.out.println("} ");
         }
     }
 
-    public void bfs(int src, HashMap<Integer, Boolean> visited) {
+
+    public void bfs(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
         Queue<Integer> q = new LinkedList<>();
 
         q.add(src);
@@ -55,149 +54,34 @@ public class Graph {
         }
     }
 
-    public void printBFS(int start, int end) {
+    public void printBFS(int start, int end, HashMap<Integer, List<Integer>> adjList) {
         HashMap<Integer, Boolean> visi = new HashMap<>();
         for (int node = start; node <= end; node++) {
             if (!visi.containsKey(node)) {
-                bfs(node, visi);
+                bfs(node, visi, adjList);
             }
         }
     }
 
-    public void dfs(int src, HashMap<Integer, Boolean> visited) {
+    public void dfs(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
         System.out.print(src + " ");
         visited.put(src, true);
 
         if (adjList.containsKey(src)) {
             for (int nbr : adjList.get(src)) {
                 if (!visited.containsKey(nbr)) {
-                    dfs(nbr, visited);
+                    dfs(nbr, visited, adjList);
                 }
             }
         }
     }
 
-    public void printDFS(int start, int end) {
+    public void printDFS(int start, int end, HashMap<Integer, List<Integer>> adjList) {
         HashMap<Integer, Boolean> visited = new HashMap<>();
         for (int node = start; node <= end; node++) {
             if (!visited.containsKey(node)) {
-                dfs(node, visited);
+                dfs(node, visited, adjList);
             }
         }
-    }
-
-    public void topSortDFS(int end) {
-        HashMap<Integer, Boolean> vis = new HashMap<>();
-        Stack<Integer> s = new Stack<>();
-
-        for (int i = 0; i < end; i++) {
-            if (!vis.containsKey(i)) {
-                topSortDFSUtil(i, vis, s);
-            }
-        }
-
-        while (!s.isEmpty()) {
-            System.out.print(s.pop() + " ");
-        }
-    }
-
-    public void topSortDFSUtil(int src, HashMap<Integer, Boolean> vis, Stack<Integer> s) {
-        vis.put(src, true);
-
-        if (adjList.containsKey(src)) {
-            for (int nbr : adjList.get(src)) {
-                if (!vis.containsKey(nbr)) {
-                    topSortDFSUtil(nbr, vis, s);
-                }
-            }
-        }
-        s.push(src);
-    }
-
-    public List<Integer> topSortBFS(int n) {
-        Map<Integer, Integer> indegree = new HashMap<>();
-        Queue<Integer> q = new LinkedList<>();
-        List<Integer> ans = new ArrayList<>();
-
-        // Initialize indegree of all nodes
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            for (int nbr : entry.getValue()) {
-                indegree.putIfAbsent(nbr, 0);
-                indegree.put(nbr, indegree.get(nbr) + 1);
-            }
-        }
-        // push all zero indegree will node into queue
-        for (int node = 0; node < n; node++) {
-            if (indegree.containsKey(node) == false) {
-                q.add(node);
-            }
-        }
-
-        // BFS chalate hai
-        while (!q.isEmpty()) {
-            int frontNode = q.poll();
-            ans.add(frontNode);
-
-            if (!adjList.containsKey(frontNode)) {
-                continue;
-            }
-
-            for (int nbr : adjList.get(frontNode)) {
-                int count = indegree.get(nbr);
-                indegree.put(nbr, count - 1);
-
-                // check zero
-                if (indegree.get(nbr) == 0) {
-                    q.add(nbr);
-                }
-            }
-        }
-
-        return ans;
-    }
-
-    public boolean checkCycleDirectedGraghBFS(int n) {
-        if (n == topSortBFS(n).size()) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public void shortestPathBFS(int src, int dest) {
-        Queue<Integer> q = new LinkedList<>();
-        HashMap<Integer, Boolean> visited = new HashMap<>();
-        HashMap<Integer, Integer> parent = new HashMap<>();
-
-        // intital space
-        q.add(src);
-        visited.put(src, true);
-        parent.put(src, -1);
-
-        while (!q.isEmpty()) {
-            int frontNode = q.poll();
-
-            if (!adjList.containsKey(frontNode)) {
-                continue;
-            }
-
-            for (int nbr : adjList.get(frontNode)) {
-                if (!visited.containsKey(nbr)) {
-                    q.add(nbr);
-                    parent.put(nbr, frontNode);
-                    visited.put(nbr, true);
-                }
-            }
-        }
-
-        // parent array hoga
-        List<Integer> ans = new ArrayList<>();
-        while (dest != -1) {
-            ans.add(dest);
-            dest = parent.get(dest);
-        }
-
-        Collections.reverse(ans);
-        System.out.println(ans);
     }
 }
