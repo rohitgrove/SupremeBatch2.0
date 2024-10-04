@@ -87,7 +87,7 @@ public class DirectedShortestPath {
         g.addEdge(2, 4, 6, true, adj);
         g.addEdge(4, 3, 1, true, adj);
 
-        // g.printAdj();
+        // g.printAdj(adj);
         int n = 5;
         topoOrderDFS(n);
     }

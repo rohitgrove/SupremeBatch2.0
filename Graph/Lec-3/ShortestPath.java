@@ -54,7 +54,7 @@ public class ShortestPath {
         g.addEdge(0, 1, false, adjList);
         g.addEdge(1, 2, false, adjList);
         g.addEdge(2, 3, false, adjList);
-
+        g.printAdj(adjList);
         int src = 0;
         int dest = 3;
         shortestPathBFS(src, dest);        

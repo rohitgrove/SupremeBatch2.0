@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 
 // directed and weighted
@@ -20,12 +19,13 @@ public class Graph {
     }
 
     public void printAdj(HashMap<Integer, List<Pair>> adj) {
-        for (Map.Entry<Integer, List<Pair>> entry : adj.entrySet()) {
-            System.out.print(entry.getKey() + " : {");
-            for (Pair nbr : entry.getValue()) {
-                System.out.print("{" + nbr.node + " , " + nbr.dist + "},");
+        for (int src : adj.keySet()) {
+            System.out.print(src + ": { ");
+            for (Pair nbr : adj.get(src)) {
+                System.out.print("{" + nbr.node + ", " + nbr.dist + "}, ");
             }
-            System.out.println("} ");
+            System.out.println("}");
         }
+        System.out.println();
     }
 }

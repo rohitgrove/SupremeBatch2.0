@@ -32,10 +32,10 @@ public class GraphWithWeight<T> {
     }
 
     public void printAdjList() {
-        for (Map.Entry<T, List<Pair<T>>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey() + ": { ");
-            for (Pair<T> p : entry.getValue()) {
-                System.out.print("{" + p.node + ", " + p.wt + "}, ");
+        for (T src : adjList.keySet()) {
+            System.out.print(src + ": { ");
+            for (Pair<T> nbr : adjList.get(src)) {
+                System.out.print("{" + nbr.node + ", " + nbr.wt + "}, ");
             }
             System.out.println("}");
         }

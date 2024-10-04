@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -20,10 +19,10 @@ public class Graph {
     }
 
     public void adjListPrint(HashMap<Integer, List<Integer>> adjList) {
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey() + " -> { ");
-            for (Integer values : entry.getValue()) {
-                System.out.print(values + ", ");
+        for (int src : adjList.keySet()) {
+            System.out.print(src + " : {");
+            for (int nbr : adjList.get(src)) {
+                System.out.print(nbr +", ");
             }
             System.out.println("}");
         }

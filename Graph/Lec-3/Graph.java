@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -21,15 +20,15 @@ public class Graph {
     }
 
     public void printAdj(HashMap<Integer, List<Integer>> adj) {
-        for (Map.Entry<Integer, List<Integer>> entry : adj.entrySet()) {
-            System.out.print(entry.getKey() + " : {");
-            for (Integer nbr : entry.getValue()) {
-                System.out.print("{" + nbr + " ,");
+        for (int src : adj.keySet()) {
+            System.out.print(src + ": { ");
+            for (int nbr : adj.get(src)) {
+                System.out.print(nbr);
             }
-            System.out.println("} ");
+            System.out.println("}");
         }
+        System.out.println();
     }
-
 
     public void bfs(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
         Queue<Integer> q = new LinkedList<>();
