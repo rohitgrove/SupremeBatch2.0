@@ -1,7 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Queue;
 import java.util.LinkedList;
 
@@ -34,8 +33,8 @@ public class CourseSchedule2 {
         List<Integer> ans = new ArrayList<>();
 
         // Initialize indegree of all nodes
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            for (int nbr : entry.getValue()) {
+        for (int i : adjList.keySet()) {
+            for (int nbr : adjList.get(i)) {
                 indegree.putIfAbsent(nbr, 0);
                 indegree.put(nbr, indegree.get(nbr) + 1);
             }
