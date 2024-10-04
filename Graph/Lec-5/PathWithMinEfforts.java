@@ -5,6 +5,7 @@ public class PathWithMinEfforts {
     public static boolean isSafe(int newRow, int newCol, int rows, int cols) {
         return (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols);
     }
+
     public static int minimumEffortPath(int[][] heights) {
         PriorityQueue<int[]> mini = new PriorityQueue<>((a, b) -> a[2] - b[2]);
         int rows = heights.length;
@@ -43,7 +44,7 @@ public class PathWithMinEfforts {
                     // entry create karo min heap me & check can we update diff array
                     if (maxDiff < minDiff[newRow][newCol]) {
                         minDiff[newRow][newCol] = Math.min(minDiff[newRow][newCol], maxDiff);
-                        mini.add(new int[]{newRow, newCol, maxDiff});
+                        mini.add(new int[] { newRow, newCol, maxDiff });
                     }
                 }
             }
