@@ -16,8 +16,8 @@ public class CountCharacters {
         // TreeMap<Character, Integer> sortedMap = new TreeMap<>(); // sorted map
         countCharacters(mapping, str);
 
-        for (Map.Entry<Character, Integer> entry : mapping.entrySet()) {
-            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        for (char ch : mapping.keySet()) {
+            System.out.println(ch + " -> " + mapping.get(ch));
         }
     }
 }
