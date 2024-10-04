@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -38,13 +37,13 @@ public class TopologicalSort {
     }
 
     public static List<Integer> topSortBFS(int n) {
-        Map<Integer, Integer> indegree = new HashMap<>();
+        HashMap<Integer, Integer> indegree = new HashMap<>();
         Queue<Integer> q = new LinkedList<>();
         List<Integer> ans = new ArrayList<>();
 
         // Initialize indegree of all nodes
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            for (int nbr : entry.getValue()) {
+        for (int src : adjList.keySet()) {
+            for (int nbr : adjList.get(src)) {
                 indegree.putIfAbsent(nbr, 0);
                 indegree.put(nbr, indegree.get(nbr) + 1);
             }
