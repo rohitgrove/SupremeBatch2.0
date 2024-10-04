@@ -21,9 +21,9 @@ public class Graph {
     }
 
     public void adjListPrint() {
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey() + " -> { ");
-            for (Integer values : entry.getValue()) {
+        for (int src : adjList.keySet()) {
+            System.out.print(src + " -> { ");
+            for (int values : adjList.get(src)) {
                 System.out.print(values + ", ");
             }
             System.out.println("}");

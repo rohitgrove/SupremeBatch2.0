@@ -1,7 +1,6 @@
 import java.util.HashMap;
 import java.util.Stack;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -23,9 +22,9 @@ public class Graph {
     }
 
     public void printList() {
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey() + " ");
-            for (Integer element : entry.getValue()) {
+        for (int src : adjList.keySet()) {
+            System.out.print(src + " ");
+            for (Integer element : adjList.get(src)) {
                 System.out.print(element + " ");
             }
             System.out.println();
@@ -115,12 +114,12 @@ public class Graph {
     }
 
     public List<Integer> topSortBFS(int n) {
-        Map<Integer, Integer> indegree = new HashMap<>();
+        HashMap<Integer, Integer> indegree = new HashMap<>();
         Queue<Integer> q = new LinkedList<>();
         List<Integer> ans = new ArrayList<>();
 
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            for (int nbr : entry.getValue()) {
+        for (int i : adjList.keySet()) {
+            for (int nbr : adjList.get(i)) {
                 indegree.putIfAbsent(nbr, 0);
                 indegree.put(nbr, indegree.get(nbr) + 1);
             }

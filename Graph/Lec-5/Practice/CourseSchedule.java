@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 
 public class CourseSchedule {
@@ -22,8 +21,8 @@ public class CourseSchedule {
         HashMap<Integer, Integer> indegree = new HashMap<>();
         List<Integer> ans = new ArrayList<>();
         Queue<Integer> q = new LinkedList<>();
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            for (int nbr : entry.getValue()) {
+        for (int src : adjList.keySet()) {
+            for (int nbr : adjList.get(src)) {
                 indegree.putIfAbsent(nbr, 0);
                 indegree.put(nbr, (indegree.get(nbr) + 1));
             }
