@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        // GragpWithWeight<Integer> g = new GragpWithWeight<>();
+        // GraphWithWeight<Integer> g = new GraphWithWeight<>();
         // g.addEdge(0, 1, 5, false);
         // g.addEdge(1, 2, 10, false);
         // g.addEdge(1, 3, 20, false);
