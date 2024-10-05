@@ -3,10 +3,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
-import java.util.Map;
 
 public class Graph {
-    public Map<Integer, List<Integer>> adjList = new HashMap<>();
+    public HashMap<Integer, List<Integer>> adjList = new HashMap<>();
 
     public void addEdge(int u, int v, boolean direction) { // tc: (v + e)
         // direction -> false -> undirected
@@ -25,9 +24,9 @@ public class Graph {
     }
 
     public void printAdjList() {
-        for (Map.Entry<Integer, List<Integer>> entry : adjList.entrySet()) {
-            System.out.print(entry.getKey() + " -> {");
-            for (Integer neighbor : entry.getValue()) {
+        for (int src : adjList.keySet()) {
+            System.out.print(src + " -> {");
+            for (Integer neighbor : adjList.get(src)) {
                 System.out.print(neighbor + ", ");
             }
             System.out.println("}");
