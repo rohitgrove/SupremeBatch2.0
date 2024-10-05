@@ -23,7 +23,7 @@ public class Graph {
         for (int src : adj.keySet()) {
             System.out.print(src + ": { ");
             for (int nbr : adj.get(src)) {
-                System.out.print(nbr);
+                System.out.print(nbr + " ");
             }
             System.out.println("}");
         }
