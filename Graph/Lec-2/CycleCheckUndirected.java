@@ -1,7 +1,6 @@
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class CycleCheckUndirected {
@@ -9,7 +8,7 @@ public class CycleCheckUndirected {
 
     public static boolean BFSUndirected(int src, HashMap<Integer, Boolean> visited) {
         Queue<Integer> q = new LinkedList<>();
-        Map<Integer, Integer> parent = new HashMap<>();
+        HashMap<Integer, Integer> parent = new HashMap<>();
 
         // Initial state
         q.add(src);
@@ -50,7 +49,7 @@ public class CycleCheckUndirected {
         return false;
     }
 
-    public static boolean DFSUndirected(int src, Map<Integer, Boolean> vis, int parent) {
+    public static boolean DFSUndirected(int src, HashMap<Integer, Boolean> vis, int parent) {
         vis.put(src, true);
 
         for (int nbr : adjList.get(src)) {
