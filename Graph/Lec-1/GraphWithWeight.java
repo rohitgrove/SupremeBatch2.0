@@ -2,11 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class GraphWithWeight<T> {
-    Map<T, List<Pair<T>>> adjList = new HashMap<>();
+    public HashMap<T, List<Pair<T>>> adjList = new HashMap<>();
 
     static class Pair<T> {
         T node;
