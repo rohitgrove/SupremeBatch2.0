@@ -5,7 +5,7 @@ import java.util.List;
 public class FloydWarshall {
     public static HashMap<Integer, List<Pair<Integer>>> adjList = new HashMap<>();
 
-    public static void flpydWarshal(int n) {
+    public static void floydWarshal(int n) {
         // intial State
         int dist[][] = new int[n][n];
         for (int[] row : dist) {
@@ -58,6 +58,6 @@ public class FloydWarshall {
         g.addEdge(3, 2, 2, true, adjList);
         g.addEdge(2, 1, 1, true, adjList);
         g.printAdjListWithPair(adjList);
-        flpydWarshal(4);
+        floydWarshal(4);
     }
 }
