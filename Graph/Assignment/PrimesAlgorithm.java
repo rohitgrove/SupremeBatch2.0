@@ -109,23 +109,23 @@ public class PrimesAlgorithm {
             adj3.add(new ArrayList<>());
         }
 
-        adj3.get(0).add(new int[] {1, 2});
-        adj3.get(1).add(new int[] {0, 2});
+        adj3.get(0).add(new int[] { 1, 2 });
+        adj3.get(1).add(new int[] { 0, 2 });
 
-        adj3.get(0).add(new int[] {3, 6});
-        adj3.get(3).add(new int[] {0, 6});
-        
-        adj3.get(3).add(new int[] {1, 8});
-        adj3.get(1).add(new int[] {3, 8});
+        adj3.get(0).add(new int[] { 3, 6 });
+        adj3.get(3).add(new int[] { 0, 6 });
 
-        adj3.get(1).add(new int[] {4, 5});
-        adj3.get(4).add(new int[] {1, 5});
-        
-        adj3.get(1).add(new int[] {2, 3});
-        adj3.get(2).add(new int[] {1, 3});
-        
-        adj3.get(2).add(new int[] {4, 7});
-        adj3.get(4).add(new int[] {2, 7});
+        adj3.get(3).add(new int[] { 1, 8 });
+        adj3.get(1).add(new int[] { 3, 8 });
+
+        adj3.get(1).add(new int[] { 4, 5 });
+        adj3.get(4).add(new int[] { 1, 5 });
+
+        adj3.get(1).add(new int[] { 2, 3 });
+        adj3.get(2).add(new int[] { 1, 3 });
+
+        adj3.get(2).add(new int[] { 4, 7 });
+        adj3.get(4).add(new int[] { 2, 7 });
 
         int result3 = spanningTree(V3, V3, adj3);
         System.out.println("The sum of weights of the Minimum Spanning Tree is: " + result3);
