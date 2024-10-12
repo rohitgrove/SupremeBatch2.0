@@ -20,7 +20,7 @@ public class NextAndPrevGreater {
         return ans;
     }
 
-    public static int[] nextGreaterRight(int[] arr) {
+    public static int[] nextGreater(int[] arr) {
         int[] ans = new int[arr.length];
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
@@ -55,9 +55,9 @@ public class NextAndPrevGreater {
         printArr(arr2);
         printArr(arr3);
         System.out.println("Next Greater");
-        printArr(nextGreaterRight(arr1));
-        printArr(nextGreaterRight(arr2));
-        printArr(nextGreaterRight(arr3));
+        printArr(nextGreater(arr1));
+        printArr(nextGreater(arr2));
+        printArr(nextGreater(arr3));
         System.out.println("Prev Greater");
         printArr(prevGreater(arr1));
         printArr(prevGreater(arr2));
