@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class FactorailaOfLargeNumbers {
+public class FactorialOfLargeNumbers {
     public static ArrayList<Integer> factorial(int N) {
         ArrayList<Integer> ans = new ArrayList<>();
         ans.add(1);
