@@ -4,7 +4,7 @@ public class RemoveAllAdjacentDuplicates {
         int index = 0;
         while (index < s.length()) {
             // same
-            // ans ka rightmost character and string s corrent character
+            // ans ka rightmost character and string s current character
             if (ans.length() > 0 && ans.charAt(ans.length() - 1) == s.charAt(index)) {
                 ans.deleteCharAt(ans.length() - 1);
             } else {
