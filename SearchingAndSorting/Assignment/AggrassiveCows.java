@@ -32,7 +32,7 @@ public class AggrassiveCows {
                     return true;
                 }
                 lastPos = stalls[i];
-            } 
+            }
         }
 
         return false;
