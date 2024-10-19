@@ -21,11 +21,13 @@ public class IntegerToRoman {
     }
 
     public static void main(String[] args) {
-        int num1 = 3;
+        int num1 = 3749;
         System.out.println(intToRoman(num1));
         int num2 = 58;
         System.out.println(intToRoman(num2));
         int num3 = 1994;
         System.out.println(intToRoman(num3));
+        int num4 = 3;
+        System.out.println(intToRoman(num4));
     }
 }
