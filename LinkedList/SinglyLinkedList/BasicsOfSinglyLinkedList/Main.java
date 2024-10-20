@@ -18,11 +18,11 @@ public class Main {
         ll.insertAtHead(10);
         ll.print();
         
-        // ll.deleteAtPositionByPos(3);
+        // ll.deleteAtPosition(3);
 
         // ll.print();
 
-        ll.deleteAtPositionByVal(30);
+        ll.deleteByVal(30);
         ll.print();
     }
 }

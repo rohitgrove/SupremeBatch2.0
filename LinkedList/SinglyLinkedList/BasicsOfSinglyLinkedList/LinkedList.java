@@ -152,7 +152,7 @@ public class LinkedList {
         return val;
     }
 
-    public int deleteAtPositionByPos(int position) {
+    public int deleteByPosition(int position) {
         // empty list
         if (head == null) {
             throw new RuntimeException("Cannot delete, coz LL is empty");
@@ -197,7 +197,7 @@ public class LinkedList {
         }
     }
 
-    public void deleteAtPositionByVal(int val) {
+    public void deleteByVal(int val) {
         if (head == null) {
             throw new RuntimeException("Cannot delete, coz LL is empty");
         }
