@@ -6,7 +6,7 @@ public class FloodFill {
 
     public static void dfs(int oldColor, int newColor, int[][] image, int sr, int sc, int direction[][]) {
         image[sr][sc] = newColor;
-       
+
         for (int dir[] : direction) {
             int newRow = sr + dir[0];
             int newCol = sc + dir[1];
@@ -24,7 +24,7 @@ public class FloodFill {
             return image;
         }
 
-        int direction[][] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+        int direction[][] = { { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } };
         dfs(oldColor, newColor, image, sr, sc, direction);
         return image;
     }
