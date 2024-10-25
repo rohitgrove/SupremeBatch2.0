@@ -28,7 +28,7 @@ public class DijakstraAlgorithm {
             // Relaxation step: update distances of neighbors if a shorter path is found
             for (Pair nbr : adj.get(srcNode)) {
                 int nbrNode = nbr.node;
-                int nbrDistance =  nbr.dist;
+                int nbrDistance = nbr.dist;
                 if (nbrDistance + srcDistance < dist[nbrNode]) {
                     dist[nbrNode] = nbrDistance + srcDistance;
                     minHeap.add(new Pair(nbrNode, nbrDistance + srcDistance));
