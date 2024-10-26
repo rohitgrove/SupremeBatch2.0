@@ -60,8 +60,12 @@ public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         String s1 = "babad";
         String s2 = "cbbd";
+        String s3 = "aaaabaaa";
+        String s4 = "abba";
 
         System.out.println(longestPalindrome(s1)); // Output: "bab" or "aba"
         System.out.println(longestPalindrome(s2)); // Output: "bb"
+        System.out.println(longestPalindrome(s3)); // Output: aaaabaaa
+        System.out.println(longestPalindrome(s4)); // Output: abba
     }
 }
