@@ -76,5 +76,9 @@ public class LongestPalindromicSubstring {
         System.out.println(longestPalindrome(s1));  // Output could be "bab" or "aba"
         String s2 = "cbbd";
         System.out.println(longestPalindrome(s2));  // Output will be "bb"
+        String s3 = "aaaabaaa";
+        System.out.println(longestPalindrome(s3));
+        String s4 = "abba";
+        System.out.println(longestPalindrome(s4));
     }
 }
