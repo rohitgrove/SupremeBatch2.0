@@ -21,12 +21,12 @@ public class Heap {
 
         // take the value to its correct position
         while (index > 1) {
-            int parrentIndex = index / 2;
-            if (arr[index] > arr[parrentIndex]) {
+            int parentIndex = index / 2;
+            if (arr[index] > arr[parentIndex]) {
                 int temp = arr[index];
-                arr[index] = arr[parrentIndex];
-                arr[parrentIndex] = temp;
-                index = parrentIndex;
+                arr[index] = arr[parentIndex];
+                arr[parentIndex] = temp;
+                index = parentIndex;
             } else {
                 break;
             }
