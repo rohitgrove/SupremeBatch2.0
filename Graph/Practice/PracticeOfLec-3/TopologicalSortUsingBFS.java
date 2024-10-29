@@ -2,14 +2,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class TopologicalSortUsingBFS {
     public static HashMap<Integer, List<Integer>> adjList = new HashMap<>();
 
     public static List<Integer> topSortBFS(int n) {
-        Map<Integer, Integer> indegree = new HashMap<>();
+        HashMap<Integer, Integer> indegree = new HashMap<>();
         Queue<Integer> q = new LinkedList<>();
         List<Integer> ans = new ArrayList<>();
 
