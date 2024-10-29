@@ -8,7 +8,6 @@ public class TopologicalSortUsingDFS {
     public static void topSortDFS(int end) {
         HashMap<Integer, Boolean> vis = new HashMap<>();
         Stack<Integer> s = new Stack<>();
-
         for (int i = 0; i < end; i++) {
             if (!vis.containsKey(i)) {
                 topSortDFSUtil(i, vis, s);
@@ -30,6 +29,7 @@ public class TopologicalSortUsingDFS {
                 }
             }
         }
+
         s.push(src);
     }
 
@@ -45,6 +45,6 @@ public class TopologicalSortUsingDFS {
         g.addEdge(6, 7, true, adjList);
 
         int n = 8;
-        topSortDFS(n);;
+        topSortDFS(n);
     }
 }

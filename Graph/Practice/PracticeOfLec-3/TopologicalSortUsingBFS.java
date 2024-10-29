@@ -12,21 +12,19 @@ public class TopologicalSortUsingBFS {
         Queue<Integer> q = new LinkedList<>();
         List<Integer> ans = new ArrayList<>();
 
-        // Initialize indegree of all nodes
         for (int src : adjList.keySet()) {
             for (int nbr : adjList.get(src)) {
                 indegree.putIfAbsent(nbr, 0);
                 indegree.put(nbr, indegree.get(nbr) + 1);
             }
         }
-        // push all zero indegree will node into queue
+
         for (int node = 0; node < n; node++) {
             if (indegree.containsKey(node) == false) {
                 q.add(node);
             }
         }
 
-        // BFS chalate hai
         while (!q.isEmpty()) {
             int frontNode = q.poll();
             ans.add(frontNode);
@@ -39,7 +37,6 @@ public class TopologicalSortUsingBFS {
                 int count = indegree.get(nbr);
                 indegree.put(nbr, count - 1);
 
-                // check zero
                 if (indegree.get(nbr) == 0) {
                     q.add(nbr);
                 }
