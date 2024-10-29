@@ -7,6 +7,7 @@ import java.util.Queue;
 
 public class ShortestPathBFS {
     static HashMap<Integer, List<Integer>> adjList = new HashMap<>();
+
     public static void shortestPathBFS(int src, int dest) {
         Queue<Integer> q = new LinkedList<>();
         HashMap<Integer, Boolean> visited = new HashMap<>();
@@ -55,6 +56,6 @@ public class ShortestPathBFS {
 
         int src = 0;
         int dest = 3;
-        shortestPathBFS(src, dest);        
+        shortestPathBFS(src, dest);
     }
 }
