@@ -11,7 +11,7 @@ public class NumberOfIslands {
             for (int j = 0; j < m; j++) {
                 if (!visited[i][j] && grid[i][j] == '1') {
                     count++;
-                    bfs(grid, visited, m, n, i, j);
+                    bfs(grid, visited, i, j);
                 }
             }
         }
@@ -23,7 +23,7 @@ public class NumberOfIslands {
                 && !visited[nextRow][nextCol] && grid[nextRow][nextCol] == '1');
     }
 
-    public static void bfs(char[][] grid, boolean[][] visited, int m, int n, int row, int col) {
+    public static void bfs(char[][] grid, boolean[][] visited, int row, int col) {
         Queue<int[]> q = new LinkedList<>();
         q.add(new int[] { row, col });
 
