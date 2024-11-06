@@ -1,5 +1,5 @@
 public class RotateImage {
-    public static void reverseVector(int arr[]) {
+    public static void reverseArray(int arr[]) {
         int n = arr.length;
         int start = 0;
         int end = n - 1;
@@ -29,7 +29,7 @@ public class RotateImage {
         // kitni rows h -> 0 > (n-1)
         for (int i = 0; i < n; i++) {
             // hr row ko reverse krna h
-            reverseVector(matrix[i]);
+            reverseArray(matrix[i]);
         }
     }
 
