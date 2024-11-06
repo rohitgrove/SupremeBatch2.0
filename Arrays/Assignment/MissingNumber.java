@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class FindMissingNumber {
+public class MissingNumber {
     public static int sortingMethod(int nums[]) {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
