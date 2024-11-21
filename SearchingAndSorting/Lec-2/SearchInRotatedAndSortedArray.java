@@ -52,12 +52,12 @@ public class SearchInRotatedAndSortedArray {
         int s = 0;
         int e = nums.length - 1;
         while (s <= e) {
-            int mid = s+(e-s) / 2;
+            int mid = s + (e - s) / 2;
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[s] <= nums[mid]) {
                 if (nums[s] <= target && target < nums[mid]) {
-                    e = mid - 1; 
+                    e = mid - 1;
                 } else {
                     s = mid + 1;
                 }
