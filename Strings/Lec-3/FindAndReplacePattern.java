@@ -29,7 +29,7 @@ public class FindAndReplacePattern {
         StringBuilder patternBuilder = new StringBuilder(pattern);
         //firstly normalise the pattern
         createUpdateMapping(patternBuilder);
-        //saare words k sath khelna h 
+        //saare words k sath khelna h
         for (String s : words) {
             StringBuilder tempString = new StringBuilder(s);
             //normalise tempString
