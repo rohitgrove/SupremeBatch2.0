@@ -5,6 +5,7 @@ public class FindAndReplacePattern {
     // This function normalizes all the words and pattern into a similar format
     // so that we can compare them and find the solution
     public static void createUpdateMapping(StringBuilder str) {
+        //find mappping
         char start = 'a';
         char[] mapping = new char[300];
 
@@ -26,12 +27,15 @@ public class FindAndReplacePattern {
     public static List<String> findAndReplacePattern(String[] words, String pattern) {
         List<String> ans = new ArrayList<>();
         StringBuilder patternBuilder = new StringBuilder(pattern);
+        //firstly normalise the pattern
         createUpdateMapping(patternBuilder);
-
+        //saare words k sath khelna h 
         for (String s : words) {
             StringBuilder tempString = new StringBuilder(s);
+            //normalise tempString
             createUpdateMapping(tempString);
             if (tempString.toString().equals(patternBuilder.toString())) {
+                //it means, that "s" wali string was a valid answer
                 ans.add(s);
             }
         }
@@ -44,6 +48,6 @@ public class FindAndReplacePattern {
         String pattern = "abb";
 
         List<String> result = findAndReplacePattern(words, pattern);
-        System.out.println(result);  // Output: [mee, aqq]
+        System.out.println(result);
     }
 }
