@@ -1,7 +1,6 @@
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class CycleCheckUndirectedUsingBFS {
@@ -9,7 +8,7 @@ public class CycleCheckUndirectedUsingBFS {
 
     public static boolean BFSUndirected(int src, HashMap<Integer, Boolean> visited) {
         Queue<Integer> q = new LinkedList<>();
-        Map<Integer, Integer> parent = new HashMap<>();
+        HashMap<Integer, Integer> parent = new HashMap<>();
 
         // Initial state
         q.add(src);
