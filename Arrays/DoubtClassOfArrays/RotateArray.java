@@ -43,7 +43,7 @@ public class RotateArray {
     }
 
     public static void main(String[] args) {
-        int nums[] = { 1, 2, 3, 4, 5, 6, 7 }, k = -3;
+        int nums[] = { 1, 2, 3, 4, 5, 6, 7 }, k = 3;
         rotate2(nums, k);
         printArr(nums);
     }
