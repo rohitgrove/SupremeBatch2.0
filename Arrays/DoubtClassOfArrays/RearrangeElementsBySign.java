@@ -2,23 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RearrangeElementsBySign {
-    public static List<Integer> rearrangeArray1(int[] nums) {
+    public static int[] rearrangeArray1(int[] nums) {
         // Method 1. Brute Force with Temp Array
         List<Integer> pos = new ArrayList<>();
         List<Integer> neg = new ArrayList<>();
 
         for (int num : nums) {
-            if (num < 0)
+            if (num < 0) {
                 neg.add(num);
-            else
+            }
+            else {
                 pos.add(num);
+            }
         }
 
-        List<Integer> ans = new ArrayList<>();
+        int ans[] = new int[nums.length];
         int i = 0;
+        int j = 0;
         while (i < pos.size()) {
-            ans.add(pos.get(i));
-            ans.add(neg.get(i));
+            ans[j++] = pos.get(i);
+            ans[j++] = neg.get(i);
             i++;
         }
 
