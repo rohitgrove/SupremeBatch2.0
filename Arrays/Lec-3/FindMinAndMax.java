@@ -6,11 +6,9 @@ public class FindMinAndMax {
 
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-
                 if (arr[i][j] > maxAns) {
                     maxAns = arr[i][j];
                 }
-
             }
         }
         return maxAns;
@@ -23,11 +21,9 @@ public class FindMinAndMax {
 
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-
                 if (arr[i][j] < minAns) {
                     minAns = arr[i][j];
                 }
-
             }
         }
         return minAns;
