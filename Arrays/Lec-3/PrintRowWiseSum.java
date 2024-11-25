@@ -5,9 +5,7 @@ public class PrintRowWiseSum {
             int sum = 0;
 
             for (int j = 0; j < col; j++) {
-
                 sum = sum + arr[i][j];
-
             }
 
             System.out.println(sum);
