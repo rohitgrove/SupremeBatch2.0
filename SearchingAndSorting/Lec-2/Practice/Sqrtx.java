@@ -1,21 +1,19 @@
 public class Sqrtx {
-    public static int mySqrt1(int x) {
+    public static int mySqrt(int x) {
         int s = 0;
         int e = x;
-        long mid = s + (e - s) / 2;
+        int mid = s + (e - s) / 2;
         int ans = -1;
 
         while (s <= e) {
-            // kya mid hi toh answer nahi
-            if (mid * mid == x) {
-                return (int) mid;
-            } else if (mid * mid < x) {
-                // ans store
-                // right me jao
-                ans = (int) mid;
-                s = (int) mid + 1;
+            int sqrt = mid * mid;
+            if (sqrt == x) {
+                return mid;
+            } else if (sqrt < x) {
+                ans = mid;
+                s = mid + 1;                
             } else {
-                e = (int) mid - 1;
+                e = mid - 1;
             }
             mid = s + (e - s) / 2;
         }
