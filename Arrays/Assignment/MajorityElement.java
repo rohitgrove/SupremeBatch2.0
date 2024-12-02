@@ -1,7 +1,12 @@
 import java.util.Arrays;
 
 public class MajorityElement {
-    public static int bruteForce(int nums[]) {
+    public static int bruteForce1(int nums[]) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+
+    public static int bruteForce2(int nums[]) {
         for (int val : nums) {
             int freq = 0;
 
