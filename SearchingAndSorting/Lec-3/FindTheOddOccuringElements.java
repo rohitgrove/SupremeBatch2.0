@@ -11,7 +11,7 @@ public class FindTheOddOccuringElements {
             }
 
             // mid check -> even or odd
-            if ((mid&1) == 1) { // mid&1 -> true-> odd number
+            if (mid % 2 != 0) { // both are true (mid&1) == 1 -> true-> odd number
                 if (mid - 1 >= 0 && nums[mid] == nums[mid - 1]) {
                     // right me jao
                     s = mid + 1;
@@ -38,7 +38,6 @@ public class FindTheOddOccuringElements {
         return -1;
     }
 
-    
     public static void main(String[] args) {
         int nums1[] = { 10, 10, 2, 2, 5, 5, 2, 5, 5, 20, 20, 11, 11, 10, 10 };
         System.out.println(findOddOccuringElement(nums1));
