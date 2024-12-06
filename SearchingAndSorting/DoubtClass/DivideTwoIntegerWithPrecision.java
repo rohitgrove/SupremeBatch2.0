@@ -11,8 +11,9 @@ public class DivideTwoIntegerWithPrecision {
                 ans = mid;
                 // go right for more precise answer
                 s = mid + 1;
-            } else
+            } else {
                 e = mid - 1;
+            }
         }
         return ans;
     }
