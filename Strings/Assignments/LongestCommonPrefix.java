@@ -17,7 +17,7 @@ public class LongestCommonPrefix {
                     curr_ch = 0;
                     break;
                 }
-            }    
+            }
 
             if (curr_ch == 0) {
                 break;

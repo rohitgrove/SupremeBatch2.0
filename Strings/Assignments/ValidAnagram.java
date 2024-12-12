@@ -2,11 +2,11 @@ import java.util.Arrays;
 
 public class ValidAnagram {
     public static boolean isAnagram1(String s, String t) {
-        char sArr[] = s.toCharArray();        
+        char sArr[] = s.toCharArray();
         char tArr[] = t.toCharArray();
-        Arrays.sort(sArr);        
+        Arrays.sort(sArr);
         Arrays.sort(tArr);
-        return Arrays.equals(sArr, tArr);       
+        return Arrays.equals(sArr, tArr);
     }
 
     public static boolean isAnagram2(String s, String t) {
