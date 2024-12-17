@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class CountPrimeNumbers2 {
-    public static int sieveOfEratosthores(int n) {// tc: O(n (loglogn))
+    public static int sieveOfEratosthenes(int n) {// tc: O(n (loglogn))
         if (n <= 1) {
             return 0;
         }
@@ -27,6 +27,6 @@ public class CountPrimeNumbers2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(sieveOfEratosthores(21));
+        System.out.println(sieveOfEratosthenes(21));
     }
 }
