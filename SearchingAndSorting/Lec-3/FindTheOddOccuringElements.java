@@ -11,7 +11,7 @@ public class FindTheOddOccuringElements {
             }
 
             // mid check -> even or odd
-            if ((mid&1) == 1) { // both are true (mid % 2) == 0 -> true-> odd number
+            if ((mid&1) == 1) { // (mid&1) == 1 -> true-> odd number
                 if (mid - 1 >= 0 && nums[mid] == nums[mid - 1]) {
                     // right me jao
                     s = mid + 1;
