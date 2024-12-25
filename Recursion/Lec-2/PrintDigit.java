@@ -17,6 +17,7 @@ public class PrintDigit {
         //processing
         digits.add(digit);
     }
+
     public static void main(String[] args) {
         int num = 4217;
         List<Integer> digits = new ArrayList<>();
