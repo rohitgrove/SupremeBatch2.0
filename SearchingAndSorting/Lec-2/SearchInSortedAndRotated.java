@@ -13,7 +13,7 @@ public class SearchInSortedAndRotated {
 
             if (mid < nums.length && nums[mid] > nums[mid + 1]) {
                 return mid;
-            } else if (mid - 1 >= 0 &&nums[mid] < nums[mid - 1]) {
+            } else if (mid - 1 >= 0 && nums[mid] < nums[mid - 1]) {
                 return mid - 1;
             } else if (nums[s] > nums[mid]) {
                 e = mid - 1;
@@ -55,7 +55,7 @@ public class SearchInSortedAndRotated {
         int nums[] = { 4, 5, 6, 7, 0, 1, 2 };
         System.out.println(search(nums, 0));
         System.out.println(search(nums, 3));
-        int nums1[] = {1, 3}, target = 0;
+        int nums1[] = { 1, 3 }, target = 0;
         System.out.println(search(nums1, target));
     }
 }
