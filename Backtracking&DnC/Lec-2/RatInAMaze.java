@@ -14,10 +14,10 @@ public class RatInAMaze {
 
     public static void printAllPath(int maze[][], int row, int col, int r, int c, String output, boolean visited[][], ArrayList<String> ans) {
         // base case
-        // destination coordination are [row - 1], [col - 1]
         if (r < 0 || c < 0 || r == row || c == col || visited[r][c] || maze[r][c] == 0) {
             return;
         }
+        // destination coordination are [row - 1], [col - 1]
         if (r == row - 1 && c == col - 1) {
             ans.add(output);
             return;
