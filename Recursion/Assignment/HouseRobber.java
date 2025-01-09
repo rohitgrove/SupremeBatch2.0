@@ -7,7 +7,7 @@ public class HouseRobber {
     
         // sol for 1 case;
         int robAmt1 = nums[idx] + solve(nums, idx + 2);
-        int robAmt2 = solve(nums, idx + 1);
+        int robAmt2 = 0 + solve(nums, idx + 1);
 
         return Math.max(robAmt1, robAmt2);
     }
