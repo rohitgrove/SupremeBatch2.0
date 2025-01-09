@@ -8,7 +8,7 @@ public class HouseRobber {
         int option1 = nums[idx] + solve(nums, idx + 2);
 
         // chori mat karo -> ith index pr
-        int option2 = solve(nums, idx + 1);
+        int option2 = 0 + solve(nums, idx + 1);
         return Math.max(option1, option2);
     }
 
