@@ -14,7 +14,7 @@ public class DecimalToBinary {
     }
 
     public static int decimalToBinaryM2(int n) {
-        // devision Method.
+        // left shift Method.
         int binaryno = 0;
         int i = 0;
         while (n > 0) {
