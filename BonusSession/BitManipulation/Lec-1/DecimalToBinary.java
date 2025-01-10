@@ -5,7 +5,7 @@ public class DecimalToBinary {
         int i = 0;
         while (n > 0) {
             int bit = n % 2;
-            binaryno = (int)(bit * Math.pow(10, i)) + binaryno;
+            binaryno = (int) (bit * Math.pow(10, i)) + binaryno;
             i++;
             n = n / 2;
         }
