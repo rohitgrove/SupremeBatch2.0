@@ -16,7 +16,7 @@ public class QuickSortFromStart {
     }
 
     public static int partition(int[] arr, int s, int e) {
-        int pivot = arr[s + (e - s) / 2];
+        int pivot = arr[s];
 
         int cnt = 0;
         for (int i = s + 1; i <= e; i++) {
