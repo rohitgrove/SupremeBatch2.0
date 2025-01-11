@@ -16,8 +16,10 @@ public class QuickSortFromStart {
     }
 
     public static int partition(int[] arr, int s, int e) {
+        //step1: chooose pivotelement
         int pivot = arr[s];
 
+        //step2: find right position for pivot Element and place it there
         int cnt = 0;
         for (int i = s + 1; i <= e; i++) {
             if (arr[i] <= pivot) {
@@ -25,13 +27,13 @@ public class QuickSortFromStart {
             }
         }
 
-        // place pivot at right position
+        //jab main loop se bahar hua, toh mere paas pivot ki right position ka index ready h
         int pivotIndex = s + cnt;
         int temp = arr[pivotIndex];
         arr[pivotIndex] = arr[s];
         arr[s] = temp;
 
-        // left and right wala part smbhal lete h
+        //Step3: left me chote and right me bade daal doo
         int i = s, j = e;
 
         while (i < pivotIndex && j > pivotIndex) {
