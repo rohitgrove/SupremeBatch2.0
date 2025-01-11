@@ -64,8 +64,23 @@ public class MergeSort1 { // tc: O(nlogn), sc: O(n)
     }
 
     public static void main(String[] args) {
-        int arr[] = { 2, 1, 6, 9, 4, 5 };
-        int ans[] = mergeSort(arr, 0, arr.length - 1);
-        printArr(ans);
+        int arr1[] = { 2, 1, 6, 9, 4, 5 };
+        printArr(mergeSort(arr1, 0, arr1.length - 1));
+        int arr2[] = { 3, 5, 1, 8, 2, 4 };
+        printArr(mergeSort(arr2, 0, arr2.length - 1));
+        int arr3[] = { 3, 1, 4, 5, 2 };
+        printArr(mergeSort(arr3, 0, arr3.length - 1));
+        int arr4[] = { 2, 4, 1, 6, 9 };
+        printArr(mergeSort(arr4, 0, arr4.length - 1));
+        int arr5[] = { 4, 2, 5, 1, 3 };
+        printArr(mergeSort(arr5, 0, arr5.length - 1));
+        int arr6[] = { 6, 2, 4, 1 };
+        printArr(mergeSort(arr6, 0, arr6.length - 1));
+        int arr7[] = { 5, 3, 2, 6, 4 };
+        printArr(mergeSort(arr7, 0, arr7.length - 1));
+        int arr8[] = { 7, 2, 1, 8, 6, 3, 5, 4 };
+        printArr(mergeSort(arr8, 0, arr8.length - 1));
+        int[] arr9 = { 50, 40, 80, 90, 70, 10, 30, 60, 120 };
+        printArr(mergeSort(arr9, 0, arr9.length - 1));
     }
 }
