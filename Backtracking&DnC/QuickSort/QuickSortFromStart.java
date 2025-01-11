@@ -16,7 +16,7 @@ public class QuickSortFromStart {
     }
 
     public static int partition(int[] arr, int s, int e) {
-        //step1: chooose pivotelement
+        //step1: chooose pivot element
         int pivot = arr[s];
 
         //step2: find right position for pivot Element and place it there
