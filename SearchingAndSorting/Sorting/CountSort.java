@@ -21,6 +21,32 @@ public class CountSort {
         }
     }
 
+    public static void countSortOnNegativeNumbers(int[] arr) {
+        int largest = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            largest = Math.max(largest, arr[i]);
+        }
+
+        int minimum = Integer.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            minimum = Math.min(minimum, arr[i]);
+        }
+
+        int[] freq = new int[largest - minimum + 1];
+
+        for (int el : arr) {
+            freq[el - minimum]++;
+        }
+
+        int idx = 0;
+        for (int i = 0; i < freq.length; i++) {
+            int count = freq[i];
+            while (count-- > 0) {
+                arr[idx++] = i + minimum;
+            }
+        }
+    }
+
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -41,5 +67,8 @@ public class CountSort {
         int arr4[] = { 10, 1, 7, 6, 14, 9 };
         countSort(arr4);
         printArr(arr4);
+        int arr5[] = { -2, 3, 8, 3, -2, 3 };
+        countSortOnNegativeNumbers(arr5);
+        printArr(arr5);
     }
 }
