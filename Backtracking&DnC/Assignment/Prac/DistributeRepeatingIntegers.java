@@ -9,7 +9,7 @@ class Compare implements Comparator<Integer> {
     }
 }
 
-public class DistbutingRepeatingIntegers {
+public class DistributeRepeatingIntegers {
     public static boolean canDistributeHelper(int[] nums, int[] quantity, int[] counts, int ithCustomer) {
         if (ithCustomer >= quantity.length) {
             return true;
