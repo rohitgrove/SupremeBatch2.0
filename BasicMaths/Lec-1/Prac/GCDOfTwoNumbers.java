@@ -10,14 +10,15 @@ public class GCDOfTwoNumbers {
 
         while (a > 0 && b > 0) {
             if (a > b) {
-                a = a-b;
+                a = a - b;
             } else {
-                b = b- a;
+                b = b - a;
             }
         }
 
         return a == 0 ? b : a;
     }
+
     public static void main(String[] args) {
         System.out.println(gcd(3, 6));
     }
