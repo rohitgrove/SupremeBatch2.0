@@ -1,4 +1,4 @@
-public class SlowExponentiation {
+public class SlowAndFastExponentiation {
     public static int fastExponentiation(int a, int b) {
         int ans = 1;
         while (b > 0) {
