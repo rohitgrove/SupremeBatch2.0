@@ -16,8 +16,8 @@ public class DecimalToBinary {
         int binaryno = 0;
         int i = 0;
         while (n > 0) {
-            int bit = n&1;
-            binaryno = (int)(bit * Math.pow(10, i)) + binaryno;
+            int bit = n & 1;
+            binaryno = (int) (bit * Math.pow(10, i)) + binaryno;
             i++;
             n = n >> 1;
         }
