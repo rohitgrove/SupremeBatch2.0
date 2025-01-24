@@ -75,15 +75,20 @@ public class LinkedList {
         } else if (position == (length + 1)) {
             insertAtTail(data);
         } else {
+            // insert at middle of linked list
+            // Step 1: create a new node
             Node newNode = new Node(data);
 
+            // Step 2: traverse curr to position
             Node curr = head;
             while (position != 2) {
                 curr = curr.next;
                 position--;
             }
 
+            // Step3: attach newNode to curr's next
             newNode.next = curr.next;
+            // Step 4: attach curr to newNode
             curr.next = newNode;
         }
     }
