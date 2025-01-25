@@ -39,7 +39,7 @@ public class LinkedList {
             // step1: create a new Node
             Node newNode = new Node(data);
             // Step 2: traverse prev curr to position
-            Node prev = null;
+            Node prev = head;
             Node curr = head;
             while (position != 1) {
                 prev = curr;
