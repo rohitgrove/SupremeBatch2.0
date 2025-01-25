@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.insertAtTail(10);
-        ll.insertAtTail(20);
-        ll.insertAtTail(30);
-        ll.insertAtTail(50);
-        ll.printLL();
+        // ll.insertAtTail(10);
+        // ll.insertAtTail(20);
+        // ll.insertAtTail(30);
+        // ll.insertAtTail(50);
+        // ll.printLL();
 
         // ll.insertAtPosition(5, 1);
-        ll.insertAtPosition2(1000, 3);
-        ll.printLL();
+        // ll.insertAtPosition2(1000, 3);
+        // ll.printLL();
 
         // // creation of node
         // Node first = new Node(10);
@@ -31,5 +31,16 @@ public class Main {
         // ll.insertAtTail(500);
 
         // ll.printLL();
+
+        ll.insertAtHead(50);
+        ll.insertAtHead(40);
+        ll.insertAtHead(30);
+        ll.insertAtHead(20);
+        ll.insertAtHead(10);
+        ll.printLL();
+        System.out.println(ll.deleteNode(2));
+        ll.printLL();
+        ll.deleteNodeByValue(50);
+        ll.printLL();
     }
 }

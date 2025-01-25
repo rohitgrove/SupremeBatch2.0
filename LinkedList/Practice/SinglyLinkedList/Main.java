@@ -11,5 +11,9 @@ public class Main {
         ll.insertAtposition(101, 6);
         ll.printLL();
         System.out.println(ll.getLength());
+
+        ll.deleteNode(6);
+        ll.printLL();
+        System.out.println(ll.getLength());
     }
 }

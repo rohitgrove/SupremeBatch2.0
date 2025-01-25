@@ -112,4 +112,95 @@ public class LinkedList {
         }
         return count;
     }
+
+    public int deleteNode(int position) {
+        // empty list
+        if (head == null) {
+            throw new RuntimeException("Cannot delete, coz LL is Empty");
+        }
+
+        int size = getLength();
+
+        if (position < 1 || position > size) {
+            throw new RuntimeException("Invalid position");
+        }
+
+        if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+
+        // delete from head
+        if (position == 1) {
+            // first node ko delete kardo
+            int val = head.data;
+            head = head.next;
+            return val;
+        } else if (size == position) {
+            // last delete ko delete kardo
+
+            // find prev
+            Node prev = head;
+            while (prev.next != tail) {
+                prev = prev.next;
+            }
+            int val = tail.data;
+            // prev node ka link null karo
+            prev.next = null;
+
+            // update tail
+            tail = prev;
+            return val;
+        } else {
+            // middle me koi node ko delete krna hai
+
+            // step1: set prev pointers
+            Node prev = head;
+            while (position != 2) {
+                position--;
+                prev = prev.next;
+            }
+
+            // step2: prev -> next me curr ka next add karo
+            Node curr = prev.next;
+            prev.next = curr.next;
+
+            return curr.data;
+        }
+    }
+
+    public void deleteNodeByValue(int value) {
+        if (head == null) {
+            throw new RuntimeException("Cannot delete, coz LL is Empty");
+        }
+
+        if (head == tail && head.data == value) {
+            head = tail = null;
+            return;
+        }
+
+        if (head.data == value) {
+            head = head.next;
+        } else if (tail.data == value) {
+            Node prev = head;
+
+            while (prev.next != tail) {
+                prev = prev.next;
+            }
+
+            prev.next = null;
+            tail = prev;
+        } else {
+            Node prev = head;
+
+            while (prev.next != null && prev.next.data != value) {
+                prev = prev.next;
+            }
+            Node curr = prev.next;
+            if (curr != null) {
+                prev.next = curr.next;
+            }
+        }
+    }
 }

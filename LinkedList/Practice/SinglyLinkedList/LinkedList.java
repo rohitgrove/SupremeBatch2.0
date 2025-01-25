@@ -74,4 +74,49 @@ public class LinkedList {
         }
         System.out.println("Null");
     }
+
+    public int deleteNode(int position) {
+        if (head == null) {
+            throw new RuntimeException("LL is Empty");
+        }
+
+        int size = getLength();
+        if (position < 0 && position > size) {
+            throw new RuntimeException("position is invalid");
+        }
+
+        if (head == tail) {
+            int val = head.data;
+            head = tail = null;
+            return val;
+        }
+
+        if (position == 1) {
+            int val = head.data;
+            head = head.next;
+            return val;
+        } else if (position == size) {
+            Node prev = head;
+
+            while (prev.next != tail) {
+                prev = prev.next;
+            }
+
+            int val = tail.data;
+            prev.next = null;
+            tail = prev;
+            return val;
+        } else {
+            Node prev = head;
+            while (position != 2) {
+                prev = prev.next;
+                position--;
+            }
+
+            Node curr = prev.next;
+            prev.next = curr.next;
+
+            return curr.data;
+        }
+    }
 }
