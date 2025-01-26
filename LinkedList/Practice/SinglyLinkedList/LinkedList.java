@@ -27,7 +27,7 @@ public class LinkedList {
     public void insertAtposition(int data, int position) {
         int length = getLength();
         if (position < 1 || position > (length + 1)) {
-            throw new UnsupportedOperationException("Invalid position. Position valid only 1 to length + 1");
+            throw new RuntimeException("Invalid position. Position valid only 1 to length + 1");
         }
 
         if (position == 1) {

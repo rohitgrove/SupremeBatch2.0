@@ -36,7 +36,7 @@ public class LinkedList {
         // assumption: position ki value [1 to length + 1 tk]
         int length = getLength();
         if (position < 1 || position > (length + 1)) {
-            throw new UnsupportedOperationException("Invalid position. Position valid only 1 to length + 1");
+            throw new RuntimeException("Invalid position. Position valid only 1 to length + 1");
         }
 
         if (position == 1) {
@@ -67,7 +67,7 @@ public class LinkedList {
     public void insertAtPosition2(int data, int position) {
         int length = getLength();
         if (position < 1 || position > (length + 1)) {
-            throw new UnsupportedOperationException("Invalid position. Position valid only 1 to length + 1");
+            throw new RuntimeException("Invalid position. Position valid only 1 to length + 1");
         }
 
         if (position == 1) {
