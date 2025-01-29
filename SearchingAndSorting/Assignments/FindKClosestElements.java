@@ -76,8 +76,6 @@ public class FindKClosestElements {
                 end = mid - 1;
             } else if (x > arr[mid]) {
                 start = mid + 1;
-            } else {
-                end = mid - 1;
             }
         }
 
