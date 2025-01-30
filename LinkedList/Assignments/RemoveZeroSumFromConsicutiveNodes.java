@@ -14,7 +14,9 @@ public class RemoveZeroSumFromConsicutiveNodes {
     }
 
     public static Node removeZeroSumSublists(Node head) {
-        if (head == null || (head.next == null && head.data == 0)) return null;
+        if (head == null || (head.next == null && head.data == 0)) {
+            return null;
+        }
 
         HashMap<Integer, Node> mp = new HashMap<>();
         Node it = head;
