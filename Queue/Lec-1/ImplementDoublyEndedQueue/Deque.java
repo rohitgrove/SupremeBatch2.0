@@ -80,4 +80,12 @@ public class Deque {
             front++;
         }
     }
+
+    public void print() {
+        System.out.println("Printing Queue");
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
 }
