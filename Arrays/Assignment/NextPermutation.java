@@ -1,4 +1,4 @@
-public class NextPetmutaion {
+public class NextPermutation {
     public static void nextPermutation(int[] arr) {
         int pivot = -1;
         int n = arr.length;
