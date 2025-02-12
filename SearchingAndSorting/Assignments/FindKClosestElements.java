@@ -42,7 +42,7 @@ public class FindKClosestElements {
         return ans;
     }
 
-    public static List<Integer> bsMethod(int arr[], int k, int x) { // tc: O(log n + k) sc: O(k)
+    public static List<Integer> bsMethod(int arr[], int k, int x) { // tc: O(logn + k) sc: O(k)
         // lower bound.
         int h = lowerBound(arr, x);
         int l = h - 1;
