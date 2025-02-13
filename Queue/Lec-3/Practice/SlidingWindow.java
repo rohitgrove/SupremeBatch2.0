@@ -1,41 +1,35 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class SlidingWindowMaximum {
+public class SlidingWindow {
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        int[] ans = new int[nums.length - k + 1];
+        int n = nums.length;
         Deque<Integer> dq = new LinkedList<>();
+        int ans[] = new int[n - k + 1];
         int ansIndex = 0;
 
-        // first window ko process karo
         for (int i = 0; i < k; i++) {
-            // jitne bhi queue k andar chotte elements h remove kardo
             while (!dq.isEmpty() && nums[i] >= nums[dq.peekLast()]) {
                 dq.pollLast();
             }
-            // now insert karo
+
             dq.offerLast(i);
         }
 
-        // remaing window ka process karo
-        for (int i = k; i < nums.length; i++) {
-            // ans store
+        for (int i = k; i < n; i++) {
             ans[ansIndex++] = nums[dq.peekFirst()];
 
-            // removal
-            // out of range elements
             while (!dq.isEmpty() && dq.peekFirst() <= i - k) {
                 dq.pollFirst();
             }
 
-            // chote elements ko remove kar do
             while (!dq.isEmpty() && nums[i] >= nums[dq.peekLast()]) {
                 dq.pollLast();
             }
-            dq.addLast(i);
+
+            dq.offer(i);
         }
 
-        // last window ko answer process karlo
         ans[ansIndex] = nums[dq.peekFirst()];
 
         return ans;
