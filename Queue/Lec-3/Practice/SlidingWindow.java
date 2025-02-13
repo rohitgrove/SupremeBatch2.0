@@ -27,7 +27,7 @@ public class SlidingWindow {
                 dq.pollLast();
             }
 
-            dq.offer(i);
+            dq.offerLast(i);
         }
 
         ans[ansIndex] = nums[dq.peekFirst()];
