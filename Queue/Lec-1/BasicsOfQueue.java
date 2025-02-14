@@ -37,5 +37,6 @@ public class BasicsOfQueue {
         q.offer(30);
 
         System.out.println("Front element of Queue is: " + q.peek());
+        System.out.println(q);
     }
 }
