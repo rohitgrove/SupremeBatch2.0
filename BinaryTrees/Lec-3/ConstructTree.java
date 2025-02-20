@@ -4,7 +4,7 @@ import java.util.Queue;
 public class ConstructTree {
     int idx = 0;
 
-    public Node crateTree(int data[]) {
+    public Node createTree(int data[]) {
         if (data[idx] == -1) {
             idx++;
             return null;
@@ -12,8 +12,8 @@ public class ConstructTree {
 
         Node root = new Node(data[idx++]);
 
-        root.left = crateTree(data);
-        root.right = crateTree(data);
+        root.left = createTree(data);
+        root.right = createTree(data);
 
         return root;
     }

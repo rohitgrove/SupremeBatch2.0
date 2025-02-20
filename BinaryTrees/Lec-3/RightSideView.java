@@ -52,20 +52,20 @@ public class RightSideView {
     public static void main(String[] args) {
         int data1[] = { 10, 30, 61, -1, -1, 60, 62, -1, -1, -1, 20, 50, -1, 65, -1, 69, -1, -1, 40, -1, -1 };
         ConstructTree ct = new ConstructTree();
-        Node root1 = ct.crateTree(data1);
+        Node root1 = ct.createTree(data1);
         System.out.println(rightView(root1));
         int data2[] = { 10, 7, 9, -1, -1, 8, -1, 5, -1, 4, -1, 2, 3, -1, -1, 1, -1, -1, 6, -1, -1 };
         ct.idx = 0;
-        Node root2 = ct.crateTree(data2);
+        Node root2 = ct.createTree(data2);
         System.out.println(rightView(root2));
         int data3[] = { 10, 15, 25, -1, 45, 65, -1, -1, 96, -1, -1, -1, 11, 16, -1, -1, -1 };
         ct.idx = 0;
-        Node root3 = ct.crateTree(data3);
+        Node root3 = ct.createTree(data3);
         System.out.println(rightView(root3));
         int data4[] = { 10, 20, 40, -1, -1, 50, 70, 110, -1, -1, 111, -1, -1, 80, -1, -1, 30, -1, 60, -1, 90, 112, -1,
                 -1, 113, -1, -1 };
         ct.idx = 0;
-        Node root4 = ct.crateTree(data4);
+        Node root4 = ct.createTree(data4);
         System.out.println(rightView(root4));
     }
 }
