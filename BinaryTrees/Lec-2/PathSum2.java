@@ -38,12 +38,12 @@ public class PathSum2 {
     public static void main(String[] args) {
         ConstructTree ct = new ConstructTree();
         int data1[] = { 5, 4, 11, 7, -1, -1, 2, -1, -1, -1, 8, 13, -1, -1, 4, -1, 1, -1, -1 };
-        Node root1 = ct.crateTree(data1);
+        Node root1 = ct.createTree(data1);
         System.out.println(pathSum(root1, 22));
         int data2[] = { 2, 4, 8, 10, -1, -1, -1, 6, 8, 12, -1, -1, -1, -1, 16, 3, -1, 3, -1, -1, 1, -1, 2, -1, 3, -1,
                 -1 };
         ct.idx = 0;
-        Node root2 = ct.crateTree(data2);
+        Node root2 = ct.createTree(data2);
         System.out.println(pathSum(root2, 27));
     }
 }
