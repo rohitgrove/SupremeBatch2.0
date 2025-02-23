@@ -35,8 +35,19 @@ public class FindDuplicateSubtrees {
 
     public static void main(String[] args) {
         ConstructTree ct = new ConstructTree();
-        int data[] = { 1, 2, 4, -1, -1, -1, 2, 4, -1, -1, -1, 4, -1, -1 };
-        Node root = ct.createTree(data);
-        System.out.println(findDuplicateSubtrees(root));
+        int data1[] = { 1, 2, 4, -1, -1, -1, 2, 4, -1, -1, -1, 4, -1, -1 };
+        Node root1 = ct.createTree(data1);
+        List<Node> res = new ArrayList<>(findDuplicateSubtrees(root1));
+        for (Node node : res) {
+            ct.levelOrder(node);
+        }
+
+        int data2[] = { 2, 2, 3, -1, -1, -1, 2, 3, -1, -1, -1 };
+        ct.idx = 0;
+        Node root2 = ct.createTree(data2);
+        res = new ArrayList<>(findDuplicateSubtrees(root2));
+        for (Node node : res) {
+            ct.levelOrder(node);
+        }
     }
 }
