@@ -33,12 +33,10 @@ public class DeleteNodeFromBST {
                 root.left = deleteNode(root.left, maxNode.data);
                 return root;
             }
+        } else if (root.data > key) {
+            root.left = deleteNode(root.left, key);
         } else {
-            if (root.data > key) {
-                root.left = deleteNode(root.left, key);
-            } else {
-                root.right = deleteNode(root.right, key);
-            }
+            root.right = deleteNode(root.right, key);
         }
 
         return root;
