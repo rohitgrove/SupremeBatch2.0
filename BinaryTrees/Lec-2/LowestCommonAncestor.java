@@ -40,5 +40,6 @@ public class LowestCommonAncestor {
         ct.idx = 0;
         Node root3 = ct.createTree(data3);
         System.out.println(lowestCommonAncestor(root3, root3.left.left, root3.left.right.right).data);
+        System.out.println(lowestCommonAncestor(root3, root3.left.right.left.right, root3.left.right.right).data);
     }
 }
