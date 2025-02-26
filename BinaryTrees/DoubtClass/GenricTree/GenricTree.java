@@ -27,16 +27,15 @@ public class GenricTree {
 
         Queue<Node> q = new LinkedList<>();
         q.add(root);
-        q.add(null); // Using 'null' as a marker for the end of a level
+        q.add(null);
 
         while (!q.isEmpty()) {
-            Node front = q.poll(); // Retrieve and remove the head of the queue
+            Node front = q.poll();
 
             if (front == null) {
-                // End of a level
                 System.out.println();
                 if (!q.isEmpty()) {
-                    q.add(null); // Add marker for the next level
+                    q.add(null);
                 }
             } else {
                 System.out.print(front.data + " ");
