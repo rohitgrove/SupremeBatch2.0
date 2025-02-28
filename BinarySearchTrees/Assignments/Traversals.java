@@ -63,4 +63,30 @@ public class Traversals {
 
         System.out.println();
     }
+
+    public static void morrisTraversal(Node root) {
+        Node curr = root;
+
+        while (curr != null) {
+            if (curr.left == null) {
+                System.out.print(curr.data + " ");
+                curr = curr.right;
+            } else {
+                Node pred = curr.left;
+                while (pred.right != curr && pred.right != null) {
+                    pred = pred.right;
+                }
+
+                if (pred.right == null) {
+                    pred.right = curr;
+                    curr = curr.left;
+                } else {
+                    pred.right = null;
+                    System.out.print(curr.data + " ");
+                    curr = curr.right;
+                }
+            }
+        }
+        System.out.println();
+    }
 }
