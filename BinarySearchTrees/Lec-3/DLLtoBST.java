@@ -16,7 +16,7 @@ public class DLLtoBST {
         head[0] = head[0].right;
 
         ///R
-        Node rightSubtree = convertDLLtoBST(head, n - n / 2 - 1);
+        Node rightSubtree = convertDLLtoBST(head, n - (n / 2) - 1);
         root.right = rightSubtree;
         return root;
     }
