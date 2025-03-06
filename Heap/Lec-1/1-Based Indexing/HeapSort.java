@@ -7,6 +7,7 @@ public class HeapSort {
         if (leftIndex <= n && arr[leftIndex] > arr[largestKaIndex]) {
             largestKaIndex = leftIndex;
         }
+
         if (rightIndex <= n && arr[rightIndex] > arr[largestKaIndex]) {
             largestKaIndex = rightIndex;
         }
