@@ -32,11 +32,8 @@ public class LargestBSTInABT {
         currNodeKaAns.maxVal = Math.max(root.data, rightKaAns.maxVal);
         currNodeKaAns.minVal = Math.min(root.data, leftKaAns.minVal);
 
-        if (leftKaAns.validBST && rightKaAns.validBST && (root.data > leftKaAns.maxVal && root.data < rightKaAns.minVal)) {
-            currNodeKaAns.validBST = true;
-        } else {
-            currNodeKaAns.validBST = false;
-        }
+        currNodeKaAns.validBST = leftKaAns.validBST && rightKaAns.validBST
+                && (root.data > leftKaAns.maxVal && root.data < rightKaAns.minVal);
 
         if (currNodeKaAns.validBST) {
             ans[0] = Math.max(ans[0], currNodeKaAns.size);
