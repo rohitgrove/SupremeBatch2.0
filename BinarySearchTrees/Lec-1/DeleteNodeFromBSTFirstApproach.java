@@ -1,4 +1,4 @@
-// Explain in lecture
+// Explain in lecture by Love Babbar
 public class DeleteNodeFromBSTFirstApproach {
     public static Node maxValue(Node root) {
         if (root == null) {
