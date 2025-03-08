@@ -1,14 +1,14 @@
 // Explain in lecture by Love Bhaiya
-public class DeleteNodeFromBSTFirstApproach {
-    public static Node maxValue(Node root) {
+public class DeleteNodeFromBSTSecondApproach {
+    public static Node minValue(Node root) {
         if (root == null) {
             return null;
         }
 
         Node temp = root;
 
-        while (temp.right != null) {
-            temp = temp.right;
+        while (temp.left != null) {
+            temp = temp.left;
         }
 
         return temp;
@@ -25,7 +25,6 @@ public class DeleteNodeFromBSTFirstApproach {
         if (root.data == key) {
             // ab delete karenge
             // 4 cases
-
             if (root.left == null && root.right == null) {
                 // 1 case -> leaf node
                 return null;
@@ -39,13 +38,13 @@ public class DeleteNodeFromBSTFirstApproach {
                 return childSubtree;
             } else {
                 // 4 case -> left non null and right non null
-                // a -> left subtree ki max value lao
-                Node maxi = maxValue(root.left);
+                // a -> left subtree ki mini value lao
+                Node mini = minValue(root.right);
                 // replacement
-                root.data = maxi.data;
+                root.data = mini.data;
 
-                // delete maxi wali node
-                root.left = deleteNode(root.left, maxi.data);
+                // delete mini wali node
+                root.right = deleteNode(root.right, mini.data);
                 return root;
             }
         } else if (root.data > key) {

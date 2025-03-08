@@ -4,6 +4,7 @@ public class Main {
         // int data[] = { 50, 30, 60, 25, 40, 70, 80, 55 };
         // int data[] = { 100, 50, 30, 20, 40, 200, 150, 175, 300, 400 };
         int data[] = { 100, 50, 30, 90, 70, 95, 200, 300, 400 };
+        // int data[] = { 100, 50, 500, 40, 60, 400, 600, 300, 350, 310, 360 };
         Node root = ConstructTree.createBST(data);
         System.out.println("Level Oreder");
         Traversals.levelOrder(root);
@@ -36,6 +37,6 @@ public class Main {
             System.out.println("Not Found");
         }
 
-        Traversals.levelOrder(DeleteNodeFromBSTFirstApproach.deleteNode(root, 300));
+        Traversals.levelOrder(DeleteNodeFromBSTSecondApproach.deleteNode(root, 300));
     }
 }
