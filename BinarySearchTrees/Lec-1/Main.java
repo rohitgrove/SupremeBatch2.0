@@ -36,6 +36,6 @@ public class Main {
             System.out.println("Not Found");
         }
 
-        Traversals.levelOrder(DeleteNodeFromBST.deleteNode(root, 300));
+        Traversals.levelOrder(DeleteNodeFromBSTFirstApproach.deleteNode(root, 300));
     }
 }
