@@ -1,4 +1,3 @@
-// Explain in lecture by Love Bhaiya
 public class DeleteNodeFromBSTSecondApproach {
     public static Node minValue(Node root) {
         if (root == null) {
