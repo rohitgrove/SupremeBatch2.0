@@ -16,7 +16,7 @@ class NodeData {
 }
 
 public class LargestBSTInABT {
-    public static NodeData findLargestBST(Node root, int[] ans) {
+    static NodeData findLargestBST(Node root, int[] ans) {
         // base case
         if (root == null) {
             return new NodeData(0, Integer.MIN_VALUE, Integer.MAX_VALUE, true);
@@ -55,13 +55,16 @@ public class LargestBSTInABT {
         int data1[] = { 5, 2, 1, -1, -1, 3, -1, -1, 4, -1, -1 };
         Node root1 = ct.createTree(data1);
         Traversals.levelOrder(root1);
+        System.out.println(largestBst(root1));
         int data2[] = { 6, 7, -1, 2, -1, -1, 3, 2, -1, -1, 4, -1, -1 };
         ct.idx = 0;
         Node root2 = ct.createTree(data2);
         Traversals.levelOrder(root2);
+        System.out.println(largestBst(root2));
         int data3[] = { 50, 30, 5, -1, -1, 20, -1, -1, 60, 45, -1, -1, 70, 65, -1, -1, 80, -1, -1 };
         ct.idx = 0;
         Node root3 = ct.createTree(data3);
         Traversals.levelOrder(root3);
+        System.out.println(largestBst(root3));
     }
 }
