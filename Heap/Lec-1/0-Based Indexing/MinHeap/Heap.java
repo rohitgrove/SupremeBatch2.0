@@ -59,12 +59,12 @@ public class Heap {
             // find out karna h, sabse chota kon
             int smallestIndex = index;
             // check left child
-            if (leftIndex < size && arr[smallestIndex] > arr[leftIndex]) {
+            if (leftIndex <= size && arr[smallestIndex] > arr[leftIndex]) {
                 smallestIndex = leftIndex;
             }
 
             // check right child
-            if (rightIndex < size && arr[smallestIndex] > arr[rightIndex]) {
+            if (rightIndex <= size && arr[smallestIndex] > arr[rightIndex]) {
                 smallestIndex = rightIndex;
             }
 

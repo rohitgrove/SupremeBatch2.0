@@ -59,12 +59,12 @@ public class Heap {
             // find out karna h, sabse bada kon
             int largestIndex = index;
             // check left child
-            if (leftIndex < size && arr[largestIndex] < arr[leftIndex]) {
+            if (leftIndex <= size && arr[largestIndex] < arr[leftIndex]) {
                 largestIndex = leftIndex;
             }
 
             // check right child
-            if (rightIndex < size && arr[largestIndex] < arr[rightIndex]) {
+            if (rightIndex <= size && arr[largestIndex] < arr[rightIndex]) {
                 largestIndex = rightIndex;
             }
 
