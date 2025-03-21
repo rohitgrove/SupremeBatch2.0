@@ -1,36 +1,38 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class PermutaionOfArray {
-    public static List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> numsList = new ArrayList<>();
-        for (int num : nums) {
-            numsList.add(num);
-        }
+    public static void permute(int[] nums) {
         int index = 0;
-        solve(numsList, ans, index);
-        return ans;
+        solve(nums, index);
     }
 
-    public static void solve(List<Integer> nums, List<List<Integer>> ans, int index) {
-        if (index >= nums.size()) {
-            ans.add(new ArrayList<>(nums));
+    public static void solve(int nums[],  int index) {
+        if (index >= nums.length) {
+            printArr(nums);
             return;
         }
 
-        for (int i = index; i < nums.size(); i++) {
-            Collections.swap(nums, index, i);
-            solve(nums, ans, index + 1);
-            Collections.swap(nums, index, i);
+        for (int i = index; i < nums.length; i++) {
+            swap(nums, index, i);
+            solve(nums, index + 1);
+            swap(nums, index, i);
         }
+    }
+
+    public static void swap(int nums[], int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    public static void printArr(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        System.out.println();
     }
 
     public static void main(String[] args) {
         int nums1[] = { 1, 2, 3 };
-        System.out.println(permute(nums1));
-        int nums2[] = { 0, 1 };
-        System.out.println(permute(nums2));
+        permute(nums1);
     }
 }
