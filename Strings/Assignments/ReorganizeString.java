@@ -6,7 +6,7 @@ public class ReorganizeString {
         for (int i = 0; i < s.length(); i++) {
             hash[sArr[i] - 'a']++;
         } // tc: O(n)
-        
+
         // find the most frequent char
         char max_freq_char = ' ';
         int max_freq = Integer.MIN_VALUE;
