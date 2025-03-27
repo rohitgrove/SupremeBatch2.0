@@ -1,7 +1,7 @@
 public class Trie {
     TrieNode root;
 
-    public void insertionWord(TrieNode root, String word, int i) {
+    private void insertionWord(TrieNode root, String word, int i) {
         if (i >= word.length()) {
             root.isTerminal = true;
             return;
@@ -16,7 +16,7 @@ public class Trie {
         insertionWord(root.children[index], word, i + 1);
     }
 
-    public boolean searchWord(TrieNode root, String word, int i) {
+    private boolean searchWord(TrieNode root, String word, int i) {
         if (i >= word.length()) {
             return root.isTerminal;
         }
@@ -30,7 +30,7 @@ public class Trie {
         return false;
     }
 
-    public boolean startWithUtil(TrieNode root, String word, int i) {
+    private boolean startWithUtil(TrieNode root, String word, int i) {
         if (i >= word.length()) {
             return true;
         }
