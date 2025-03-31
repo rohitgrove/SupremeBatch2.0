@@ -62,6 +62,7 @@ public class LongestCommonSubsequence {
         return dp[0][0];
     }
 
+    // with loop changing
     public static int solveUsingTabulationSO(String text1, String text2) {
         int next[] = new int[text1.length() + 1];
         int curr[] = new int[text1.length() + 1];
