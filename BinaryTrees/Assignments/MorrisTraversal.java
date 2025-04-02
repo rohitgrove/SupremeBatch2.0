@@ -12,7 +12,7 @@ public class MorrisTraversal {
                 ans.add(curr.data);
                 curr = curr.right;
             }
-                // left node is NOT NULL
+            // left node is NOT NULL
             else {
                 // find inorder predecesoor
                 Node pred = curr.left;
@@ -53,5 +53,10 @@ public class MorrisTraversal {
         ct.idx = 0;
         Node root4 = ct.createTree(data4);
         System.out.println(morrisTraversal(root4));
+        int data5[] = { 6, -1, 8, -1, 29, 20, 5, 9, -1, 10, -1, 13, -1, -1, 17, -1, 19, -1, -1, 23, -1, 25, -1, -1, 32,
+                30, -1, -1, 35, 33, -1, -1, 39, -1, -1 };
+        ct.idx = 0;
+        Node root5 = ct.createTree(data5);
+        System.out.println(morrisTraversal(root5));
     }
 }
