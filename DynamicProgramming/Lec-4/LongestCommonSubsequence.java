@@ -122,8 +122,8 @@ public class LongestCommonSubsequence {
     }
 
     public static void main(String[] args) {
-        System.err.println(longestCommonSubsequence("abcde", "ace"));
-        System.err.println(longestCommonSubsequence("abc", "abc"));
-        System.err.println(longestCommonSubsequence("abc", "def"));
+        System.out.println(longestCommonSubsequence("abcde", "ace"));
+        System.out.println(longestCommonSubsequence("abc", "abc"));
+        System.out.println(longestCommonSubsequence("abc", "def"));
     }
 }
