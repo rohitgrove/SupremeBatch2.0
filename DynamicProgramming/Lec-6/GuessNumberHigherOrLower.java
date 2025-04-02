@@ -74,6 +74,6 @@ public class GuessNumberHigherOrLower {
     }
 
     public static void main(String[] args) {
-        System.err.println(getMoneyAmount(10));
+        System.out.println(getMoneyAmount(10));
     }
 }
