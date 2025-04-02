@@ -41,6 +41,7 @@ public class LCAOfBST {
             Node leftAns = lowestCommonAncestor2(root.left, p, q);
             return leftAns;
         }
+
         // case 2: p and q both comes in right subtree of root node
         if (p.data > root.data && q.data > root.data) {
             Node rightAns = lowestCommonAncestor2(root.right, p, q);
