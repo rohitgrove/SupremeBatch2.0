@@ -38,7 +38,7 @@ public class ConstructTreeUsingPostOrderAndInOrder {
     }
 
     public static Node constructTreeFromPostAndInorderTraversal(HashMap<Integer, Integer> valueToIndexMap,
-    int postOrder[], int inOrder[], int[] postIndex, int inOrderStart, int inOrderEnd, int size) {
+            int postOrder[], int inOrder[], int[] postIndex, int inOrderStart, int inOrderEnd, int size) {
         if (postIndex[0] < 0 || inOrderStart > inOrderEnd) {
             return null;
         }
@@ -49,19 +49,22 @@ public class ConstructTreeUsingPostOrderAndInOrder {
 
         int position = valueToIndexMap.get(element);
 
-        root.right = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inOrder, postIndex, position + 1, inOrderEnd, size);
-        root.left = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inOrder, postIndex, inOrderStart, position - 1, size);
+        root.right = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inOrder, postIndex,
+                position + 1, inOrderEnd, size);
+        root.left = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inOrder, postIndex,
+                inOrderStart, position - 1, size);
         return root;
     }
 
     public static Node buildTree(int[] postOrder, int[] inorder) {
         int size = postOrder.length;
-        int postIndex[] = {size - 1};
+        int postIndex[] = { size - 1 };
         int inorderStartIndex = 0;
         int inorderEndIndex = size - 1;
         HashMap<Integer, Integer> visitToIndex = new HashMap<>();
         createMapping(inorder, size, visitToIndex);
-        return constructTreeFromPostAndInorderTraversal(visitToIndex, postOrder, inorder, postIndex, inorderStartIndex, inorderEndIndex, size);
+        return constructTreeFromPostAndInorderTraversal(visitToIndex, postOrder, inorder, postIndex, inorderStartIndex,
+                inorderEndIndex, size);
     }
 
     public static void main(String[] args) {

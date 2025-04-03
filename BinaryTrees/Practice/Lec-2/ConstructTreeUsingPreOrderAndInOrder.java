@@ -38,7 +38,7 @@ public class ConstructTreeUsingPreOrderAndInOrder {
     }
 
     public static Node constructTreeFromPreAndPostOrder(int[] preOrder, int[] inorder, int[] preIndex,
-            int inorderStartIndex, int inorderEndIndex, int size,  HashMap<Integer, Integer> visitToIndex) {
+            int inorderStartIndex, int inorderEndIndex, int size, HashMap<Integer, Integer> visitToIndex) {
         if (preIndex[0] > size || inorderStartIndex > inorderEndIndex) {
             return null;
         }
@@ -49,8 +49,10 @@ public class ConstructTreeUsingPreOrderAndInOrder {
 
         int position = visitToIndex.get(element);
 
-        root.left = constructTreeFromPreAndPostOrder(preOrder, inorder, preIndex, inorderStartIndex, position - 1, size, visitToIndex);
-        root.right = constructTreeFromPreAndPostOrder(preOrder, inorder, preIndex, position + 1, inorderEndIndex, size, visitToIndex);
+        root.left = constructTreeFromPreAndPostOrder(preOrder, inorder, preIndex, inorderStartIndex, position - 1, size,
+                visitToIndex);
+        root.right = constructTreeFromPreAndPostOrder(preOrder, inorder, preIndex, position + 1, inorderEndIndex, size,
+                visitToIndex);
 
         return root;
     }
@@ -63,7 +65,8 @@ public class ConstructTreeUsingPreOrderAndInOrder {
         HashMap<Integer, Integer> visitToIndex = new HashMap<>();
         createMapping(inorder, size, visitToIndex);
 
-        return constructTreeFromPreAndPostOrder(preOrder, inorder, preIndex, inorderStartIndex, inorderEndIndex, size, visitToIndex);
+        return constructTreeFromPreAndPostOrder(preOrder, inorder, preIndex, inorderStartIndex, inorderEndIndex, size,
+                visitToIndex);
     }
 
     public static void main(String[] args) {
