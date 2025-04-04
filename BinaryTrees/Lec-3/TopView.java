@@ -7,6 +7,7 @@ import java.util.TreeMap;
 class Pair {
     public Node node;
     public int hd;
+
     public Pair(Node node, int hd) {
         this.node = node;
         this.hd = hd;
@@ -15,7 +16,7 @@ class Pair {
 
 public class TopView {
     public static List<Integer> topView(Node root) {
-        TreeMap<Integer,Integer> hdToNodeMap = new TreeMap<>();
+        TreeMap<Integer, Integer> hdToNodeMap = new TreeMap<>();
         Queue<Pair> q = new LinkedList<>();
         q.offer(new Pair(root, 0));
 
