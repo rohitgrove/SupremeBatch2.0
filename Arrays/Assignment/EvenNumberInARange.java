@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class EvenNumberInARange {
     public static ArrayList<Integer> solve(ArrayList<Integer> A, ArrayList<ArrayList<Integer>> B) {
         ArrayList<Integer> ans = new ArrayList<>();
@@ -18,7 +19,7 @@ public class EvenNumberInARange {
 
     public static ArrayList<Integer> solve2(ArrayList<Integer> A, ArrayList<ArrayList<Integer>> B) {
         ArrayList<Integer> ans = new ArrayList<>();
-        
+
         // Precompute the number of even numbers up to each index
         ArrayList<Integer> evenCountPrefix = new ArrayList<>();
         int count = 0;
@@ -28,12 +29,12 @@ public class EvenNumberInARange {
             }
             evenCountPrefix.add(count);
         }
-        
+
         // Process each query using the prefix array
         for (ArrayList<Integer> query : B) {
             int left = query.get(0);
             int right = query.get(1);
-            
+
             // Count of even numbers in the range [left, right]
             int evenCountInRange = evenCountPrefix.get(right) - (left > 0 ? evenCountPrefix.get(left - 1) : 0);
             ans.add(evenCountInRange);
