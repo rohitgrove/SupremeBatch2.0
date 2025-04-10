@@ -37,15 +37,15 @@ public class FirstReapeatingElement {
         int count[] = new int[maxi + 1];
 
         for (int i = 0; i < count.length; i++) {
-            count[arr[i]]++;    
-        }        
+            count[arr[i]]++;
+        }
 
         for (int i = 0; i < count.length; i++) {
             if (count[arr[i]] > 1) {
                 return i + 1;
             }
         }
-        
+
         return -1;
     }
 
