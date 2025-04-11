@@ -1,4 +1,3 @@
-
 public class ReplaceElementsWithLeastGreaterElementToItsRight {
     public static Node insert(Node root, int val, int[] succ) {
         if (root == null) {
