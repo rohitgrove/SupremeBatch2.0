@@ -1,5 +1,5 @@
 public class LongestPalindromeSubsequence {
-    public static int solveUsingTabulationSO(String text1, String text2) {
+    public static int solveUsingTabulationSO1(String text1, String text2) {
         int next[] = new int[text1.length() + 1];
         int curr[] = new int[text1.length() + 1];
 
@@ -20,10 +20,32 @@ public class LongestPalindromeSubsequence {
         return next[0];
     }
 
+    public static int solveUsingTabulationSO2(String text1, String text2) {
+        int nextRow[] = new int[text2.length() + 1];
+        int currRow[] = new int[text2.length() + 1];
+
+        for (int i_Index = text1.length() - 1; i_Index >= 0; i_Index--) {
+            for (int j_Index = text2.length() - 1; j_Index >= 0; j_Index--) {
+                int ans;
+                if (text1.charAt(i_Index) == text2.charAt(j_Index)) {
+                    ans = 1 + nextRow[j_Index + 1];
+                } else {
+                    ans = 0 + Math.max(currRow[j_Index + 1], nextRow[j_Index]);
+                }
+                currRow[j_Index] = ans;
+            }
+            // shifting
+            nextRow = currRow.clone();
+        }
+
+        return nextRow[0];
+    }
+
+
     public static int longestPalindromeSubseq(String s) {
         StringBuilder text2 = new StringBuilder(s);
         text2.reverse();
-        int ans = solveUsingTabulationSO(s, text2.toString());
+        int ans = solveUsingTabulationSO1(s, text2.toString());
         return ans;
     }
 
