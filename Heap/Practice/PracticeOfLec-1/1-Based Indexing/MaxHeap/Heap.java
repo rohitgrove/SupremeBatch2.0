@@ -15,14 +15,14 @@ public class Heap {
             throw new RuntimeException("Heap Overflow");
         }
         // size increase kar jayega
+        size++;
         int index = size;
         arr[index] = val;
-        size++;
 
         // take the val to its correct postion
-        while (index > 0) {
-            int parrentIndex = (index - 1) / 2;
-            if (arr[index] < arr[parrentIndex]) {
+        while (index > 1) {
+            int parrentIndex = index / 2;
+            if (arr[index] > arr[parrentIndex]) {
                 int temp = arr[index];
                 arr[index] = arr[parrentIndex];
                 arr[parrentIndex] = temp;
@@ -33,49 +33,44 @@ public class Heap {
         }
     }
 
-    public void printHeap() {
-        for (int i = 0; i < size; i++) {
+    public void printHeap() { // tc: O(logn)
+        for (int i = 1; i <= size; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
 
     public int deleteFromHeap() {
-        if (size == 0) {
-            throw new RuntimeException("Heap Underflow");
-        }
-        int answer = arr[0];
+        int answer = arr[1];
         // replacement
-        arr[0] = arr[size - 1];
+        arr[1] = arr[size];
         // last element ko delete uski original position
-        arr[size - 1] = 0;
-        size--;
+        arr[size--] = 0;
 
-        int index = 0;
+        int index = 1;
         while (index < size) {
-            int leftIndex = 2 * index + 1;
-            int rightIndex = 2 * index + 2;
+            int leftIndex = 2 * index;
+            int rightIndex = 2 * index + 1;
 
-            // find out karna h, sabse chota kon
-            int smallestIndex = index;
+            // find out karna h, sabse bada kon
+            int largestKaIndex = index;
             // check left child
-            if (leftIndex < size && arr[smallestIndex] > arr[leftIndex]) {
-                smallestIndex = leftIndex;
+            if (leftIndex <= size && arr[largestKaIndex] < arr[leftIndex]) {
+                largestKaIndex = leftIndex;
             }
 
-            // check right child
-            if (rightIndex < size && arr[smallestIndex] > arr[rightIndex]) {
-                smallestIndex = rightIndex;
+            if (rightIndex <= size && arr[largestKaIndex] < arr[rightIndex]) {
+                largestKaIndex = rightIndex;
             }
 
             // no change
-            if (index == smallestIndex) {
+            if (index == largestKaIndex) {
                 break;
             } else {
                 int temp = arr[index];
-                arr[index] = arr[smallestIndex];
-                arr[smallestIndex] = temp;
-                index = smallestIndex;
+                arr[index] = arr[largestKaIndex];
+                arr[largestKaIndex] = temp;
+                index = largestKaIndex;
             }
         }
 

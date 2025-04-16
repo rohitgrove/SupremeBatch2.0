@@ -15,9 +15,9 @@ public class Heap {
             throw new RuntimeException("Heap Overflow");
         }
         // size increase kar jayega
-        size++;
-        int index = size - 1;
+        int index = size;
         arr[index] = val;
+        size++;
 
         // take the val to its correct postion
         while (index > 0) {
@@ -59,12 +59,12 @@ public class Heap {
             // find out karna h, sabse bada kon
             int largestIndex = index;
             // check left child
-            if (leftIndex <= size && arr[largestIndex] < arr[leftIndex]) {
+            if (leftIndex < size && arr[largestIndex] < arr[leftIndex]) {
                 largestIndex = leftIndex;
             }
 
             // check right child
-            if (rightIndex <= size && arr[largestIndex] < arr[rightIndex]) {
+            if (rightIndex < size && arr[largestIndex] < arr[rightIndex]) {
                 largestIndex = rightIndex;
             }
 

@@ -6,23 +6,20 @@ public class Heap {
     public Heap(int capacity) {
         this.arr = new int[capacity];
         this.capacity = capacity;
-        // size = current number of element in heap
         this.size = 0;
     }
 
-    public void insert(int val) { // tc: O(logn)
+    public void insert(int val) {
         if (size == capacity) {
             throw new RuntimeException("Heap Overflow");
         }
-        // size increase kar jayega
         int index = size;
         arr[index] = val;
         size++;
 
-        // take the val to its correct postion
         while (index > 0) {
             int parrentIndex = (index - 1) / 2;
-            if (arr[index] < arr[parrentIndex]) {
+            if (arr[index] > arr[parrentIndex]) {
                 int temp = arr[index];
                 arr[index] = arr[parrentIndex];
                 arr[parrentIndex] = temp;
@@ -45,9 +42,7 @@ public class Heap {
             throw new RuntimeException("Heap Underflow");
         }
         int answer = arr[0];
-        // replacement
         arr[0] = arr[size - 1];
-        // last element ko delete uski original position
         arr[size - 1] = 0;
         size--;
 
@@ -56,26 +51,22 @@ public class Heap {
             int leftIndex = 2 * index + 1;
             int rightIndex = 2 * index + 2;
 
-            // find out karna h, sabse chota kon
-            int smallestIndex = index;
-            // check left child
-            if (leftIndex < size && arr[smallestIndex] > arr[leftIndex]) {
-                smallestIndex = leftIndex;
+            int largestIndex = index;
+            if (leftIndex < size && arr[largestIndex] < arr[leftIndex]) {
+                largestIndex = leftIndex;
             }
 
-            // check right child
-            if (rightIndex < size && arr[smallestIndex] > arr[rightIndex]) {
-                smallestIndex = rightIndex;
+            if (rightIndex < size && arr[largestIndex] < arr[rightIndex]) {
+                largestIndex = rightIndex;
             }
 
-            // no change
-            if (index == smallestIndex) {
+            if (index == largestIndex) {
                 break;
             } else {
                 int temp = arr[index];
-                arr[index] = arr[smallestIndex];
-                arr[smallestIndex] = temp;
-                index = smallestIndex;
+                arr[index] = arr[largestIndex];
+                arr[largestIndex] = temp;
+                index = largestIndex;
             }
         }
 
