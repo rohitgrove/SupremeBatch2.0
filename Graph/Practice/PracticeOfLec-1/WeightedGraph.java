@@ -17,6 +17,8 @@ public class WeightedGraph<T> {
     HashMap<T, List<Pair<T>>> adjList = new HashMap<>();
 
     public void addEdge(T u, T v, int wt, boolean direction) {
+        // direction = false -> undirected
+        // direction = true -> directed
         adjList.putIfAbsent(u, new ArrayList<>());
         if (direction) {
             adjList.get(u).add(new Pair<>(v, wt));
@@ -40,8 +42,11 @@ public class WeightedGraph<T> {
     }
 
     public void bfsTraversal(T src, HashMap<T, Boolean> visited) {
+        // adjList already data member me hai
+        // visited
+        // Queue
         Queue<T> q = new LinkedList<>();
-        q.add(src);
+        q.offer(src);
         visited.put(src, true);
 
         while (!q.isEmpty()) {
@@ -52,10 +57,11 @@ public class WeightedGraph<T> {
                 continue;
             }
 
+            // go to nbr
             for (Pair<T> nbr : adjList.get(frontNode)) {
                 T nbrData = nbr.data;
                 if (!visited.containsKey(nbrData)) {
-                    q.add(nbrData);
+                    q.offer(nbrData);
                     visited.put(nbrData, true);
                 }
             }

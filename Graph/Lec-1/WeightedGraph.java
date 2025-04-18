@@ -46,7 +46,7 @@ public class WeightedGraph<T> {
         // visited
         // Queue
         Queue<T> q = new LinkedList<>();
-        q.add(src);
+        q.offer(src);
         visited.put(src, true);
 
         while (!q.isEmpty()) {
@@ -61,7 +61,7 @@ public class WeightedGraph<T> {
             for (Pair<T> nbr : adjList.get(frontNode)) {
                 T nbrData = nbr.data;
                 if (!visited.containsKey(nbrData)) {
-                    q.add(nbrData);
+                    q.offer(nbrData);
                     visited.put(nbrData, true);
                 }
             }

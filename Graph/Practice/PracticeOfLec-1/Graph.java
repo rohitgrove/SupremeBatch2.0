@@ -31,7 +31,7 @@ public class Graph {
 
     public void bfsUtil(int src, HashMap<Integer, Boolean> visited) {
         Queue<Integer> q = new LinkedList<>();
-        q.add(src);
+        q.offer(src);
         visited.put(src, true);
 
         while (!q.isEmpty()) {
@@ -46,7 +46,7 @@ public class Graph {
             for (int nbr : adjList.get(frontNode)) {
                 int nbrData = nbr;
                 if (!visited.containsKey(nbrData)) {
-                    q.add(nbrData);
+                    q.offer(nbrData);
                     visited.put(nbrData, true);
                 }
             }
