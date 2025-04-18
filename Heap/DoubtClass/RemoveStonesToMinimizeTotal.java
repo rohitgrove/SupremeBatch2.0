@@ -5,11 +5,11 @@ public class RemoveStonesToMinimizeTotal {
     public static int minStoneSum(int[] piles, int k) {
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
-        for(int val : piles) {
+        for (int val : piles) {
             maxHeap.offer(val);
         }
 
-        while (k-- > 0) { 
+        while (k-- > 0) {
             int top = maxHeap.poll();
 
             top -= top / 2;
@@ -18,7 +18,7 @@ public class RemoveStonesToMinimizeTotal {
 
         int sum = 0;
 
-        while (!maxHeap.isEmpty()) { 
+        while (!maxHeap.isEmpty()) {
             sum += maxHeap.poll();
         }
 
