@@ -1,26 +1,26 @@
 public class HeapSort {
-    public static void heapify(int[] nums, int i, int n) {
+    public static void heapify(int[] nums, int index, int n) {
         while (true) {
-            int left = 2 * i + 1;
-            int right = 2 * i + 2;
-            int swapindex = i;
+            int left = 2 * index + 1;
+            int right = 2 * index + 2;
+            int largestindex = index;
 
-            if (left < n && nums[left] > nums[i]) {
-                swapindex = left;
+            if (left < n && nums[left] > nums[largestindex]) {
+                largestindex = left;
             }
 
-            if (right < n && nums[right] > nums[swapindex]) {
-                swapindex = right;
+            if (right < n && nums[right] > nums[largestindex]) {
+                largestindex = right;
             }
 
-            if (swapindex == i) {
+            if (largestindex == index) {
                 break;
             }
 
-            int temp = nums[i];
-            nums[i] = nums[swapindex];
-            nums[swapindex] = temp;
-            i = swapindex;
+            int temp = nums[index];
+            nums[index] = nums[largestindex];
+            nums[largestindex] = temp;
+            index = largestindex;
         }
     }
 
