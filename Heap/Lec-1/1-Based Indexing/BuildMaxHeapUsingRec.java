@@ -1,25 +1,25 @@
-public class BuildMinHeap {
+public class BuildMaxHeapUsingRec {
     public static void heapify(int[] arr, int n, int index) {
         int leftIndex = 2 * index;
         int rightIndex = 2 * index + 1;
-        int smallestKaIndex = index;
+        int largestKaIndex = index;
 
-        // teno me se min lao
-        if (leftIndex <= n && arr[leftIndex] < arr[smallestKaIndex]) {
-            smallestKaIndex = leftIndex;
+        // teno me se max lao
+        if (leftIndex <= n && arr[leftIndex] > arr[largestKaIndex]) {
+            largestKaIndex = leftIndex;
         }
 
-        if (rightIndex <= n && arr[rightIndex] < arr[smallestKaIndex]) {
-            smallestKaIndex = rightIndex;
+        if (rightIndex <= n && arr[rightIndex] > arr[largestKaIndex]) {
+            largestKaIndex = rightIndex;
         }
-        // after these 2 conditions largestKaIndex will be pointing towards smallest
+        // after these 2 conditions largestKaIndex will be pointing towards largest
         // elemnt among 3
-        if (index != smallestKaIndex) {
+        if (index != largestKaIndex) {
             int temp = arr[index];
-            arr[index] = arr[smallestKaIndex];
-            arr[smallestKaIndex] = temp;
+            arr[index] = arr[largestKaIndex];
+            arr[largestKaIndex] = temp;
             // ab recursion sambhal lega
-            index = smallestKaIndex;
+            index = largestKaIndex;
             heapify(arr, n, index);
         }
     }

@@ -1,4 +1,4 @@
-public class HeapSort {
+public class HeapSortUsingItr {
     public static void heapify(int[] nums, int index, int n) {
         while (true) {
             int left = 2 * index + 1;
@@ -25,7 +25,7 @@ public class HeapSort {
     }
 
     public static void buildHeap(int[] nums, int n) {
-        for (int i = (n / 2) - 1; i >= 0; --i) {
+        for (int i = n / 2; i >= 0; --i) {
             heapify(nums, i, n);
         }
     }
@@ -42,12 +42,6 @@ public class HeapSort {
         }
     }
 
-    public static int[] sortArray(int[] nums) {
-        buildHeap(nums, nums.length);
-        heapSort(nums);
-        return nums;
-    }
-
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -56,7 +50,12 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int nums[] = { 5, 2, 3, 1 };
-        printArr(sortArray(nums));
+        int arr[] = { 5, 10, 15, 20, 25, 12 };
+        System.out.println("Before Sort: ");
+        printArr(arr);
+        buildHeap(arr, arr.length);
+        heapSort(arr);
+        System.out.println("After Sort: ");
+        printArr(arr);
     }
 }

@@ -1,7 +1,7 @@
-public class BuildMinHeap {
+public class BuildMinHeapUsingRec {
     public static void heapify(int[] arr, int n, int index) {
-        int leftIndex = 2 * index + 1;
-        int rightIndex = 2 * index + 2;
+        int leftIndex = 2 * index;
+        int rightIndex = 2 * index + 1;
         int smallestKaIndex = index;
 
         // teno me se min lao
@@ -25,20 +25,20 @@ public class BuildMinHeap {
     }
 
     public static void buildHeap(int arr[], int n) {
-        for (int index = n / 2; index >= 0; index--) {
+        for (int index = n / 2; index > 0; index--) {
             heapify(arr, n, index);
         }
     }
 
     public static void printArr(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        int arr[] = { 5, 10, 15, 20, 25, 12 };
+        int arr[] = { -1, 5, 10, 15, 20, 25, 12 };
         System.out.println("Before heapify: ");
         printArr(arr);
         buildHeap(arr, arr.length - 1);
