@@ -3,11 +3,12 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) {
         // Graph g = new Graph();
-        // g.addEdge(0, 1, false);
+        // g.addEdge(0, 0, false);
         // g.addEdge(1, 2, false);
         // g.addEdge(1, 3, false);
         // g.addEdge(2, 3, false);
         // g.printAdjList();
+        // g.dfsTraversal(0, 3);
 
         // WeightedGraph<Character> g = new WeightedGraph<>();
         // g.addEdge('a', 'b', 5, false);
@@ -45,7 +46,7 @@ public class Main {
 
         for (char node = 'a'; node <= 'f'; node++) {
             if (!visited.containsKey(node)) {
-                g.bfsTraversal(node, visited);
+                g.dfsTraversal(node, visited);
             }
         }
     }
