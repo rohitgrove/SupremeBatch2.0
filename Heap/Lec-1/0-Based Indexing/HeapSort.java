@@ -45,7 +45,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = {5, 10, 15, 20, 25, 12 };
+        int arr[] = { 5, 10, 15, 20, 25, 12 };
         System.out.println("Before Sort: ");
         printArr(arr);
         buildHeap(arr, arr.length - 1);
