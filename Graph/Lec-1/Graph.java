@@ -35,7 +35,7 @@ public class Graph {
         visited.put(src, true);
 
         while (!q.isEmpty()) {
-            Integer frontNode = q.poll();
+            int frontNode = q.poll();
             System.out.print(frontNode + " ");
 
             if (!adjList.containsKey(frontNode)) {

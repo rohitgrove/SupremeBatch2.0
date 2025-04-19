@@ -42,7 +42,6 @@ public class Graph {
                 continue;
             }
 
-            // go to nbr
             for (int nbr : adjList.get(frontNode)) {
                 int nbrData = nbr;
                 if (!visited.containsKey(nbrData)) {
