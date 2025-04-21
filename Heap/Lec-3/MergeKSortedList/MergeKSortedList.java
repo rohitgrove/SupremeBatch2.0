@@ -63,8 +63,25 @@ public class MergeKSortedList {
         Node head3 = new Node(2);
         head3.next = new Node(6);
 
-        Node lists[] = { head1, head2, head3 };
+        Node lists1[] = { head1, head2, head3 };
 
-        printList(mergeKLists(lists));
+        printList(mergeKLists(lists1));
+
+        Node head4 = new Node(1);
+        head4.next = new Node(4);
+        head4.next.next = new Node(7);
+        head4.next.next.next  = new Node(10);
+
+        Node head5 = new Node(2);
+        head5.next = new Node(5);
+
+        Node head6 = new Node(3);
+        head6.next = new Node(6);
+        head6.next.next = new Node(8);
+        head6.next.next.next = new Node(9);
+        head6.next.next.next.next = new Node(11);
+
+        Node lists2[] = { head4, head5, head6 };
+        printList(mergeKLists(lists2));
     }
 }
