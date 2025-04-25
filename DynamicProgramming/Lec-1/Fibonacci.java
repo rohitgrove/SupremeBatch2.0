@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Fibonacci {
     public static int solveUsingRec(int n) {
         // base case
@@ -60,7 +58,7 @@ public class Fibonacci {
 
     public static int solveUsingTabulationSpaceOptimization(int n) {
         if (n == 0 || n == 1) {
-            return 0;
+            return n;
         }
         int prev = 0;
         int curr = 1;
