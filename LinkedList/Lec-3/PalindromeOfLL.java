@@ -28,7 +28,7 @@ public class PalindromeOfLL {
     public static boolean compareList(Node head1, Node head2) {
         Node temp1 = head1;
         Node temp2 = head2;
-        while (temp1 != null & temp2 != null) {
+        while (temp1 != null && temp2 != null) {
             if (temp1.data != temp2.data) {
                 return false;
             }
