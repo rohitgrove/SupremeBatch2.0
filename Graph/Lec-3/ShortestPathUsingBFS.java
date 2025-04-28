@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class ShortestPath {
+public class ShortestPathUsingBFS {
     public static HashMap<Integer, List<Integer>> adjList = new HashMap<>();
 
     public static void shortestPath(int src, int dest) {
