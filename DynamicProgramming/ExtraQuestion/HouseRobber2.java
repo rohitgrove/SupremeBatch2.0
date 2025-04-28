@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class HouseRobber2 {
     public static int solveUsingRec(int nums[], int start, int end) {
         // base case
@@ -78,7 +76,7 @@ public class HouseRobber2 {
         // Calculate for first house included, last excluded
         int prev2_1 = nums[0];
         int prev1_1 = Math.max(nums[0], nums[1]);
-        int current_1 = 0;
+        int current_1;
         for (int i = 2; i < n - 1; i++) {
             current_1 = Math.max(prev1_1, prev2_1 + nums[i]);
             prev2_1 = prev1_1;
