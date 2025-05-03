@@ -17,7 +17,7 @@ public class BridgInAGraph {
                 continue;
             }
             if (!visited.containsKey(nbr)) {
-                // stemp1
+                // step1
                 criticalConnectionsHelper(nbr, src, adjList, timer, ans, tin, low, visited);
                 // low update
                 low[src] = Math.min(low[src], low[nbr]);
