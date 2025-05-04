@@ -1,4 +1,3 @@
-
 public class KnapsackWithDuplicateItems {
     public static int solveUsingRec(int capacity, int profit[], int wt[], int index, int n) {
         // base case
