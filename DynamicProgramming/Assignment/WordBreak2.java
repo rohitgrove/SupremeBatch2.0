@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.HashMap;
 
 public class WordBreak2 {
     public static List<String> solveUsingRecursion(String s, HashMap<String, Boolean> dict, int i) {
