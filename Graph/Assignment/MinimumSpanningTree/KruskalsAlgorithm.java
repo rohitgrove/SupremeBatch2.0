@@ -9,7 +9,7 @@ public class KruskalsAlgorithm {
             return node;
         }
 
-        return parent[node] = findParent(parent, parent[node]);
+        return parent[node] = findParent(parent, parent[node]); // path compression
     }
 
     public static void unionSet(int u, int v, int parent[], int rank[]) {

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PrimsAlgorithm {
+public class PrimesAlgorithm {
     public static int getMinValueNode(int[] key, boolean mst[]) {
         int temp = Integer.MAX_VALUE;
         int index = -1; // rep. actual having min value
@@ -66,11 +66,11 @@ public class PrimsAlgorithm {
     }
 
     public static void main(String[] args) {
-        int V1 = 3;
-        int E1 = 3;
+        int V = 3;
+        int E = 3;
 
         List<List<int[]>> adj = new ArrayList<>();
-        for (int i = 0; i < V1; i++) {
+        for (int i = 0; i < V; i++) {
             adj.add(new ArrayList<>());
         }
 
@@ -84,7 +84,7 @@ public class PrimsAlgorithm {
         adj.get(0).add(new int[] { 2, 1 }); // Edge from node 0 to 2 with weight 1
         adj.get(2).add(new int[] { 0, 1 }); // Edge from node 2 to 0 with weight 1
 
-        int result = spanningTree(V1, E1, adj);
+        int result = spanningTree(V, E, adj);
 
         System.out.println("The sum of weights of the Minimum Spanning Tree is: " + result);
 
@@ -109,24 +109,23 @@ public class PrimsAlgorithm {
             adj3.add(new ArrayList<>());
         }
 
-        // Adding edges: {source, destination, weight}
-        adj3.get(0).add(new int[] { 1, 2 }); // Edge from node 0 to 1 with weight 2
-        adj3.get(1).add(new int[] { 0, 2 }); // Edge from node 1 to 0 with weight 2
+        adj3.get(0).add(new int[] { 1, 2 });
+        adj3.get(1).add(new int[] { 0, 2 });
 
-        adj3.get(0).add(new int[] { 3, 6 }); // Edge from node 0 to 3 with weight 6
-        adj3.get(3).add(new int[] { 0, 6 }); // Edge from node 3 to 0 with weight 6
+        adj3.get(0).add(new int[] { 3, 6 });
+        adj3.get(3).add(new int[] { 0, 6 });
 
-        adj3.get(3).add(new int[] { 1, 8 }); // Edge from node 1 to 3 with weight 8
-        adj3.get(1).add(new int[] { 3, 8 }); // Edge from node 3 to 1 with weight 8
+        adj3.get(3).add(new int[] { 1, 8 });
+        adj3.get(1).add(new int[] { 3, 8 });
 
-        adj3.get(1).add(new int[] { 4, 5 }); // Edge from node 1 to 4 with weight 5
-        adj3.get(4).add(new int[] { 1, 5 }); // Edge from node 4 to 1 with weight 5
+        adj3.get(1).add(new int[] { 4, 5 });
+        adj3.get(4).add(new int[] { 1, 5 });
 
-        adj3.get(1).add(new int[] { 2, 3 }); // Edge from node 1 to 2 with weight 3
-        adj3.get(2).add(new int[] { 1, 3 }); // Edge from node 2 to 1 with weight 3
+        adj3.get(1).add(new int[] { 2, 3 });
+        adj3.get(2).add(new int[] { 1, 3 });
 
-        adj3.get(2).add(new int[] { 4, 7 }); // Edge from node 2 to 4 with weight 7
-        adj3.get(4).add(new int[] { 2, 7 }); // Edge from node 4 to 2 with weight 7
+        adj3.get(2).add(new int[] { 4, 7 });
+        adj3.get(4).add(new int[] { 2, 7 });
 
         int result3 = spanningTree(V3, V3, adj3);
         System.out.println("The sum of weights of the Minimum Spanning Tree is: " + result3);
