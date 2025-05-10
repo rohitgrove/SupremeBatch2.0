@@ -10,7 +10,7 @@ public class ValidParentheses {
                 st.push(ch);
             } else {
                 // clossing bracket
-                if (!st.empty()) {
+                if (!st.isEmpty()) {
                     if (ch == ')' && st.peek() == '(') {
                         st.pop();
                     } else if (ch == '}' && st.peek() == '{') {
