@@ -22,7 +22,10 @@ public class ValidParentheses {
                         return false;
                     }
                 } else {
-                    // no match
+                    // Hidden test cases
+                    // single element string jo ek
+                    // close bracket "]" "}" ")" contain karti ho
+                    // jiska mtlb hamesha invalid parathese honge
                     return false;
                 }
             }
