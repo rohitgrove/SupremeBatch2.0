@@ -15,7 +15,7 @@ public class RightSideView {
             if (front == null) {
                 if (!q.isEmpty()) {
                     ans.add(q.peek().data);
-                    q.add(null);
+                    q.offer(null);
                 }
             } else {
                 if (front.right != null) {
@@ -29,7 +29,7 @@ public class RightSideView {
         }
     }
 
-    public static void rightViewREC(Node root, int level,List<Integer> ans) {
+    public static void rightViewREC(Node root, int level, List<Integer> ans) {
         if (root == null) {
             return;
         }
@@ -44,6 +44,9 @@ public class RightSideView {
 
     public static List<Integer> rightView(Node root) {
         List<Integer> ans = new ArrayList<>();
+        if(root == null) {
+            return ans;
+        }
         rightViewUsingLevelOrder(root, ans);
         return ans;
     }

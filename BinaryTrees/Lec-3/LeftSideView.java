@@ -45,6 +45,9 @@ public class LeftSideView {
 
     public static List<Integer> leftView(Node root) {
         List<Integer> leftView = new ArrayList<>();
+        if (root == null) {
+            return leftView;
+        }
         leftViewREC(root, 0, leftView);
         return leftView;
     }

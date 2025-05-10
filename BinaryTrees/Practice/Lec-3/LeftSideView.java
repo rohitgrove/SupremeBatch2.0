@@ -15,7 +15,7 @@ public class LeftSideView {
             if (front == null) {
                 if (!q.isEmpty()) {
                     ans.add(q.peek().data);
-                    q.add(null);
+                    q.offer(null);
                 }
             } else {
                 if (front.left != null) {
@@ -29,7 +29,7 @@ public class LeftSideView {
         }
     }
 
-    public static void leftViewREC(Node root, int level,List<Integer> ans) {
+    public static void leftViewREC(Node root, int level, List<Integer> ans) {
         if (root == null) {
             return;
         }
@@ -44,6 +44,9 @@ public class LeftSideView {
 
     public static List<Integer> leftView(Node root) {
         List<Integer> ans = new ArrayList<>();
+        if(root == null) {
+            return ans;
+        }
         leftViewREC(root, 0, ans);
         return ans;
     }

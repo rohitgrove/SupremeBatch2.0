@@ -45,6 +45,9 @@ public class RightSideView {
 
     public static List<Integer> rightView(Node root) {
         List<Integer> rightView = new ArrayList<>();
+        if (root == null) {
+            return rightView;
+        }
         rightViewREC(root, 0, rightView);
         return rightView;
     }
