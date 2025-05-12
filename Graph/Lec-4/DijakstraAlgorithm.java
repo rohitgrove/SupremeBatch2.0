@@ -13,7 +13,7 @@ public class DijakstraAlgorithm {
 
         PriorityQueue<Pair> minHeap = new PriorityQueue<>((a, b) -> a.dist - b.dist);
         // intial state -> {src, 0};
-        minHeap.add(new Pair(src, 0));
+        minHeap.offer(new Pair(src, 0));
 
         // distance updation logic
         while (!minHeap.isEmpty()) {
@@ -31,7 +31,7 @@ public class DijakstraAlgorithm {
                 int nbrDistance = nbr.dist;
                 if (nbrDistance + srcDistance < dist[nbrNode]) {
                     dist[nbrNode] = nbrDistance + srcDistance;
-                    minHeap.add(new Pair(nbrNode, nbrDistance + srcDistance));
+                    minHeap.offer(new Pair(nbrNode, nbrDistance + srcDistance));
                 }
             }
         }
