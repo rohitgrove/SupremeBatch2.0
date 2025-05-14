@@ -27,7 +27,7 @@ public class Graph {
         System.out.println();
     }
 
-    public void bfsUtil(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
+    private void bfsUtil(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
         Queue<Integer> q = new LinkedList<>();
         q.offer(src);
         visited.put(src, true);
@@ -60,7 +60,7 @@ public class Graph {
         }
     }
 
-    public void dfsUtil(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
+    private void dfsUtil(int src, HashMap<Integer, Boolean> visited, HashMap<Integer, List<Integer>> adjList) {
         visited.put(src, true);
         System.out.print(src + " ");
 
