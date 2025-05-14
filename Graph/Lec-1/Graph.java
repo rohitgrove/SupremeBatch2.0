@@ -18,7 +18,7 @@ public class Graph {
         }
     }
 
-    public void printAdj() {
+    public void printAdjList() {
         for (int src : adjList.keySet()) {
             System.out.print(src + "-> {");
             for (int neighbour : adjList.get(src)) {
