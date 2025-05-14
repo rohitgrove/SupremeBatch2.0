@@ -11,7 +11,7 @@ public class UndirectedGraphCycleDetectionUsingBFS {
         HashMap<Integer, Integer> parent = new HashMap<>();
 
         // Initial state
-        q.add(src);
+        q.offer(src);
         visited.put(src, true);
         parent.put(src, -1);
 
@@ -24,7 +24,7 @@ public class UndirectedGraphCycleDetectionUsingBFS {
                 }
 
                 if (!visited.containsKey(nbr)) {
-                    q.add(nbr);
+                    q.offer(nbr);
                     visited.put(nbr, true);
                     parent.put(nbr, frontNode);
                 } else if (visited.get(nbr)) {
