@@ -1,6 +1,31 @@
 public class GasStation {
     public static int bruteForceApproach(int gas[], int cost[]) {
-        
+        int size = cost.length;
+        for (int start = 0; start < size; start++) {
+            int rear = start;
+            boolean canCompleteCircuit = true;
+            int balance = 0;
+
+            for (int count = 0; count < size; count++) {
+                balance += gas[rear] - cost[rear];
+                if (balance < 0) {
+                    canCompleteCircuit = false;
+                    break;
+                }
+
+                if ((rear + 1) == size) {
+                    rear = 0;
+                } else {
+                    rear++;
+                }
+            }
+
+            if (canCompleteCircuit) {
+                return start;
+            }
+        }
+
+        return -1;
     }
 
     public static int optimizedApproach(int gas[], int cost[]) {
