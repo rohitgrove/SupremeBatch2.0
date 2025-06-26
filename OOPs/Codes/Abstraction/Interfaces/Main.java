@@ -1,14 +1,16 @@
 interface Bird {
     void fly();
+
     void eat();
 
-    default void sleep(){
+    default void sleep() {
         System.out.println("Bird sleep");
     }
 }
 
-interface Walk{
+interface Walk {
     int legs = 4;
+
     void walking();
 }
 
@@ -38,6 +40,7 @@ class Crow implements Bird {
     public void fly() {
         System.out.println("Crow flying");
     }
+
     @Override
     public void eat() {
         System.out.println("Crow eating");
@@ -45,7 +48,7 @@ class Crow implements Bird {
 }
 
 public class Main {
-    public static void doBirdStuff(Bird b){
+    public static void doBirdStuff(Bird b) {
         b.eat();
         b.fly();
         b.eat();
@@ -69,4 +72,3 @@ public class Main {
         doBirdStuff(new Crow());
     }
 }
-
