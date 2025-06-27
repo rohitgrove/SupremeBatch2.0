@@ -2,7 +2,6 @@ import java.util.HashSet;
 
 public class HashSetBasics {
     public static void main(String[] args) {
-
         HashSet<Student> set = new HashSet<>();
 
         Student s1 = new Student(1, "Babbar");
@@ -53,5 +52,4 @@ public class HashSetBasics {
         //
         // System.out.println(st);
     }
-
 }
