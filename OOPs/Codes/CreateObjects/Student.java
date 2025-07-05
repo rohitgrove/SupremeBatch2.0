@@ -5,12 +5,12 @@ public class Student {
     public String name;
     public int nos;
 
-    // Defualt ctor
+    // Default ctor // attr, -> garbage
     public Student() {
         System.out.println("Student Default ctor Called");
     }
 
-    // parameterised ctor
+    // Parameterised ctor
     public Student(int id, int age, String name, int nos) {
         System.out.println("Student Parameterised ctor Called");
         this.id = id;
@@ -19,8 +19,8 @@ public class Student {
         this.nos = nos;
     }
 
-    // copy ctor
-    public Student(Student srcobj) {
+    // Copy ctor
+    public Student(Student srcobj) { // srcobj -> A
         System.out.println("Student Copy ctor Called");
         this.id = srcobj.id;
         this.age = srcobj.age;
@@ -28,7 +28,7 @@ public class Student {
         this.nos = srcobj.nos;
     }
 
-    // Methods / Behaviors
+    // Methods / Behaviours
     public void study() {
         System.out.println(name + " Studying");
     }
