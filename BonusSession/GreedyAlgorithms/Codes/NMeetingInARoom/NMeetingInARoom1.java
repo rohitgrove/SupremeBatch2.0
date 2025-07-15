@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class NMeetingInARoom {
+public class NMeetingInARoom1 {
     public static int maxMeetings(int start[], int end[]) {
         int n = end.length;
         int time[][] = new int[start.length][2];
