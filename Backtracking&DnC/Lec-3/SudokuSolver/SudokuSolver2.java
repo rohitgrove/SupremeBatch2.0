@@ -1,59 +1,61 @@
-public class SudokuSolver {
-    public static boolean isSafe(char[][] board, int row, int col, char value) {
-        for (int i = 0; i < board.length; i++) {
+public class SudokuSolver2 {
+    public static boolean isSafe(int row, int col, char value, char[][] board) {
+        int n = board.length;
+
+        for (int i = 0; i < n; i++) {
+            // row check
             if (board[row][i] == value) {
                 return false;
             }
-        }
 
-        for (int i = 0; i < board.length; i++) {
+            // col check
             if (board[i][col] == value) {
+                return false;
+            }
+
+            // 3*3 box check
+            if (board[3 * (row / 3) + (i / 3)][3 * (col / 3) + (i % 3)] == value) {
                 return false;
             }
         }
 
-        int r = (row / 3) * 3;
-        int c = (col / 3) * 3;
-        for (int i = r; i < r + 3; i++) {
-            for (int j = c; j < c + 3; j++) {
-                if (board[i][j] == value) {
-                    return false;
-                }
-            }
-        }
         return true;
     }
 
-    public static boolean solveHelper(char board[][]) {
-        for (int r = 0; r < board.length; r++) {
-            for (int c = 0; c < board.length; c++) {
-                if (board[r][c] == '.') {
-                    for (char value = '1'; value <= '9'; value++) {
-                        if (isSafe(board, r, c, value)) {
-                            board[r][c] = value;
+    public static boolean solveSudokuHelper(char[][] board) {
+        int n = board.length;
 
-                            if (solveHelper(board)) {
+        for (int r = 0; r < n; r++) {
+            for (int c = 0; c < n; c++) {
+                if (board[r][c] == '.') {
+                    for (char ch = '1'; ch <= '9'; ch++) {
+                        if (isSafe(r, c, ch, board)) {
+                            board[r][c] = ch;
+
+                            if (solveSudokuHelper(board)) {
                                 return true;
                             } else {
                                 board[r][c] = '.';
                             }
                         }
                     }
+
                     return false;
                 }
             }
         }
+
         return true;
     }
 
     public static void solveSudoku(char[][] board) {
-        solveHelper(board);
+        solveSudokuHelper(board);
     }
 
     public static void printArr(char[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                System.out.print(board[i][j] + " ");
+        for (char[] row : board) {
+            for (char ele : row) {
+                System.out.print(ele + " ");
             }
             System.out.println();
         }
@@ -70,8 +72,10 @@ public class SudokuSolver {
                 { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
                 { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
                 { '.', '.', '.', '.', '8', '.', '.', '7', '9' } };
+        System.out.println("Before Solving");
         printArr(board);
         solveSudoku(board);
+        System.out.println("After Solving");
         printArr(board);
     }
 }
