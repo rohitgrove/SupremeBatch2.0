@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FindAndReplacePattern {
     // this function normalises all the words and pattern into a similar format
@@ -22,9 +22,10 @@ public class FindAndReplacePattern {
             str.setCharAt(i, mapping[ch]);
         }
     }
+
     public static List<String> findAndReplacePattern(String[] words, String pattern) {
         List<String> ans = new ArrayList<>();
-        // firstly normalise the pattern 
+        // firstly normalise the pattern
         StringBuilder Pattern = new StringBuilder(pattern);
         createMapping(Pattern);
         pattern = Pattern.toString();

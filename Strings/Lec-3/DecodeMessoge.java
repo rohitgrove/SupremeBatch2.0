@@ -24,7 +24,7 @@ public class DecodeMessoge {
                 ans.append(decodeChar);
             }
         }
-        
+
         return String.valueOf(ans);
     }
 

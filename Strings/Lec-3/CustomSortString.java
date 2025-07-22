@@ -8,7 +8,7 @@ public class CustomSortString {
     static class Custom implements Comparator<Character> {
         @Override
         public int compare(Character o1, Character o2) {
-            return str.indexOf(o1) - str.indexOf(o2);   
+            return str.indexOf(o1) - str.indexOf(o2);
         }
     }
 

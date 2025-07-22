@@ -3,7 +3,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
         int pickP = 0;
         int pickM = 0;
         int pickG = 0;
-        
+
         int travelP = 0;
         int travelM = 0;
         int travelG = 0;
@@ -39,7 +39,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
         for (int i = 0; i < lastG; i++) {
             travelG += travel[i];
         }
-        
+
         for (int i = 0; i < lastM; i++) {
             travelM += travel[i];
         }
