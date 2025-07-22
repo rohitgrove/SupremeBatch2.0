@@ -25,7 +25,7 @@ public class DecodeMessoge {
             }
         }
 
-        return String.valueOf(ans);
+        return ans.toString();
     }
 
     public static void main(String[] args) {
