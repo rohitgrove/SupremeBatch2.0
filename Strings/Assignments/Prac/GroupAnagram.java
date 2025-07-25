@@ -12,7 +12,7 @@ public class GroupAnagram {
             Arrays.sort(sArr);
             String s = String.valueOf(sArr);
             mp.putIfAbsent(s, new ArrayList<>());
-            
+
             mp.get(s).add(str);
         }
 
@@ -31,7 +31,7 @@ public class GroupAnagram {
 
     public static List<List<String>> groupAnagramsM2(String[] strs) {
         HashMap<String, List<String>> mp = new HashMap<>();
-        
+
         for (String str : strs) {
             String s = Arrays.toString(hash(str));
             mp.putIfAbsent(s, new ArrayList<>());
@@ -43,7 +43,7 @@ public class GroupAnagram {
     }
 
     public static void main(String[] args) {
-        String strs[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        System.out.println(groupAnagramsM2(strs));
+        String strs[] = { "eat", "tea", "tan", "ate", "nat", "bat" };
+        System.out.println(groupAnagramsM1(strs));
     }
 }
