@@ -14,7 +14,6 @@ public class CountZeroAndOne {
 
         System.out.println("ZeroCount: " + zeroCount);
         System.out.println("oneCOunt: " + oneCount);
-
     }
 
     public static void main(String[] args) {
