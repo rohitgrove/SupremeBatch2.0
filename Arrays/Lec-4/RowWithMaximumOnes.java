@@ -21,7 +21,6 @@ public class RowWithMaximumOnes {
                 oneCount = count;
                 rowNo = i;
             }
-
         }
 
         ans[0] = rowNo;
