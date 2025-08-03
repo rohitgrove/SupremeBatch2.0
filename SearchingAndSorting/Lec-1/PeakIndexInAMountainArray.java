@@ -26,9 +26,9 @@ public class PeakIndexInAMountainArray {
 
         while (s <= e) {
             int mid = s + (e - s) / 2;
-            if (nums[mid] < nums[mid + 1]) {
+            if (mid + 1 < nums.length && nums[mid] < nums[mid + 1]) {
                 s = mid + 1;
-            } else if (nums[mid] < nums[mid - 1]) {
+            } else if (mid - 1 >= 0 && nums[mid] < nums[mid - 1]) {
                 e = mid - 1;
             } else {
                 // It must be Peak
