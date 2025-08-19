@@ -3,7 +3,7 @@ import java.util.Stack;
 public class ReverseAStack {
     public static void insertAtBottom(Stack<Integer> st, int data) {
         if (st.isEmpty()) {
-            st.add(data);
+            st.push(data);
             return;
         }
 
