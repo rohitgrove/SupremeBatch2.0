@@ -1,4 +1,4 @@
-public class PivotIndex {
+public class FindPivotIndex {
     public static int bruteForce(int[] nums) {
         for (int i = 0; i < nums.length; i++) { // tc: O(n2) sc: O(1)
             int lSum = 0;
