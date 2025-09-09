@@ -7,7 +7,7 @@ public class Prata {
             while (true) {
                 if (timeTaken + j * R <= mid) {
                     currP++;
-                    timeTaken += j*R;
+                    timeTaken += j * R;
                     j++;
                 } else {
                     break;
