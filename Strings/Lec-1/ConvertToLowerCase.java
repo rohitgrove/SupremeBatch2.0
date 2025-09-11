@@ -7,7 +7,7 @@ public class ConvertToLowerCase {
                 str.setCharAt(index, (char) (currCharacter - 'A' + 'a'));
             }
             index++;
-        }    
+        }
     }
 
     public static void convertToLowerCase2(StringBuilder str) {
