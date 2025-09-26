@@ -36,9 +36,9 @@ public class PivotIndex {
                 return s;
             }
 
-            if (nums[mid] < nums[mid - 1]) {
+            if (mid < nums.length && nums[mid] < nums[mid - 1]) {
                 return mid;
-            } else if (nums[mid] > nums[mid + 1]) {
+            } else if (mid >= 0 && nums[mid] > nums[mid + 1]) {
                 return mid + 1;
             } else if (nums[s] > nums[mid]) {
                 e = mid - 1;
