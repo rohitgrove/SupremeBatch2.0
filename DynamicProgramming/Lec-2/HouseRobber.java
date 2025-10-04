@@ -75,11 +75,11 @@ public class HouseRobber {
     }
 
     public static int rob(int[] nums) {
-        int index = 0;
+        // int index = 0;
         // return solveUsingRec(nums, index);
-        int dp[] = new int[nums.length];
-        Arrays.fill(dp, -1);
-        solveUsingMemo(nums, index, dp);
+        // int dp[] = new int[nums.length];
+        // Arrays.fill(dp, -1);
+        // return solveUsingMemo(nums, index, dp);
 
         return solveUsingTabulation(nums);
     }
