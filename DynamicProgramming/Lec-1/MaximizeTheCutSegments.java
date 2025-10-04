@@ -54,7 +54,6 @@ public class MaximizeTheCutSegments {
             if (i - z >= 0) {
                 dp[i] = Math.max(dp[i], dp[i - z] + 1);
             }
-
         }
 
         return dp[n];
