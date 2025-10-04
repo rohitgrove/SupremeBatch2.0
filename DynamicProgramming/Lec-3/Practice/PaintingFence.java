@@ -6,7 +6,7 @@ public class PaintingFence {
             return k;
         }
 
-        if(n == 2) {
+        if (n == 2) {
             return k * k;
         }
 
@@ -19,7 +19,7 @@ public class PaintingFence {
             return k;
         }
 
-        if(n == 2) {
+        if (n == 2) {
             return k * k;
         }
 
