@@ -1,34 +1,6 @@
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class ConstructTreeUsingPostOrderAndInOrder {
-    public static void levelOrder(Node root) {
-        Queue<Node> q = new LinkedList<>();
-        q.offer(root);
-        q.offer(null);
-
-        while (!q.isEmpty()) {
-            Node front = q.poll();
-            if (front == null) {
-                System.out.println();
-                if (!q.isEmpty()) {
-                    q.offer(null);
-                }
-            } else {
-                System.out.print(front.data + " ");
-                if (front.left != null) {
-                    q.offer(front.left);
-                }
-
-                if (front.right != null) {
-                    q.offer(front.right);
-                }
-            }
-        }
-        System.out.println();
-    }
-
     public static void createMapping(int[] postorder, int size, HashMap<Integer, Integer> valueToIndex) {
         for (int i = 0; i < size; i++) {
             int element = postorder[i];
@@ -71,6 +43,6 @@ public class ConstructTreeUsingPostOrderAndInOrder {
         int inOrder[] = { 8, 14, 6, 2, 10, 4 };
         int postOrder[] = { 8, 6, 14, 4, 10, 2 };
         Node root = buildTree(postOrder, inOrder);
-        levelOrder(root);
+        Traversals.levelOrder(root);
     }
 }
