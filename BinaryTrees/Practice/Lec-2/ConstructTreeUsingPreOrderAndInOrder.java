@@ -46,11 +46,5 @@ public class ConstructTreeUsingPreOrderAndInOrder {
         int preOrder[] = { 2, 8, 10, 6, 4, 12 };
         Node root = buildTree(preOrder, inorder);
         Traversals.levelOrder(root);
-        System.out.println(root.data);
-        System.out.println(root.left.data);
-        System.out.println(root.left.right.data);
-        System.out.println(root.left.left.data);
-        System.out.println(root.right.data);
-        System.out.println(root.right.right.data);
     }
 }
