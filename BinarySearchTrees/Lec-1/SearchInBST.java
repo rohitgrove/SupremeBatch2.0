@@ -15,9 +15,9 @@ public class SearchInBST {
         boolean leftAns = false;
         boolean rightAns = false;
         if (target > root.data) {
-            leftAns = search(root.right, target);
+            rightAns = search(root.right, target);
         } else {
-            rightAns = search(root.left, target);
+            leftAns = search(root.left, target);
         }
 
         return leftAns || rightAns;
