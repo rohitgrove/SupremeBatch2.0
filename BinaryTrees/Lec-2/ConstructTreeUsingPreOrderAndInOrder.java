@@ -1,33 +1,6 @@
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class ConstructTreeUsingPreOrderAndInOrder {
-    public static void levelOrder(Node root) {
-        Queue<Node> q = new LinkedList<>();
-        q.offer(root);
-        q.offer(null);
-
-        while (!q.isEmpty()) {
-            Node front = q.poll();
-            if (front == null) {
-                System.out.println();
-                if (!q.isEmpty()) {
-                    q.offer(null);
-                }
-            } else {
-                System.out.print(front.data + " ");
-                if (front.left != null) {
-                    q.offer(front.left);
-                }
-
-                if (front.right != null) {
-                    q.offer(front.right);
-                }
-            }
-        }
-    }
-
     public static int searchInorder(int[] inOrder, int size, int element) {
         for (int i = 0; i < size; i++) {
             if (inOrder[i] == element) {
@@ -83,6 +56,6 @@ public class ConstructTreeUsingPreOrderAndInOrder {
         int inorder[] = { 10, 8, 6, 2, 4, 12 };
         int preOrder[] = { 2, 8, 10, 6, 4, 12 };
         Node root = buildTree(preOrder, inorder);
-        levelOrder(root);
+        Traversals.levelOrder(root);
     }
 }
