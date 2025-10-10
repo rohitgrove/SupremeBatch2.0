@@ -77,5 +77,21 @@ public class SudokuSolver1 {
         solveSudoku(board);
         System.out.println("After Solving");
         printArr(board);
+
+        char board1[][] = { { '.', '.', '5', '.', '4', '2', '.', '.', '.' },
+                { '.', '.', '7', '5', '.', '9', '.', '.', '.' },
+                { '.', '4', '.', '.', '.', '8', '.', '.', '5' },
+                { '.', '6', '.', '.', '.', '.', '.', '2', '9' },
+                { '2', '3', '.', '.', '.', '.', '.', '8', '7' },
+                { '7', '9', '.', '.', '.', '.', '.', '6', '.' },
+                { '8', '.', '.', '4', '.', '.', '.', '5', '.' },
+                { '.', '.', '.', '7', '.', '6', '2', '.', '.' },
+                { '.', '.', '.', '1', '8', '.', '7', '.', '.' } };
+
+        System.out.println("Before Solving");
+        printArr(board1);
+        solveSudoku(board1);
+        System.out.println("After Solving");
+        printArr(board1);
     }
 }
