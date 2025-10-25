@@ -57,6 +57,7 @@ public class DirectedGraphCycleDetectionUsingDFS {
 
         int n = 8;
         System.out.println(checkCycleDirectedGraghDFS(n));
+        adjList = new HashMap<>();
 
         Graph g1 = new Graph();
         g1.addEdge(0, 1, true, adjList);
