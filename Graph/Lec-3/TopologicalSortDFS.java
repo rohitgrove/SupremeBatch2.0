@@ -45,5 +45,17 @@ public class TopologicalSortDFS {
         g.addEdge(6, 7, true, adjList);
         g.printAdjList(adjList);
         topologicalSort(8);
+
+        adjList = new HashMap<>();
+        g.addEdge(0, 1, true, adjList);
+        g.addEdge(1, 2, true, adjList);
+        g.addEdge(2, 3, true, adjList);
+        g.addEdge(3, 4, true, adjList);
+        g.addEdge(3, 5, true, adjList);
+        g.addEdge(4, 6, true, adjList);
+        g.addEdge(5, 6, true, adjList);
+        g.addEdge(6, 7, true, adjList);
+        g.printAdjList(adjList);
+        topologicalSort(8);
     }
 }
