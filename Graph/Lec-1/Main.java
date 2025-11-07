@@ -8,7 +8,7 @@ public class Main {
         // g.addEdge(1, 3, false);
         // g.addEdge(2, 3, false);
         // g.printAdjList();
-        // g.dfsTraversal(0, 3);
+        // g.dfs(0, 3);
 
         // WeightedGraph<Character> g = new WeightedGraph<>();
         // g.addEdge('a', 'b', 5, false);
