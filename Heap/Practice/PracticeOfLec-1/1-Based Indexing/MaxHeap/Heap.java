@@ -6,20 +6,17 @@ public class Heap {
     public Heap(int capacity) {
         this.arr = new int[capacity];
         this.capacity = capacity;
-        // size = current number of element in heap
         this.size = 0;
     }
 
-    public void insert(int val) { // tc: O(logn)
+    public void insert(int val) {
         if (size == capacity) {
             throw new RuntimeException("Heap Overflow");
         }
-        // size increase kar jayega
         size++;
         int index = size;
         arr[index] = val;
 
-        // take the val to its correct postion
         while (index > 1) {
             int parrentIndex = index / 2;
             if (arr[index] > arr[parrentIndex]) {
@@ -33,7 +30,7 @@ public class Heap {
         }
     }
 
-    public void printHeap() { // tc: O(logn)
+    public void printHeap() {
         for (int i = 1; i <= size; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -42,9 +39,7 @@ public class Heap {
 
     public int deleteFromHeap() {
         int answer = arr[1];
-        // replacement
         arr[1] = arr[size];
-        // last element ko delete uski original position
         arr[size--] = 0;
 
         int index = 1;
