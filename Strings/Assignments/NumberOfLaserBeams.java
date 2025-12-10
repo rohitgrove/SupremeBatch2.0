@@ -32,9 +32,9 @@ public class NumberOfLaserBeams {
     }
 
     public static void main(String[] args) {
-        String bank1[] = {"011001", "000000", "010100", "001000"};
+        String bank1[] = { "011001", "000000", "010100", "001000" };
         System.out.println(numberOfBeams(bank1));
-        String bank2[] = {"000", "111", "000"};
+        String bank2[] = { "000", "111", "000" };
         System.out.println(numberOfBeams(bank2));
     }
 }
