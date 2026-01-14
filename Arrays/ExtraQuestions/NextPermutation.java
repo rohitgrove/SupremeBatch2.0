@@ -51,5 +51,8 @@ public class NextPermutation {
         int nums3[] = { 1, 1, 5 };
         nextPermutation(nums3);
         printArr(nums3);
+        int nums4[] = { 3, 7, 2, 3, 5, 6, 8 };
+        nextPermutation(nums4);
+        printArr(nums4);
     }
 }
