@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class CelebrityProblem {
+public class CelebrityProblemByLakshayBhaiya {
     public static int celebrity(int[][] mat) {
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < mat.length; i++) {
@@ -36,13 +36,17 @@ public class CelebrityProblem {
     }
 
     public static void main(String[] args) {
-        int mat1[][] = { { 0, 1, 0 },
-                { 0, 0, 0 },
-                { 0, 1, 0 } };
+        int mat1[][] = { { 1, 1, 0 },
+                { 0, 1, 0 },
+                { 0, 1, 1 } };
         System.out.println(celebrity(mat1));
-
-        int mat2[][] = { { 0, 1 },
-                { 1, 0 } };
+        int mat2[][] = { { 1, 1, 0, 1 },
+                { 0, 1, 0, 1 },
+                { 1, 1, 1, 1 },
+                { 0, 0, 0, 1 } };
         System.out.println(celebrity(mat2));
+        int mat3[][] = { { 0, 1 },
+                { 1, 0 } };
+        System.out.println(celebrity(mat3));
     }
 }
