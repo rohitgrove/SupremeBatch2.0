@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class CelebrityProblem {
+public class CelebrityProblemByLakshayBhaiya {
     public static int celebrity(int mat[][]) {
         Stack<Integer> st = new Stack<>();
         // step1: push all persons into stack
