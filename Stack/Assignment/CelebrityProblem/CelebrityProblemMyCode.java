@@ -16,6 +16,8 @@ public class CelebrityProblemMyCode {
                 continue;
             }
             if (!knows(j, candiate, mat) || knows(candiate, j, mat)) {
+                // if j does not know candidate,
+                // or candidate knows j, return -1
                 return -1;
             }
         }
