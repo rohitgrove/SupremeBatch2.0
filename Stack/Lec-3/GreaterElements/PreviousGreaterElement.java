@@ -1,21 +1,20 @@
 import java.util.Stack;
 
 public class PreviousGreaterElement {
-    public static int[] nextGreaterElements(int[] arr) {
+    public static int[] previousGreaterElements(int[] arr) {
         Stack<Integer> st = new Stack<>();
+        st.push(-1);
         int ans[] = new int[arr.length];
 
-        for (int i = arr.length - 1; i >= 0; i--) {
-            while (!st.isEmpty() && arr[i] > arr[st.peek()]) {
-                int kids = st.pop();
-                ans[kids] = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            int curr = arr[i];
+
+            while (st.peek() != -1 && st.peek() <= curr) {
+                st.pop();
             }
 
-            st.push(i);
-        }
-
-        while (!st.isEmpty()) {
-            ans[st.pop()] = -1;
+            ans[i] = st.peek();
+            st.push(curr);
         }
 
         return ans;
@@ -43,11 +42,11 @@ public class PreviousGreaterElement {
         printArr(arr5);
         printArr(arr6);
         System.out.println("Results: ");
-        printArr(nextGreaterElements(arr1));
-        printArr(nextGreaterElements(arr2));
-        printArr(nextGreaterElements(arr3));
-        printArr(nextGreaterElements(arr4));
-        printArr(nextGreaterElements(arr5));
-        printArr(nextGreaterElements(arr6));
+        printArr(previousGreaterElements(arr1));
+        printArr(previousGreaterElements(arr2));
+        printArr(previousGreaterElements(arr3));
+        printArr(previousGreaterElements(arr4));
+        printArr(previousGreaterElements(arr5));
+        printArr(previousGreaterElements(arr6));
     }
 }

@@ -3,18 +3,19 @@ import java.util.Stack;
 public class NextGreaterElement {
     public static int[] nextGreaterElements(int[] arr) {
         Stack<Integer> st = new Stack<>();
+        st.push(-1);
         int ans[] = new int[arr.length];
 
-        for (int i = 0; i < arr.length; i++) {
-            while (!st.isEmpty() && arr[i] > arr[st.peek()]) {
-                int kids = st.pop();
-                ans[kids] = arr[i];
-            }
-            st.push(i);
-        }
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int curr = arr[i];
 
-        while (!st.isEmpty()) {
-            ans[st.pop()] = -1;
+            // jab tak stack ka top <= curr ho, pop karo
+            while (st.peek() != -1 && st.peek() <= curr) {
+                st.pop();
+            }
+
+            ans[i] = st.peek();
+            st.push(curr);
         }
 
         return ans;
