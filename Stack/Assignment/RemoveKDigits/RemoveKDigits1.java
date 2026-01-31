@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class RemoveKDigits {
+public class RemoveKDigits1 {
     public static String removeKdigits(String num, int k) {
         StringBuilder ans = new StringBuilder();
         Stack<Character> st = new Stack<>();
