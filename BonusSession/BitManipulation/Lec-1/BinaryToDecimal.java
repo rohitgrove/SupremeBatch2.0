@@ -12,6 +12,7 @@ public class BinaryToDecimal {
         }
         return decimal;
     }
+
     public static void main(String[] args) {
         int binaryno = 11010;
         int decimal = binaryToDecimal(binaryno);
