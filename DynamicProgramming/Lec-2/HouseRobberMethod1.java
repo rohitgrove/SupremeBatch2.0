@@ -1,4 +1,4 @@
-public class HouseRobber {
+public class HouseRobberMethod1 {
     public static int solveUsingRec(int nums[], int index) {
         // base case
         if (index >= nums.length) {
@@ -30,7 +30,7 @@ public class HouseRobber {
         return dp[index];
     }
 
-    public static int solveUsingTabulationM1(int nums[]) {
+    public static int solveUsingTabulation(int nums[]) {
         int n = nums.length;
         // step1
         int dp[] = new int[n];
@@ -49,22 +49,7 @@ public class HouseRobber {
         return dp[0];
     }
 
-    public static int solveUsingTabulationM2(int nums[]) {
-        int n = nums.length;
-        // step1
-        int dp[] = new int[n + 1];
-        // step2
-        dp[n - 1] = nums[n - 1];
-        for (int index = n - 2; index >= 0; index--) {
-            int include = nums[index] + dp[index + 2];
-            int exclude = dp[index + 1];
-            dp[index] = Math.max(include, exclude);
-        }
-
-        return dp[0];
-    }
-
-    public static int solveUsingTabulationSOM1(int nums[]) {
+    public static int solveUsingTabulationSO(int nums[]) {
         int n = nums.length;
 
         int prev = nums[n - 1];
@@ -87,33 +72,14 @@ public class HouseRobber {
         return prev;
     }
 
-    public static int solveUsingTabulationSOM2(int nums[]) {
-        int n = nums.length;
-        int prev = nums[n - 1];
-        int next = 0;
-        int curr;
-
-        for (int idx = n - 2; idx >= 0; idx--) {
-            int include = nums[idx] + next;
-            int exclude = 0 + prev;
-            curr = Math.max(include, exclude);
-
-            // bhul jata hu
-            next = prev;
-            prev = curr;
-        }
-
-        return prev;
-    }
-
     public static int rob(int[] nums) {
         // int index = 0;
         // return solveUsingRec(nums, index);
-        // int dp[] = new int[nums.length + 1];
+        // int dp[] = new int[nums.length];
         // Arrays.fill(dp, -1);
         // return solveUsingMemo(nums, index, dp);
 
-        return solveUsingTabulationM2(nums);
+        return solveUsingTabulation(nums);
     }
 
     public static void main(String[] args) {
