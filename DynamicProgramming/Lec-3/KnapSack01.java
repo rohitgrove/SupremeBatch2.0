@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class KnapSack01 {
     public static int solveUsingRec(int capacity, int profit[], int wt[], int index, int n) {
         // base case
