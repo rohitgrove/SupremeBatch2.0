@@ -79,7 +79,7 @@ public class EditDistance {
         return dp[0][0];
     }
 
-    public static int solveUsingTabulationSO(String word1, String word2) {
+    public static int solveUsingTabulationSO1(String word1, String word2) {
         int[] next = new int[word1.length() + 1];
         int[] curr = new int[word1.length() + 1];
 
@@ -113,6 +113,36 @@ public class EditDistance {
         return next[0];
     }
 
+    public static int solveUsingTabulationSO2(String word1, String word2) {
+        int[] curr = new int[word2.length() + 1];
+        int[] next = new int[word2.length() + 1];
+
+        for (int col = 0; col <= word2.length(); col++) {
+            next[col] = word2.length() - col;
+        }
+
+        for (int idx1 = word1.length() - 1; idx1 >= 0; idx1--) {
+            curr[word2.length()] = word1.length() - idx1;
+
+            for (int idx2 = word2.length() - 1; idx2 >= 0; idx2--) {
+
+                if (word1.charAt(idx1) == word2.charAt(idx2)) {
+                    curr[idx2] = next[idx2 + 1];
+                } else {
+                    int replace = 1 + next[idx2 + 1];
+                    int insert = 1 + curr[idx2 + 1];
+                    int remove = 1 + next[idx2];
+
+                    curr[idx2] = Math.min(replace, Math.min(insert, remove));
+                }
+            }
+
+            next = curr.clone();
+        }
+
+        return next[0];
+    }
+
     public static int minDistance(String word1, String word2) {
         // return solveUsingRec(word1, word2, 0, 0);
         // int dp[][] = new int[word1.length() + 1][word2.length() + 1];
@@ -122,7 +152,7 @@ public class EditDistance {
 
         // return solveUsingMemo(word1, word2, 0, 0, dp);
 
-        return solveUsingTabulationSO(word1, word2);
+        return solveUsingTabulationSO1(word1, word2);
     }
 
     public static void main(String[] args) {
