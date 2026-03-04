@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class GuessNumberHigherOrLower {
+public class GuessNumberHigherOrLower2 {
     public static int solveUsingRec(int start, int end) {
         // base case
         if (start >= end) {
