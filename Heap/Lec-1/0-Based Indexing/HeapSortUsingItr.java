@@ -1,0 +1,61 @@
+public class HeapSortUsingItr {
+    public static void heapify(int[] nums, int index, int n) {
+        while (true) {
+            int left = 2 * index + 1;
+            int right = 2 * index + 2;
+            int largestindex = index;
+
+            if (left < n && nums[left] > nums[largestindex]) {
+                largestindex = left;
+            }
+
+            if (right < n && nums[right] > nums[largestindex]) {
+                largestindex = right;
+            }
+
+            if (largestindex == index) {
+                break;
+            }
+
+            int temp = nums[index];
+            nums[index] = nums[largestindex];
+            nums[largestindex] = temp;
+            index = largestindex;
+        }
+    }
+
+    public static void buildHeap(int[] nums, int n) {
+        for (int i = n / 2; i >= 0; --i) {
+            heapify(nums, i, n);
+        }
+    }
+
+    public static void heapSort(int[] nums) {
+        int n = nums.length - 1;
+        while (n > 0) {
+            // swap element to last
+            int temp = nums[0];
+            nums[0] = nums[n];
+            nums[n] = temp;
+            heapify(nums, 0, n);
+            n--;
+        }
+    }
+
+    public static void printArr(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 5, 10, 15, 20, 25, 12 };
+        System.out.println("Before Sort: ");
+        printArr(arr);
+        buildHeap(arr, arr.length);
+        heapSort(arr);
+        System.out.println("After Sort: ");
+        printArr(arr);
+    }
+}
