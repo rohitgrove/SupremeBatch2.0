@@ -1,0 +1,3 @@
+Here is my solution to [problem]. Do NOT suggest improvements yet.
+
+Act as a strict technical interviewer. Ask me 3 hard follow-up questions, one about why I chose this data structure, one about time complexity tradeoffs, one about edge cases I might have missed."

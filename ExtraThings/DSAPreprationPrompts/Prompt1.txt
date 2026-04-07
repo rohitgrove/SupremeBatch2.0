@@ -1,0 +1,3 @@
+"I have been working on [problem name] for 40 minutes. I think it involves graphs.
+
+I tried BFS but it is failing on this specific case: [describe the case]. Do NOT give me the solution or code. Give me just one question I should be asking myself to move forward."
