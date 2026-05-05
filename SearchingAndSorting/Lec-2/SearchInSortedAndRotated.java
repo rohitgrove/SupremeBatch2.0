@@ -11,7 +11,7 @@ public class SearchInSortedAndRotated {
                 return s;
             }
 
-            if (mid < nums.length && nums[mid] > nums[mid + 1]) {
+            if (mid + 1 < nums.length && nums[mid] > nums[mid + 1]) {
                 return mid;
             } else if (mid - 1 >= 0 && nums[mid] < nums[mid - 1]) {
                 return mid - 1;

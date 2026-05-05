@@ -14,9 +14,9 @@ public class SearchInSortedAndRotatedPivotAsSmallerElement {
                 return s;
             }
 
-            if (mid < nums.length && nums[mid] < nums[mid - 1]) {
+            if (mid - 1 >= 0 && nums[mid] < nums[mid - 1]) {
                 return mid;
-            } else if (mid >= 0 && nums[mid] > nums[mid + 1]) {
+            } else if (mid + 1 < nums.length && nums[mid] > nums[mid + 1]) {
                 return mid + 1;
             } else if (nums[s] > nums[mid]) {
                 e = mid - 1;
@@ -31,6 +31,9 @@ public class SearchInSortedAndRotatedPivotAsSmallerElement {
 
     public static int search(int[] nums, int target) {
         int pivot = findPivotIndexAsSmallerElement(nums);
+        if (pivot == 0) {
+            return binarySearch(nums, target, 0, nums.length - 1);
+        }
         // search in A
         if (nums[0] <= target && target <= nums[pivot - 1]) {
             return binarySearch(nums, target, 0, pivot);
