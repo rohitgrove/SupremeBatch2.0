@@ -34,6 +34,23 @@ public class ApplyOperationsToAnArray {
         return nums;
     }
 
+    public static int[] applyOperations2(int[] nums) {
+        int res[] = new int[nums.length];
+        int j = 0;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                nums[i] *= 2;
+                nums[i + 1] = 0;
+            }
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                res[j++] = nums[i];
+            }
+        }
+        return res;
+    }
+
     public static void printArr(int nums[]) {
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] + " ");
