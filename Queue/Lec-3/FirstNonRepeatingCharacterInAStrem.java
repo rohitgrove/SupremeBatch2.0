@@ -43,7 +43,7 @@ public class FirstNonRepeatingCharacterInAStrem {
             q.offer(i);
         }
 
-        while (!q.isEmpty() && freq[str.charAt(q.peek()) - 'a']  > 1) {
+        while (!q.isEmpty() && freq[str.charAt(q.peek()) - 'a'] > 1) {
             q.poll();
         }
 
