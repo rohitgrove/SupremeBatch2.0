@@ -1,4 +1,4 @@
-public class FindPivotIndexOnBassisOfSmallestPivotIndex {
+public class PivotIndexOnBassisOfSmallestPivotIndex {
     public static int findPivotIdx(int nums[]) {
         int start = 0;
         int end = nums.length - 1;
