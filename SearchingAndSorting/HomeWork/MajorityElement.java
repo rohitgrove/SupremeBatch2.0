@@ -18,12 +18,12 @@ public class MajorityElement {
 
         return -1;
     }
-   
+
     public static int betterApproach1(int nums[]) {
         Arrays.sort(nums);
         return nums[nums.length / 2];
     }
-    
+
     public static int betterApproach2(int nums[]) {
         Arrays.sort(nums);
         // freq count
