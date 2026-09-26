@@ -27,5 +27,5 @@ public class CheckPalindrome {
         System.out.println(checkPalindorme(str3));
         String str4 = "TAPAT";
         System.out.println(checkPalindorme(str4));
-    }    
+    }
 }
