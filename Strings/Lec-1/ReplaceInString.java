@@ -7,7 +7,7 @@ public class ReplaceInString {
 
             if (curr == '@') {
                 // insert space
-                str.setCharAt(index, ' '); 
+                str.setCharAt(index, ' ');
             }
             index++;
         }
@@ -17,6 +17,6 @@ public class ReplaceInString {
         StringBuilder str = new StringBuilder("My@Name@is@Rohit@Grover");
         System.out.println("Before: " + str);
         replaceCharacter(str);
-        System.out.println("After: " + str);   
+        System.out.println("After: " + str);
     }
 }
