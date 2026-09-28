@@ -15,7 +15,6 @@ public class ReverseSubstringsBetweenEachPairOfParentheses {
                 StringBuilder previous = stack.pop();
                 previous.append(current);
                 current = previous;
-
             } else {
                 current.append(ch);
             }
