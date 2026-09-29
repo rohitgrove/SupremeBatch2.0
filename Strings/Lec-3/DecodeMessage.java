@@ -1,4 +1,4 @@
-public class DecodeMessoge {
+public class DecodeMessage {
     public static String decodeMessage(String key, String message) {
         // create mapping
         char start = 'a';
