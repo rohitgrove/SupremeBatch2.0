@@ -12,7 +12,7 @@ public class IsomorphicString {
 
         for (int i = 0; i < s.length(); i++) {
             if (hash[s.charAt(i)] != t.charAt(i)) {
-                return  false;
+                return false;
             }
         }
 
