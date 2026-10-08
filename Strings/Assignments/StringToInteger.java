@@ -1,7 +1,7 @@
 public class StringToInteger {
     public static int myAtoi(String s) {
         int num = 0, i = 0, sign = 1; //+ve
-        while (s.charAt(i) == ' ') {
+        while (i < s.length() && s.charAt(i) == ' ') {
             i++;
         }
 
