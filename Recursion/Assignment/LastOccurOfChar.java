@@ -1,33 +1,26 @@
 public class LastOccurOfChar {
-    static int ans = -1;
-
-    public static void lastOccLTR(String str, char x, int idx) {
-        // base case
+    public static void lastOccLTR(String str, char x, int idx, int ans[]) {
         if (idx >= str.length()) {
             return;
         }
-        // ek case solution
+
         if (str.charAt(idx) == x) {
-            ans = idx;
+            ans[0] = idx;
         }
 
-        // RE
-        lastOccLTR(str, x, idx + 1);
+        lastOccLTR(str, x, idx + 1, ans);
     }
 
-    public static void lastOccRTL(String str, char x, int idx) {
-        // base case
+    public static int lastOccRTL(String str, char x, int idx) {
         if (idx < 0) {
-            return;
-        }
-        // ek case solution
-        if (str.charAt(idx) == x) {
-            ans = idx;
-            return;
+            return -1;
         }
 
-        // RE
-        lastOccRTL(str, x, idx - 1);
+        if (str.charAt(idx) == x) {
+            return idx;
+        }
+
+        return lastOccRTL(str, x, idx - 1);
     }
 
     public static int lastOcc(String str, char x, int idx) {
@@ -36,17 +29,24 @@ public class LastOccurOfChar {
         }
 
         int isFound = lastOcc(str, x, idx + 1);
-
         if (isFound == -1 && str.charAt(idx) == x) {
             return idx;
         }
+
         return isFound;
+    }
+
+    public static int lastIndex(String s, char c) {
+        // int ans[] = new int[] { -1 };
+        // lastOccLTR(s, c, 0, ans);
+        // return ans[0];
+        // return lastOccRTL(s, c, s.length() - 1);
+        return lastOcc(s, c, 0);
     }
 
     public static void main(String[] args) {
         String str = "rbcddegb";
-        char x = 'd';
-        lastOccRTL(str, x, str.length() - 1);
-        System.out.println(ans);
+        char x = 'b';
+        System.out.println(lastIndex(str, x));
     }
 }
