@@ -1,5 +1,5 @@
 public class CountDearrangement {
-    public static int solve(int n) {
+    public static int derangeCount(int n) {
         // base case
         if (n == 1) {
             return 0;
@@ -9,12 +9,12 @@ public class CountDearrangement {
             return 1;
         }
 
-        int ans = (n - 1) * (solve(n - 1) + solve(n - 2));
+        int ans = (n - 1) * (derangeCount(n - 1) + derangeCount(n - 2));
         return ans;
     }
 
     public static void main(String[] args) {
         int n = 3;
-        System.out.println(solve(n));
+        System.out.println(derangeCount(n));
     }
 }
