@@ -1,8 +1,8 @@
 public class AddStrings {
-    public static void solve(String num1, int p1, String num2, int p2, int carry,StringBuilder ans) {
+    public static void solve(String num1, int p1, String num2, int p2, int carry, StringBuilder ans) {
         if (p1 < 0 && p2 < 0) {
             if (carry != 0) {
-                ans.append(carry + '0');
+                ans.append((char) (carry + '0'));
             }
             return;
         }
@@ -13,7 +13,6 @@ public class AddStrings {
         int digit = csum % 10;
         carry = csum / 10;
         ans.append(digit);
-
         solve(num1, p1 - 1, num2, p2 - 1, carry, ans);
     }
 
