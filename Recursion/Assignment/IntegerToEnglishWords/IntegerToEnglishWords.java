@@ -1,15 +1,5 @@
 import java.util.List;
 
-class Pair {
-    public int number;
-    public String word;
-
-    public Pair(int number, String word) {
-        this.number = number;
-        this.word = word;
-    }
-}
-
 public class IntegerToEnglishWords {
     public static List<Pair> mp = List.of(
         new Pair(1000000000, "Billion"),
