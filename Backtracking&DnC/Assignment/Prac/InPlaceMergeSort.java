@@ -1,30 +1,32 @@
 public class InPlaceMergeSort {
-    public static void mergeSort(int nums[], int s, int e) {
-        if (s >= e) {
+    public static void mergeSort(int[] nums, int start, int end) {
+        if (start >= end) {
             return;
         }
 
-        int mid = s + (e - s) / 2;
-        mergeSort(nums, s, mid);
-        mergeSort(nums, mid + 1, e);
-        merge(nums, s, mid, e);
+        int mid = start + (end - start) / 2;
+
+        mergeSort(nums, start, mid);
+        mergeSort(nums, mid + 1, end);
+        inPlaceMerge(nums, start, end);
     }
 
-    public static void merge(int[] nums, int s, int mid, int e) {
-        int total_len = e - s + 1;
-        int gap = (total_len / 2) + (total_len % 2);
+    public static void inPlaceMerge(int nums[], int start, int end) {
+        int len = end - start + 1;
+        int gap = (len / 2) + (len % 2);
 
         while (gap > 0) {
-            int i = s;
-            int j = s + gap;
-            while (j <= e) {
+            int i = start;
+            int j = start + gap;
+
+            while (j <= end) {
                 if (nums[i] > nums[j]) {
                     int temp = nums[i];
                     nums[i] = nums[j];
                     nums[j] = temp;
                 }
-                i++;
                 j++;
+                i++;
             }
             gap = gap <= 1 ? 0 : (gap / 2) + (gap % 2);
         }
