@@ -7,10 +7,10 @@ public class InPlaceMergeSort {
         int mid = start + (end - start) / 2;
         mergeSort(nums, start, mid);
         mergeSort(nums, mid + 1, end);
-        mergeInPlace(nums, start, mid, end);
+        mergeInPlace(nums, start, end);
     }
 
-    public static void mergeInPlace(int[] nums, int start, int mid, int end) {
+    public static void mergeInPlace(int[] nums, int start, int end) {
         int total_len = end - start + 1;
         int gap = (total_len / 2) + (total_len % 2);
 
