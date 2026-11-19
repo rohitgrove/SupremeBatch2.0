@@ -35,10 +35,7 @@ public class LinkedList {
         } else if (position == (length + 1)) {
             insertAtTail(data);
         } else {
-            // insert at middle linked list
-            // step1: create a new Node
             Node newNode = new Node(data);
-            // Step 2: traverse prev curr to position
             Node prev = head;
             Node curr = head;
             while (position != 1) {
@@ -47,10 +44,7 @@ public class LinkedList {
                 position--;
             }
 
-            // Step 3: attach prev to newNode
             prev.next = newNode;
-
-            // Step 4: attach newNode to curr
             newNode.next = curr;
         }
     }
@@ -77,11 +71,11 @@ public class LinkedList {
 
     public int deleteNode(int position) {
         if (head == null) {
-            throw new RuntimeException("LL is Empty");
+            throw new RuntimeException("Cannot delete, coz LL is Empty");
         }
 
         int size = getLength();
-        if (position < 0 && position > size) {
+        if (position < 1 || position > (size)) {
             throw new RuntimeException("position is invalid");
         }
 
