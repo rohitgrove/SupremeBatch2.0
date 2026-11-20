@@ -11,16 +11,16 @@ public class Main {
         // ll.insertAtMiddle(5, 500);
         // ll.print();
 
-        ll.deleteNode(4);
+        ll.deleteNode1(4);
         ll.print();
         System.out.println(ll.findLength());
-        ll.deleteNode(2);
+        ll.deleteNode1(2);
         ll.print();
         System.out.println(ll.findLength());
-        ll.deleteNode(2);
+        ll.deleteNode1(2);
         ll.print();
         System.out.println(ll.findLength());
-        ll.deleteNode(1);
+        ll.deleteNode1(1);
         ll.print();
         System.out.println(ll.findLength());
     }

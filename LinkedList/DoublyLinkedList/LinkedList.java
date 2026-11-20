@@ -85,7 +85,7 @@ public class LinkedList {
         }
     }
 
-    public int deleteNode(int position) {
+    public int deleteNode1(int position) {
         if (head == null) {
             throw new RuntimeException("Cannot delete, coz LL is Empty");
         }
@@ -131,6 +131,77 @@ public class LinkedList {
             nextNode.prev = prevNode;
 
             return currNode.data;
+        }
+    }
+
+    public int deleteFromHead() {
+        if (head == null) {
+            throw new RuntimeException("Can't delete, because of empty linked list");
+        }
+
+        if (head == tail) {
+            int val = head.data;
+            head = null;
+            tail = null;
+            return val;
+        } else {
+            Node temp = head;
+
+            head = head.next;
+            head.prev = null;
+
+            return temp.data;
+        }
+    }
+
+    public int deleteFromTail() {
+        if (head == null) {
+            throw new RuntimeException("Can't delete, because of empty linked list");
+        }
+
+        if (head == tail) {
+            int val = head.data;
+            head = null;
+            tail = null;
+            return val;
+        } else {
+            int val = tail.data;
+            Node prevNode = tail.prev;
+
+            prevNode.next = null;
+            tail = prevNode;
+
+            return val;
+        }
+    }
+
+    public int deleteNode2(int position) {
+        if (head == null) {
+            throw new RuntimeException("LL is Empty");
+        }
+
+        int size = findLength();
+        if (position < 1 || position > (size)) {
+            throw new RuntimeException("position is invalid");
+        }
+
+        if (position == 1) {
+            return deleteFromHead();
+        } else if (position == size) {
+            return deleteFromTail();
+        } else {
+            Node prvNode = head;
+            Node currNode = head;
+            while (position != 1) {
+                prvNode = currNode;
+                currNode = currNode.next;
+                position--;
+            }
+            int val = currNode.data;
+            Node nextNode = currNode.next;
+            prvNode.next = nextNode;
+            nextNode.prev = prvNode;
+            return val;
         }
     }
 }
